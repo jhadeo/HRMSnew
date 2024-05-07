@@ -3,7 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package HRMS;
+
 import com.formdev.flatlaf.FlatLightLaf;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author admin WOOOW
@@ -249,17 +258,44 @@ public class MainMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 //view guest table
-    public void view_table(){
-    
+
+    public void view_table() {
+        DefaultTableModel tbmodel = (DefaultTableModel) jTable1.getModel();
+        tbmodel.setRowCount(0);
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            Statement stmt = con.createStatement();
+            String sql = "select * from Guest";
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                String GuestID = String.valueOf(rs.getInt("GuestID"));
+                String FirstName = rs.getString("FirstName");
+                String MiddleName = rs.getString("MiddleName");
+                String LastName = rs.getString("LastName");
+                String PhoneNo = rs.getString("PhoneNo");
+                String Email = rs.getString("Email");
+                String HomeAddress = rs.getString("HomeAddress");
+                SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy"); // date datatype to string
+                Date BirthDate = rs.getDate("BirthDate");
+                String BString = sdf.format(BirthDate);
+                String Gender = rs.getString("Gender");
+                boolean MemberStatus = rs.getBoolean("MemberStatus");
+
+
+                tbmodel.addRow(new Object[]{GuestID, FirstName, MiddleName, LastName, PhoneNo, Email, HomeAddress, BString, Gender, MemberStatus});
+            }
+            con.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     private void jTabbedPane3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane3StateChanged
-        if (jTabbedPane3.getSelectedIndex()== 0){
+        if (jTabbedPane3.getSelectedIndex() == 0) {
             view_table();
         }
     }//GEN-LAST:event_jTabbedPane3StateChanged
 
-    
-    
     /**
      * @param args the command line arguments
      */
