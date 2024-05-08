@@ -6,12 +6,32 @@ import java.sql.*;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 /**
  *
  * @author admin
  */
 public class Guest {
+
+    static boolean searchguestID(int guestID) {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            Statement stmt = con.createStatement();
+            String search = "select GuestID from Guest where " + guestID + "= Guest.GuestID";
+            ResultSet rs = stmt.executeQuery(search);
+            String test = "";
+            while (rs.next()) {
+                test = rs.getString("GuestID");
+                if (test.isEmpty()) {
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 
     static String getGuestString() throws SQLException {
         int id = 0;
@@ -27,49 +47,49 @@ public class Guest {
 
     static String getGuestNum(int guestID) {
         try {
-            String id="";
+            String id = "";
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
-            String sql = "Select PhoneNo from Guest where "+guestID+" = GuestID";
+            String sql = "Select PhoneNo from Guest where " + guestID + " = GuestID";
             Statement stmt = con.createStatement();
-         ResultSet rs = stmt.executeQuery(sql);
-        while (rs.next()) {
-            id = rs.getString("PhoneNo");
-        }
-        return id;
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                id = rs.getString("PhoneNo");
+            }
+            return id;
         } catch (Exception e) {
             e.printStackTrace();
         }
         return "";
     }
-    
-     static String getGuestEmail(int guestID) {
+
+    static String getGuestEmail(int guestID) {
         try {
-            String id="";
+            String id = "";
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
-            String sql = "Select Email from Guest where "+guestID+" = GuestID";
+            String sql = "Select Email from Guest where " + guestID + " = GuestID";
             Statement stmt = con.createStatement();
-         ResultSet rs = stmt.executeQuery(sql);
-        while (rs.next()) {
-            id = rs.getString("Email");
-        }
-        return id;
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                id = rs.getString("Email");
+            }
+            return id;
         } catch (Exception e) {
             e.printStackTrace();
         }
         return "";
     }
-     
+
     static String getGuestName(int guestID) {
         try {
-            String id="";
+            String id = "";
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
-            String sql = "Select concat(FirstName,' ', LastName) as[Name] from Guest where "+guestID+" = GuestID";
+            String sql = "Select concat(FirstName,' ', LastName) as[Name] from Guest where " + guestID + " = GuestID";
             Statement stmt = con.createStatement();
-         ResultSet rs = stmt.executeQuery(sql);
-        while (rs.next()) {
-            id = rs.getString("Name");
-        }
-        return id;
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                id = rs.getString("Name");
+            }
+            return id;
         } catch (Exception e) {
             e.printStackTrace();
         }
