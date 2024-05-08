@@ -5,18 +5,22 @@
 package HRMS;
 
 import com.formdev.flatlaf.FlatLightLaf;
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.text.SimpleDateFormat;
-import javax.swing.table.DefaultTableModel;
+import java.util.Enumeration;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.*;
+import javax.swing.AbstractButton;
+import javax.swing.ButtonGroup;
 
 /**
  *
  * @author admin WOOOW
  */
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 public class MainMenu extends javax.swing.JFrame {
 
     /**
@@ -36,22 +40,67 @@ public class MainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
+        MainPanel = new javax.swing.JTabbedPane();
+        RoomSection = new javax.swing.JPanel();
+        RoomPanel = new javax.swing.JTabbedPane();
         jPanel5 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        ViewRoomTable = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
+        RoomRSection = new javax.swing.JPanel();
+        RReservationPanel = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jTabbedPane3 = new javax.swing.JTabbedPane();
-        jPanel9 = new javax.swing.JPanel();
+        GuestSection = new javax.swing.JPanel();
+        GuestPanel = new javax.swing.JTabbedPane();
+        ViewGuests = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        ViewTable = new javax.swing.JTable();
+        AddGuest = new javax.swing.JPanel();
+        lastfield = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jRadioButton6 = new javax.swing.JRadioButton();
+        datebirthchooser = new com.toedter.calendar.JDateChooser();
+        middlefield = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        homefield = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        firstfield = new javax.swing.JTextField();
+        guestfield = new javax.swing.JTextField();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        mobilefield = new javax.swing.JTextField();
+        emailfield = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        EditGuest = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        EditTable = new javax.swing.JTable();
+        EventSection = new javax.swing.JPanel();
+        EventPanel = new javax.swing.JTabbedPane();
+        jPanel9 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        EventReservation = new javax.swing.JPanel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel13 = new javax.swing.JPanel();
+        jPanel14 = new javax.swing.JPanel();
+        jPanel15 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Serendipity System");
@@ -62,88 +111,177 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(216, 167, 144));
         jPanel2.setPreferredSize(new java.awt.Dimension(1152, 768));
 
-        jTabbedPane1.setBackground(new java.awt.Color(216, 167, 144));
-        jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.LEFT);
-        jTabbedPane1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jTabbedPane1.setMaximumSize(new java.awt.Dimension(1920, 1080));
+        MainPanel.setBackground(new java.awt.Color(216, 167, 144));
+        MainPanel.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        MainPanel.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        MainPanel.setMaximumSize(new java.awt.Dimension(1920, 1080));
 
-        jTabbedPane2.setBackground(new java.awt.Color(239, 231, 221));
+        RoomPanel.setBackground(new java.awt.Color(239, 231, 221));
+        RoomPanel.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                RoomPanelStateChanged(evt);
+            }
+        });
 
         jPanel5.setBackground(new java.awt.Color(239, 231, 221));
+
+        ViewRoomTable.setBackground(new java.awt.Color(239, 231, 221));
+        ViewRoomTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Room No.", "Room Type", "Room Rate", "Room Limit", "Room Status"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(ViewRoomTable);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 956, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1021, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 551, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 557, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("View Rooms", jPanel5);
+        RoomPanel.addTab("View Rooms", jPanel5);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 956, Short.MAX_VALUE)
+            .addGap(0, 1021, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 551, Short.MAX_VALUE)
+            .addGap(0, 557, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("Add Room", jPanel6);
+        RoomPanel.addTab("Add Room", jPanel6);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 956, Short.MAX_VALUE)
+            .addGap(0, 1021, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 551, Short.MAX_VALUE)
+            .addGap(0, 557, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("Edit Room", jPanel7);
+        RoomPanel.addTab("Edit Room", jPanel7);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 956, Short.MAX_VALUE)
+            .addGap(0, 1021, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 551, Short.MAX_VALUE)
+            .addGap(0, 557, Short.MAX_VALUE)
         );
 
-        jTabbedPane2.addTab("Remove Room", jPanel8);
+        RoomPanel.addTab("Remove Room", jPanel8);
+
+        javax.swing.GroupLayout RoomSectionLayout = new javax.swing.GroupLayout(RoomSection);
+        RoomSection.setLayout(RoomSectionLayout);
+        RoomSectionLayout.setHorizontalGroup(
+            RoomSectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(RoomPanel, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+        RoomSectionLayout.setVerticalGroup(
+            RoomSectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RoomSectionLayout.createSequentialGroup()
+                .addComponent(RoomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 180, Short.MAX_VALUE))
+        );
+
+        MainPanel.addTab("Room Management", RoomSection);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGap(0, 1021, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2)
+            .addGap(0, 737, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Room Management", jPanel1);
+        RReservationPanel.addTab("View Reservations", jPanel1);
 
-        jTabbedPane3.setFont(new java.awt.Font("Segoe UI Light", 0, 12)); // NOI18N
-        jTabbedPane3.addChangeListener(new javax.swing.event.ChangeListener() {
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1021, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 737, Short.MAX_VALUE)
+        );
+
+        RReservationPanel.addTab("Add Reservation", jPanel3);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1021, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 737, Short.MAX_VALUE)
+        );
+
+        RReservationPanel.addTab("Check Out", jPanel4);
+
+        javax.swing.GroupLayout RoomRSectionLayout = new javax.swing.GroupLayout(RoomRSection);
+        RoomRSection.setLayout(RoomRSectionLayout);
+        RoomRSectionLayout.setHorizontalGroup(
+            RoomRSectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(RReservationPanel)
+        );
+        RoomRSectionLayout.setVerticalGroup(
+            RoomRSectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(RReservationPanel)
+        );
+
+        MainPanel.addTab("Room Reservations", RoomRSection);
+
+        GuestPanel.setBackground(new java.awt.Color(239, 231, 221));
+        GuestPanel.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jTabbedPane3StateChanged(evt);
+                GuestPanelStateChanged(evt);
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        ViewTable.setBackground(new java.awt.Color(239, 231, 221));
+        ViewTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -166,101 +304,429 @@ public class MainMenu extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(ViewTable);
+
+        javax.swing.GroupLayout ViewGuestsLayout = new javax.swing.GroupLayout(ViewGuests);
+        ViewGuests.setLayout(ViewGuestsLayout);
+        ViewGuestsLayout.setHorizontalGroup(
+            ViewGuestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1021, Short.MAX_VALUE)
+        );
+        ViewGuestsLayout.setVerticalGroup(
+            ViewGuestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ViewGuestsLayout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 737, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        GuestPanel.addTab("View Guests", ViewGuests);
+
+        AddGuest.setBackground(new java.awt.Color(239, 231, 221));
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel18.setText("Membership:");
+
+        buttonGroup2.add(jRadioButton5);
+        jRadioButton5.setText("Active");
+        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton5ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup2.add(jRadioButton6);
+        jRadioButton6.setText("Inactive");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel2.setText("Guest  ID:");
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel9.setText("Middle Name:");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel3.setText("Date of Birth:");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel4.setText("First Name:");
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel10.setText("Mobile Number:");
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel5.setText("Last Name:");
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel6.setText("Home Address:");
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel7.setText("Email:");
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel8.setText("Gender:");
+
+        firstfield.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                firstfieldActionPerformed(evt);
+            }
+        });
+
+        guestfield.setEditable(false);
+
+        buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setText("Male");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(jRadioButton3);
+        jRadioButton3.setText("Female");
+
+        buttonGroup1.add(jRadioButton4);
+        jRadioButton4.setText("Other");
+        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton4ActionPerformed(evt);
+            }
+        });
+
+        mobilefield.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mobilefieldActionPerformed(evt);
+            }
+        });
+
+        emailfield.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailfieldActionPerformed(evt);
+            }
+        });
+
+        jButton1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jButton1.setText("Submit Information");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1confirm(evt);
+            }
+        });
+
+        javax.swing.GroupLayout AddGuestLayout = new javax.swing.GroupLayout(AddGuest);
+        AddGuest.setLayout(AddGuestLayout);
+        AddGuestLayout.setHorizontalGroup(
+            AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddGuestLayout.createSequentialGroup()
+                .addGroup(AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddGuestLayout.createSequentialGroup()
+                        .addGap(830, 830, 830)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AddGuestLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(AddGuestLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(guestfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(firstfield)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(middlefield)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lastfield))
+                            .addGroup(AddGuestLayout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(emailfield))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddGuestLayout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(homefield))
+                            .addGroup(AddGuestLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(datebirthchooser, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mobilefield)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(65, 65, 65))
+                            .addGroup(AddGuestLayout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton5)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioButton6)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addGap(12, 12, 12))
+        );
+        AddGuestLayout.setVerticalGroup(
+            AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddGuestLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(guestfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(firstfield)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(middlefield)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lastfield))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(homefield)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emailfield)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel3)
+                        .addComponent(datebirthchooser, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AddGuestLayout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addGroup(AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(mobilefield, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10)
+                            .addGroup(AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jRadioButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jRadioButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel8)
+                                .addComponent(jRadioButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel18)
+                    .addGroup(AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jRadioButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jRadioButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(21, 21, 21)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(352, 352, 352))
+        );
+
+        lastfield.setDocument(new JTextFieldLimit(20));
+        middlefield.setDocument(new JTextFieldLimit(20));
+        homefield.setDocument(new JTextFieldLimit(60));
+        firstfield.setDocument(new JTextFieldLimit(20));
+        mobilefield.setDocument(new JTextFieldLimit(11));
+        emailfield.setDocument(new JTextFieldLimit(345));
+
+        GuestPanel.addTab("Add a Guest", AddGuest);
+
+        EditGuest.setBackground(new java.awt.Color(239, 231, 221));
+
+        EditTable.setBackground(new java.awt.Color(239, 231, 221));
+        EditTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "First Name", "Middle Name", "Last Name", "Phone No.", "Email", "Home Address", "Birth Date", "Gender", "Member Status"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(EditTable);
+
+        javax.swing.GroupLayout EditGuestLayout = new javax.swing.GroupLayout(EditGuest);
+        EditGuest.setLayout(EditGuestLayout);
+        EditGuestLayout.setHorizontalGroup(
+            EditGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditGuestLayout.createSequentialGroup()
+                .addGap(0, 235, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 786, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        EditGuestLayout.setVerticalGroup(
+            EditGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+
+        GuestPanel.addTab("Edit a Guest", EditGuest);
+
+        javax.swing.GroupLayout GuestSectionLayout = new javax.swing.GroupLayout(GuestSection);
+        GuestSection.setLayout(GuestSectionLayout);
+        GuestSectionLayout.setHorizontalGroup(
+            GuestSectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(GuestPanel)
+        );
+        GuestSectionLayout.setVerticalGroup(
+            GuestSectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(GuestPanel)
+        );
+
+        MainPanel.addTab("Guest Management", GuestSection);
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 956, Short.MAX_VALUE)
+            .addGap(0, 1021, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
+            .addGap(0, 737, Short.MAX_VALUE)
         );
 
-        jTabbedPane3.addTab("View Guests", jPanel9);
+        EventPanel.addTab("View Events", jPanel9);
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 956, Short.MAX_VALUE)
+            .addGap(0, 1021, Short.MAX_VALUE)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 577, Short.MAX_VALUE)
+            .addGap(0, 737, Short.MAX_VALUE)
         );
 
-        jTabbedPane3.addTab("Add a Guest", jPanel10);
+        EventPanel.addTab("Add Event", jPanel10);
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 956, Short.MAX_VALUE)
+            .addGap(0, 1021, Short.MAX_VALUE)
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 577, Short.MAX_VALUE)
+            .addGap(0, 737, Short.MAX_VALUE)
         );
 
-        jTabbedPane3.addTab("Edit a Guest", jPanel11);
+        EventPanel.addTab("Edit  Event", jPanel11);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane3)
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1021, Short.MAX_VALUE)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane3)
-        );
-
-        jTabbedPane1.addTab("Guest Management", jPanel4);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 956, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 586, Short.MAX_VALUE)
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 737, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Event Management", jPanel3);
+        EventPanel.addTab("Remove Event", jPanel12);
+
+        javax.swing.GroupLayout EventSectionLayout = new javax.swing.GroupLayout(EventSection);
+        EventSection.setLayout(EventSectionLayout);
+        EventSectionLayout.setHorizontalGroup(
+            EventSectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(EventPanel)
+        );
+        EventSectionLayout.setVerticalGroup(
+            EventSectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(EventPanel)
+        );
+
+        MainPanel.addTab("Event Management", EventSection);
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1021, Short.MAX_VALUE)
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 737, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("View Reservations", jPanel13);
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1021, Short.MAX_VALUE)
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 737, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Add Reservation", jPanel14);
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1021, Short.MAX_VALUE)
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 737, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Cancel Reservation", jPanel15);
+
+        javax.swing.GroupLayout EventReservationLayout = new javax.swing.GroupLayout(EventReservation);
+        EventReservation.setLayout(EventReservationLayout);
+        EventReservationLayout.setHorizontalGroup(
+            EventReservationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane1)
+        );
+        EventReservationLayout.setVerticalGroup(
+            EventReservationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane1)
+        );
+
+        MainPanel.addTab("Event Reservations", EventReservation);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1100, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1162, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 586, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 //view guest table
 
-    public void view_table() {
-        DefaultTableModel tbmodel = (DefaultTableModel) jTable1.getModel();
+    private void view_Guesttable( ) {
+        DefaultTableModel tbmodel = (DefaultTableModel) ViewTable.getModel();
         tbmodel.setRowCount(0);
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
@@ -290,11 +756,178 @@ public class MainMenu extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-    private void jTabbedPane3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane3StateChanged
-        if (jTabbedPane3.getSelectedIndex() == 0) {
-            view_table();
+    
+    private void view_editGuestTable(){
+        DefaultTableModel tbmodel = (DefaultTableModel) EditTable.getModel();
+        tbmodel.setRowCount(0);
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            Statement stmt = con.createStatement();
+            String sql = "select * from Guest";
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+              
+                String FirstName = rs.getString("FirstName");
+                String MiddleName = rs.getString("MiddleName");
+                String LastName = rs.getString("LastName");
+                String PhoneNo = rs.getString("PhoneNo");
+                String Email = rs.getString("Email");
+                String HomeAddress = rs.getString("HomeAddress");
+                SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy"); // date datatype to string
+                Date BirthDate = rs.getDate("BirthDate");
+                String BString = sdf.format(BirthDate);
+                String Gender = rs.getString("Gender");
+                boolean MemberStatus = rs.getBoolean("MemberStatus");
+
+
+                tbmodel.addRow(new Object[] {FirstName, MiddleName, LastName, PhoneNo, Email, HomeAddress, BString, Gender, MemberStatus});
+            }
+            con.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-    }//GEN-LAST:event_jTabbedPane3StateChanged
+    }
+    
+    private void view_Roomtable(){
+    DefaultTableModel tbmodel = (DefaultTableModel) ViewRoomTable.getModel();
+        tbmodel.setRowCount(0);
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            Statement stmt = con.createStatement();
+            String sql = "select * from Room";
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                String RoomNo = String.valueOf(rs.getInt("RoomNo"));
+                String RoomType = rs.getString("RoomType");
+                String RoomRate = rs.getString("RoomRate");
+                String RoomLimit = rs.getString("RoomLimit");
+                String RoomStatus = rs.getString("RoomStatus");
+                
+                tbmodel.addRow(new Object[]{RoomNo, RoomType, RoomRate, RoomLimit, RoomStatus});
+            }
+            con.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    String getSelectedButtonText(ButtonGroup buttonGroup) {
+        for (Enumeration buttons = buttonGroup.getElements(); buttons.hasMoreElements();) {
+            AbstractButton button = (AbstractButton) buttons.nextElement();
+
+            if (button.isSelected()) {
+                return button.getText();
+            }
+        }
+
+        return null;
+    }
+    
+    String gId = "";
+    
+    private void GuestPanelStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_GuestPanelStateChanged
+        switch (GuestPanel.getSelectedIndex()) {
+            case 0:
+                view_Guesttable();
+                break;
+            case 1:
+                try {
+                    gId = Guest.getGuestString();
+                    guestfield.setText(gId);
+                } catch(SQLException e){
+                    
+                }   break;
+            case 2:
+                try {
+                    gId = Guest.getGuestString();
+                    view_editGuestTable();
+                } catch(SQLException e){
+                    
+                }   break;
+            default:
+                break;
+        }
+    }//GEN-LAST:event_GuestPanelStateChanged
+
+    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton5ActionPerformed
+
+    private void firstfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstfieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_firstfieldActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void emailfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailfieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailfieldActionPerformed
+
+    private void jButton1confirm(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1confirm
+        // TODO add your handling code here:
+        try {
+            String choice = getSelectedButtonText(buttonGroup1);
+            if (choice == "Other") {
+                choice = JOptionPane.showInputDialog(null, "Enter gender: ");
+            }
+
+            String status = getSelectedButtonText(buttonGroup2);
+            boolean member = false;
+            if("Active".equals(status)){
+                member = true;
+            } else {
+                member = false;
+            }
+            int memberstatus = member ? 1 : 0;
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            Statement stmt = con.createStatement();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date selectedDate = (Date) datebirthchooser.getDate();
+            java.sql.Date sqlDate = new java.sql.Date(selectedDate.getTime()); //stackoverflow
+            if(Guest.AddGuest(firstfield.getText(),middlefield.getText(), lastfield.getText(), mobilefield.getText(), emailfield.getText(), homefield.getText(), sqlDate, choice, memberstatus)){
+                JOptionPane.showMessageDialog(this, "Data Saved!");
+                System.out.println("Entry success");
+                guestfield.setText(gId);
+                firstfield.setText("");
+                lastfield.setText("");
+                middlefield.setText("");
+                homefield.setText("");
+                mobilefield.setText("");
+                emailfield.setText("");
+            } else {
+                JOptionPane.showMessageDialog(this, "Data not Saved!");
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jButton1confirm
+
+    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton4ActionPerformed
+
+    private void mobilefieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mobilefieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mobilefieldActionPerformed
+
+    private void RoomPanelStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_RoomPanelStateChanged
+       switch (RoomPanel.getSelectedIndex()) {
+            case 0:
+                view_Roomtable();
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            default:
+                break;
+        }
+    }//GEN-LAST:event_RoomPanelStateChanged
 
     /**
      * @param args the command line arguments
@@ -318,9 +951,47 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel AddGuest;
+    private javax.swing.JPanel EditGuest;
+    private javax.swing.JTable EditTable;
+    private javax.swing.JTabbedPane EventPanel;
+    private javax.swing.JPanel EventReservation;
+    private javax.swing.JPanel EventSection;
+    private javax.swing.JTabbedPane GuestPanel;
+    private javax.swing.JPanel GuestSection;
+    private javax.swing.JTabbedPane MainPanel;
+    private javax.swing.JTabbedPane RReservationPanel;
+    private javax.swing.JTabbedPane RoomPanel;
+    private javax.swing.JPanel RoomRSection;
+    private javax.swing.JPanel RoomSection;
+    private javax.swing.JPanel ViewGuests;
+    private javax.swing.JTable ViewRoomTable;
+    private javax.swing.JTable ViewTable;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private com.toedter.calendar.JDateChooser datebirthchooser;
+    private javax.swing.JTextField emailfield;
+    private javax.swing.JTextField firstfield;
+    private javax.swing.JTextField guestfield;
+    private javax.swing.JTextField homefield;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -329,10 +1000,17 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField lastfield;
+    private javax.swing.JTextField middlefield;
+    private javax.swing.JTextField mobilefield;
     // End of variables declaration//GEN-END:variables
 }
