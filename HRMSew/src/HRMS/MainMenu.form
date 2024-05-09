@@ -188,9 +188,6 @@
                           <SubComponents>
                             <Component class="javax.swing.JTable" name="ViewRoomTable">
                               <Properties>
-                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="dd" green="e7" red="ef" type="rgb"/>
-                                </Property>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="5" rowCount="4">
                                     <Column editable="false" title="Room No." type="java.lang.String"/>
@@ -200,6 +197,9 @@
                                     <Column editable="false" title="Room Status" type="java.lang.String"/>
                                   </Table>
                                 </Property>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="dd" green="e7" red="ef" type="rgb"/>
+                                </Property>
                               </Properties>
                             </Component>
                           </SubComponents>
@@ -207,6 +207,11 @@
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="jPanel6">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="dd" green="e7" red="ef" type="rgb"/>
+                        </Property>
+                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Add Room">
@@ -221,17 +226,178 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="1082" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="80" pref="167" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="jLabel68" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel73" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel71" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="addRoomNo" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="addRoomRate" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="addRoomType" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Component id="addRoom" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jLabel72" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="addRoomLimit" min="-2" pref="80" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="roomImageUpload" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel69" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="uploadRoom" min="-2" pref="121" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace pref="241" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="638" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace pref="152" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="roomImageUpload" min="-2" pref="150" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel69" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="uploadRoom" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="addRoomNo" min="-2" pref="32" max="-2" attributes="0"/>
+                                              <Component id="jLabel71" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jLabel73" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="addRoomType" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jLabel68" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="addRoomRate" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jLabel72" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="addRoomLimit" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="addRoom" min="-2" pref="43" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace pref="241" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
+                      <SubComponents>
+                        <Component class="javax.swing.JLabel" name="jLabel68">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Light" size="24" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Book Rate (per day):"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="addRoomRate">
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel69">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Light" size="24" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Room Image:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="uploadRoom">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Light" size="18" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Upload"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="roomImageUpload">
+                          <Properties>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                                <LineBorder thickness="2"/>
+                              </Border>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JSpinner" name="addRoomType">
+                          <Properties>
+                            <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                              <SpinnerModel type="list">
+                                <ListItem value="Single"/>
+                                <ListItem value="Double"/>
+                                <ListItem value="Suite"/>
+                              </SpinnerModel>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel71">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Light" size="24" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Room Number:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel72">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Light" size="24" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Room Limit:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="addRoom">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Light" size="18" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Add Room"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="addRoomLimit">
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="addRoomNo">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel73">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Light" size="24" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Room Type:"/>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="jPanel7">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="dd" green="e7" red="ef" type="rgb"/>
+                        </Property>
+                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Edit Room">
@@ -246,17 +412,54 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="1082" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace pref="430" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane13" min="-2" pref="646" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="638" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jScrollPane13" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="205" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
+                      <SubComponents>
+                        <Container class="javax.swing.JScrollPane" name="jScrollPane13">
+                          <AuxValues>
+                            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                          </AuxValues>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JTable" name="editRoomTable">
+                              <Properties>
+                                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                                  <Table columnCount="5" rowCount="0">
+                                    <Column editable="false" title="Room Number" type="java.lang.String"/>
+                                    <Column editable="false" title="Room Type" type="java.lang.String"/>
+                                    <Column editable="false" title="Room Rate" type="java.lang.String"/>
+                                    <Column editable="false" title="Room Limit" type="java.lang.String"/>
+                                    <Column editable="false" title="Status" type="java.lang.String"/>
+                                  </Table>
+                                </Property>
+                              </Properties>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                      </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="jPanel8">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="dd" green="e7" red="ef" type="rgb"/>
+                        </Property>
+                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Remove Room">
@@ -271,15 +474,47 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="1082" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace pref="430" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane14" min="-2" pref="646" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="638" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jScrollPane14" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="205" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
+                      <SubComponents>
+                        <Container class="javax.swing.JScrollPane" name="jScrollPane14">
+                          <AuxValues>
+                            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                          </AuxValues>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JTable" name="removeRoomTable">
+                              <Properties>
+                                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                                  <Table columnCount="5" rowCount="0">
+                                    <Column editable="false" title="Room Number" type="java.lang.String"/>
+                                    <Column editable="false" title="Room Type" type="java.lang.String"/>
+                                    <Column editable="false" title="Room Rate" type="java.lang.String"/>
+                                    <Column editable="false" title="Room Limit" type="java.lang.String"/>
+                                    <Column editable="false" title="Status" type="java.lang.String"/>
+                                  </Table>
+                                </Property>
+                              </Properties>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                      </SubComponents>
                     </Container>
                   </SubComponents>
                 </Container>
@@ -2640,11 +2875,11 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="eventDateCancel" max="32767" attributes="0"/>
                                               <Component id="eventDurationCancel" max="32767" attributes="0"/>
-                                              <Component id="reservedToCancel" pref="162" max="32767" attributes="0"/>
+                                              <Component id="reservedToCancel" pref="164" max="32767" attributes="0"/>
                                               <Component id="eventNameCancel" alignment="0" max="32767" attributes="0"/>
                                               <Component id="roomAssignedCancel" alignment="0" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="92" max="32767" attributes="0"/>
+                                          <EmptySpace pref="94" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="jLabel58" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
@@ -2654,7 +2889,7 @@
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="roomChargeCancel" pref="138" max="32767" attributes="0"/>
+                                              <Component id="roomChargeCancel" pref="140" max="32767" attributes="0"/>
                                               <Component id="cateringCancel" max="32767" attributes="0"/>
                                               <Component id="requestCancel" max="32767" attributes="0"/>
                                               <Component id="eventTaxesCancel" max="32767" attributes="0"/>
@@ -3057,7 +3292,7 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel35" min="-2" pref="260" max="-2" attributes="0"/>
+                                      <Component id="confRoomImageUpload" min="-2" pref="260" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -3074,7 +3309,7 @@
                                   <EmptySpace pref="183" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel35" min="-2" pref="150" max="-2" attributes="0"/>
+                                          <Component id="confRoomImageUpload" min="-2" pref="150" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
@@ -3155,7 +3390,7 @@
                             <Property name="text" type="java.lang.String" value="Upload"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel35">
+                        <Component class="javax.swing.JLabel" name="confRoomImageUpload">
                           <Properties>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">

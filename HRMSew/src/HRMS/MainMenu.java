@@ -59,8 +59,24 @@ public class MainMenu extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         ViewRoomTable = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
+        jLabel68 = new javax.swing.JLabel();
+        addRoomRate = new javax.swing.JTextField();
+        jLabel69 = new javax.swing.JLabel();
+        uploadRoom = new javax.swing.JButton();
+        roomImageUpload = new javax.swing.JLabel();
+        addRoomType = new javax.swing.JSpinner();
+        jLabel71 = new javax.swing.JLabel();
+        jLabel72 = new javax.swing.JLabel();
+        addRoom = new javax.swing.JButton();
+        addRoomLimit = new javax.swing.JTextField();
+        addRoomNo = new javax.swing.JTextField();
+        jLabel73 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        editRoomTable = new javax.swing.JTable();
         jPanel8 = new javax.swing.JPanel();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        removeRoomTable = new javax.swing.JTable();
         RoomRSection = new javax.swing.JPanel();
         RReservationPanel = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
@@ -248,7 +264,7 @@ public class MainMenu extends javax.swing.JFrame {
         addConfRoomBook = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
         uploadConf = new javax.swing.JButton();
-        jLabel35 = new javax.swing.JLabel();
+        confRoomImageUpload = new javax.swing.JLabel();
         addConf = new javax.swing.JButton();
         jPanel19 = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
@@ -283,7 +299,6 @@ public class MainMenu extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(239, 231, 221));
 
-        ViewRoomTable.setBackground(new java.awt.Color(239, 231, 221));
         ViewRoomTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -310,6 +325,7 @@ public class MainMenu extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        ViewRoomTable.setBackground(new java.awt.Color(239, 231, 221));
         jScrollPane3.setViewportView(ViewRoomTable);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -325,41 +341,188 @@ public class MainMenu extends javax.swing.JFrame {
 
         RoomPanel.addTab("View Rooms", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\overview.png"), jPanel5); // NOI18N
 
+        jPanel6.setBackground(new java.awt.Color(239, 231, 221));
+
+        jLabel68.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+        jLabel68.setText("Book Rate (per day):");
+
+        jLabel69.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+        jLabel69.setText("Room Image:");
+
+        uploadRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        uploadRoom.setText("Upload");
+
+        roomImageUpload.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+
+        addRoomType.setModel(new javax.swing.SpinnerListModel(new String[] {"Single", "Double", "Suite"}));
+
+        jLabel71.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+        jLabel71.setText("Room Number:");
+
+        jLabel72.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+        jLabel72.setText("Room Limit:");
+
+        addRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        addRoom.setText("Add Room");
+
+        addRoomNo.setEditable(false);
+
+        jLabel73.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+        jLabel73.setText("Room Type:");
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1082, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(80, 167, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel68)
+                            .addComponent(jLabel73)
+                            .addComponent(jLabel71))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(addRoomNo)
+                            .addComponent(addRoomRate)
+                            .addComponent(addRoomType, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(addRoom, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel72)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(addRoomLimit, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(125, 125, 125)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(roomImageUpload, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel69)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(uploadRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(241, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 638, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap(152, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
+                        .addComponent(roomImageUpload, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel69)
+                            .addComponent(uploadRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(addRoomNo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel71))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel73, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(addRoomType, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel68, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(addRoomRate, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel72, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(addRoomLimit, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(addRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(241, Short.MAX_VALUE))
         );
 
         RoomPanel.addTab("Add Room", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\square-plus.png"), jPanel6); // NOI18N
+
+        jPanel7.setBackground(new java.awt.Color(239, 231, 221));
+
+        editRoomTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Room Number", "Room Type", "Room Rate", "Room Limit", "Status"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane13.setViewportView(editRoomTable);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1082, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(430, Short.MAX_VALUE)
+                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 638, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(205, Short.MAX_VALUE))
         );
 
         RoomPanel.addTab("Edit Room", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\pen-square.png"), jPanel7); // NOI18N
+
+        jPanel8.setBackground(new java.awt.Color(239, 231, 221));
+
+        removeRoomTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Room Number", "Room Type", "Room Rate", "Room Limit", "Status"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane14.setViewportView(removeRoomTable);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1082, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(430, Short.MAX_VALUE)
+                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 638, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(205, Short.MAX_VALUE))
         );
 
         RoomPanel.addTab("Remove Room", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\square-minus.png"), jPanel8); // NOI18N
@@ -1772,10 +1935,10 @@ public class MainMenu extends javax.swing.JFrame {
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(eventDateCancel)
                             .addComponent(eventDurationCancel)
-                            .addComponent(reservedToCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                            .addComponent(reservedToCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
                             .addComponent(eventNameCancel)
                             .addComponent(roomAssignedCancel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel58)
                             .addComponent(jLabel41)
@@ -1784,7 +1947,7 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(jLabel61))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(roomChargeCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                            .addComponent(roomChargeCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
                             .addComponent(cateringCancel)
                             .addComponent(requestCancel)
                             .addComponent(eventTaxesCancel)
@@ -1931,7 +2094,7 @@ public class MainMenu extends javax.swing.JFrame {
         uploadConf.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         uploadConf.setText("Upload");
 
-        jLabel35.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        confRoomImageUpload.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         addConf.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         addConf.setText("Add Conference Room");
@@ -1956,7 +2119,7 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(addConf, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(125, 125, 125)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(confRoomImageUpload, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel18Layout.createSequentialGroup()
                         .addComponent(jLabel34)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1969,7 +2132,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(183, Short.MAX_VALUE)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel18Layout.createSequentialGroup()
-                        .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(confRoomImageUpload, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel34)
@@ -2798,10 +2961,16 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField addConfRoomBook;
     private javax.swing.JTextField addConfRoomCap;
     private javax.swing.JTextField addConfRoomNo;
+    private javax.swing.JButton addRoom;
+    private javax.swing.JTextField addRoomLimit;
+    private javax.swing.JTextField addRoomNo;
+    private javax.swing.JTextField addRoomRate;
+    private javax.swing.JSpinner addRoomType;
     private javax.swing.JTable cancelReservation;
     private javax.swing.JTextField cateringCancel;
     private javax.swing.JTable checkoutTable;
     private javax.swing.JButton checkoutbutton;
+    private javax.swing.JLabel confRoomImageUpload;
     private javax.swing.JButton confRoomSearch;
     private com.toedter.calendar.JDateChooser datebirthchooser;
     private javax.swing.JTextField editAddress;
@@ -2812,6 +2981,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JCheckBox editMember;
     private javax.swing.JTextField editMiddleName;
     private javax.swing.JTextField editPhone;
+    private javax.swing.JTable editRoomTable;
     private javax.swing.JTextField emailfield;
     private javax.swing.JButton eventConfirmCancel;
     private javax.swing.JTextField eventDateCancel;
@@ -2853,7 +3023,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
@@ -2883,7 +3052,12 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -2922,6 +3096,8 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -2940,10 +3116,12 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField mobilefield;
     private javax.swing.ButtonGroup paymentRoomGroup;
     private javax.swing.ButtonGroup paymentRoomStatus;
+    private javax.swing.JTable removeRoomTable;
     private javax.swing.JTextField requestCancel;
     private javax.swing.JTextField reservedToCancel;
     private javax.swing.JTextField roomAssignedCancel;
     private javax.swing.JTextField roomChargeCancel;
+    private javax.swing.JLabel roomImageUpload;
     private javax.swing.JTextField roomnumber;
     private javax.swing.JButton searchRoom;
     private javax.swing.JButton searchRoomCheckout;
@@ -2966,6 +3144,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField txtTotal;
     private javax.swing.JTextField txtTotal2;
     private javax.swing.JButton uploadConf;
+    private javax.swing.JButton uploadRoom;
     // End of variables declaration//GEN-END:variables
     //</editor-fold>
 }
