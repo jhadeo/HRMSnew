@@ -47,7 +47,7 @@ public class ActionPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(239, 231, 221));
 
         actionButton1.setBorder(null);
-        actionButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\blank-check-box.png")); // NOI18N
+        actionButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\view.png")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
