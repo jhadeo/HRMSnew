@@ -4,9 +4,32 @@
  */
 package HRMS;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.sql.*;
 
 public class Room {
+
+    static String getMaxRoomID() {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            Statement stmt = con.createStatement();
+            String search = "Select MAX(RoomNo) AS [RoomNo] from Room";
+            ResultSet rs = stmt.executeQuery(search);
+            String test = "";
+            while (rs.next()) {
+                test = rs.getString("RoomNo");
+                if (test.isEmpty()) {
+                    return "";
+                } else {
+                    return test;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
 
     static boolean searchRoomID(int RoomID) {
         try {
@@ -58,7 +81,7 @@ public class Room {
             pstmt.setString(4, checkOutDate);
             pstmt.setString(5, roomRate);
             pstmt.setString(6, payMethod);
-            pstmt.setString(7,Taxes );
+            pstmt.setString(7, Taxes);
             pstmt.setString(8, Total);
             pstmt.setBoolean(9, status);
             pstmt.executeUpdate();
@@ -70,7 +93,7 @@ public class Room {
             e.printStackTrace();
             return false;
         }
-        
+
     }
 
     static boolean CheckOut(int RoomNo) {
@@ -80,13 +103,34 @@ public class Room {
 
             String insertSql = "UPDATE Room SET RoomStatus = 'Available' WHERE RoomNo = " + RoomNo;
             stmt.execute(insertSql);
-            String Sql = "UPDATE RoomReservation SET PaymentStatus = 1, CheckOutStatus = 1 WHERE RoomNo = " + RoomNo+ " AND CheckOutStatus = 0 AND CheckInDate < GETDATE();";
+            String Sql = "UPDATE RoomReservation SET PaymentStatus = 1, CheckOutStatus = 1 WHERE RoomNo = " + RoomNo + " AND CheckOutStatus = 0 AND CheckInDate < GETDATE();";
             stmt.execute(Sql);
             return true;
         } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
-        
+    }
+
+    static boolean addRoom(int roomNo, String roomType, double roomRate, int roomLimit,File roomImage) {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            Statement stmt = con.createStatement();
+            String insertsql = "INSERT INTO Room (RoomNo, RoomType, RoomRate, RoomLimit, RoomImage, RoomStatus)VALUES (?,?,?,?,?,?)";
+            PreparedStatement pstmt = con.prepareStatement(insertsql);
+            pstmt.setInt(1,roomNo);
+            pstmt.setString(2, roomType);
+            pstmt.setDouble(3, roomRate);
+            pstmt.setInt(4, roomLimit);
+           FileInputStream fis = new FileInputStream(roomImage);
+            pstmt.setBinaryStream(5, fis, (int) roomImage.length());
+            pstmt.setString(6, "Available");
+            pstmt.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }
