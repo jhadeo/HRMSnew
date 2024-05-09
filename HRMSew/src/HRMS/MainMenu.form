@@ -117,9 +117,6 @@
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Room Management">
                     <Property name="tabTitle" type="java.lang.String" value="Room Management"/>
-                    <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\bed-alt.png"/>
-                    </Property>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -159,9 +156,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="View Rooms">
                             <Property name="tabTitle" type="java.lang.String" value="View Rooms"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\overview.png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -216,9 +210,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Add Room">
                             <Property name="tabTitle" type="java.lang.String" value="Add Room"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\square-plus.png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -307,28 +298,28 @@
                       <SubComponents>
                         <Component class="javax.swing.JLabel" name="jLabel68">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Book Rate (per day):"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Book Rate (per day):"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="addRoomRate">
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel69">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Room Image:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Room Image:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JButton" name="uploadRoom">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Upload"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="18" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Upload"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="uploadRoomActionPerformed"/>
@@ -356,26 +347,26 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel71">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Room Number:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Room Number:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel72">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Room Limit:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Room Limit:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JButton" name="addRoom">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Add Room"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="18" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Add Room"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addRoomActionPerformed"/>
@@ -390,10 +381,10 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel73">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Room Type:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Room Type:"/>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -408,9 +399,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Edit Room">
                             <Property name="tabTitle" type="java.lang.String" value="Edit Room"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\pen-square.png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -459,38 +447,38 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jScrollPane13" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jScrollPane13" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="editRN" max="32767" attributes="0"/>
+                                              <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jLabel63" max="32767" attributes="0"/>
+                                              <Component id="editRT" min="-2" pref="32" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jLabel62" max="32767" attributes="0"/>
+                                              <Component id="editRR" min="-2" pref="32" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="editRL" max="32767" attributes="0"/>
+                                              <Component id="jLabel64" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jLabel65" max="32767" attributes="0"/>
+                                              <Component id="editRS" min="-2" pref="32" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="jButton2" min="-2" pref="40" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                                   <EmptySpace max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace pref="190" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="editRN" max="32767" attributes="0"/>
-                                      <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabel63" max="32767" attributes="0"/>
-                                      <Component id="editRT" min="-2" pref="32" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabel62" max="32767" attributes="0"/>
-                                      <Component id="editRR" min="-2" pref="32" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="editRL" max="32767" attributes="0"/>
-                                      <Component id="jLabel64" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabel65" max="32767" attributes="0"/>
-                                      <Component id="editRS" min="-2" pref="32" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jButton2" min="-2" pref="40" max="-2" attributes="0"/>
-                                  <EmptySpace pref="293" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -520,42 +508,42 @@
                         </Container>
                         <Component class="javax.swing.JLabel" name="jLabel35">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Room Number:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Room Number:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel62">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Room Rate:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Room Rate:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel63">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Room Type:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Room Type:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel64">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Room Limit:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Room Limit:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel65">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Room Status:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Room Status:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="editRN">
@@ -576,10 +564,10 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="jButton2">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Edit Room"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Edit Room"/>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -594,9 +582,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Remove Room">
                             <Property name="tabTitle" type="java.lang.String" value="Remove Room"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\square-minus.png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -645,38 +630,38 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jScrollPane14" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jScrollPane14" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="removeRN" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel66" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jLabel70" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="removeRT" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jLabel67" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="removeRR" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="removeRL" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel74" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jLabel75" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="removeRS" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="removeRBution" min="-2" pref="40" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                                   <EmptySpace max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace pref="199" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="removeRN" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jLabel66" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabel70" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="removeRT" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabel67" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="removeRR" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="removeRL" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jLabel74" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabel75" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="removeRS" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="removeRBution" min="-2" pref="40" max="-2" attributes="0"/>
-                                  <EmptySpace pref="284" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -711,18 +696,18 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel66">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Room Number:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Room Number:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel67">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Room Rate:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Room Rate:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="removeRR">
@@ -732,18 +717,18 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel70">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Room Type:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Room Type:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel74">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Room Limit:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Room Limit:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="removeRS">
@@ -753,10 +738,10 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel75">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Room Status:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Room Status:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="removeRL">
@@ -771,10 +756,10 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="removeRBution">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Remove Room"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Remove Room"/>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -793,9 +778,6 @@
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Room Reservations">
                     <Property name="tabTitle" type="java.lang.String" value="Room Reservations"/>
-                    <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\booking.png"/>
-                    </Property>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -835,9 +817,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="View Reservations">
                             <Property name="tabTitle" type="java.lang.String" value="View Reservations"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\reservation-table.png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -899,9 +878,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Add Reservation">
                             <Property name="tabTitle" type="java.lang.String" value="Add Reservation"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\check-in-calendar.png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -1375,9 +1351,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Check Out">
                             <Property name="tabTitle" type="java.lang.String" value="Check Out"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\check-out-calendar.png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -1525,9 +1498,6 @@
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Guest Management">
                     <Property name="tabTitle" type="java.lang.String" value="Guest Management"/>
-                    <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\users.png"/>
-                    </Property>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -1567,9 +1537,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="View Guests">
                             <Property name="tabTitle" type="java.lang.String" value="View Guests"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\overview.png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -1635,9 +1602,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Add a Guest">
                             <Property name="tabTitle" type="java.lang.String" value="Add a Guest"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\add-friend (Small) (Custom).png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -1742,14 +1706,11 @@
                                           <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jRadioButton4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jLabel3" max="32767" attributes="0"/>
-                                              <Component id="datebirthchooser" max="32767" attributes="0"/>
-                                              <Component id="jLabel10" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="mobilefield" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jLabel3" max="32767" attributes="0"/>
+                                          <Component id="datebirthchooser" max="32767" attributes="0"/>
+                                          <Component id="jLabel10" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="mobilefield" alignment="0" min="-2" pref="32" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -1970,9 +1931,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Edit a Guest">
                             <Property name="tabTitle" type="java.lang.String" value="Edit a Guest"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\user-pen.png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -2189,9 +2147,6 @@
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Event Management">
                     <Property name="tabTitle" type="java.lang.String" value="Event Management"/>
-                    <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\daily-calendar.png"/>
-                    </Property>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -2226,9 +2181,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="View Events">
                             <Property name="tabTitle" type="java.lang.String" value="View Events"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\calendar-week.png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -2284,9 +2236,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Add Event">
                             <Property name="tabTitle" type="java.lang.String" value="Add Event"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\calendar-check (Custom).png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -2294,15 +2243,162 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="1045" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel81" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="homefield4" min="-2" pref="726" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel79" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="homefield2" min="-2" pref="726" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel78" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="homefield1" min="-2" pref="726" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel77" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="firstfield1" min="-2" pref="189" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel76" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="guestfield1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel80" min="-2" pref="139" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="homefield3" min="-2" pref="726" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace pref="47" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="725" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel76" alignment="3" max="32767" attributes="0"/>
+                                      <Component id="guestfield1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel77" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="firstfield1" alignment="3" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel78" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="homefield1" alignment="3" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel79" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="homefield2" alignment="3" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel80" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="homefield3" alignment="3" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel81" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="homefield4" alignment="3" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="208" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
+                      <SubComponents>
+                        <Component class="javax.swing.JLabel" name="jLabel76">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Light" size="24" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Event ID:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="guestfield1">
+                          <Properties>
+                            <Property name="editable" type="boolean" value="false"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel77">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Light" size="24" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Event Name:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="firstfield1">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="firstfield.setDocument(new JTextFieldLimit(20));"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel78">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Light" size="24" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Catering:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="homefield1">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="homefield.setDocument(new JTextFieldLimit(60));"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel79">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Light" size="24" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Audio Visual Request:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="homefield2">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="homefield.setDocument(new JTextFieldLimit(60));"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel80">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Light" size="24" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Room Setup:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="homefield3">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="homefield.setDocument(new JTextFieldLimit(60));"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel81">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Light" size="24" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Decoration:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="homefield4">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="homefield.setDocument(new JTextFieldLimit(60));"/>
+                          </AuxValues>
+                        </Component>
+                      </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="jPanel11">
                       <Properties>
@@ -2314,9 +2410,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Edit  Event">
                             <Property name="tabTitle" type="java.lang.String" value="Edit  Event"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\calendar-lines-pen.png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -2324,8 +2417,27 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="284" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="editGuestConfirm1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel82" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel84" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel85" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel86" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel87" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="editFirstName5" pref="88" max="32767" attributes="0"/>
+                                      <Component id="editFirstName4" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="editFirstName3" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="editFirstName2" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="editFirstName1" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="editFirstName6" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="62" max="32767" attributes="0"/>
                                   <Component id="jScrollPane7" min="-2" pref="755" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -2333,10 +2445,48 @@
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jScrollPane7" min="-2" pref="388" max="-2" attributes="0"/>
-                                  <EmptySpace pref="331" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jScrollPane7" min="-2" pref="388" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel82" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="editFirstName1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel83" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="editFirstName2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel84" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="editFirstName3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel85" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="editFirstName4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel86" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="editFirstName5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jLabel87" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="editFirstName6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                  <Component id="editGuestConfirm1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="198" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2365,6 +2515,77 @@
                             </Component>
                           </SubComponents>
                         </Container>
+                        <Component class="javax.swing.JLabel" name="jLabel82">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Light" size="18" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Event ID:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="editFirstName1">
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel83">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Light" size="18" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Event Name:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="editFirstName2">
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel84">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Light" size="18" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Catering:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="editFirstName3">
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel85">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Light" size="18" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Audio Visual Setup:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="editFirstName4">
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel86">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Light" size="18" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Room Setup:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="editFirstName5">
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel87">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Light" size="18" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Decoration:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JTextField" name="editFirstName6">
+                        </Component>
+                        <Component class="javax.swing.JToggleButton" name="editGuestConfirm1">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Light" size="18" style="0"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Edit Event"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editGuestConfirm1ActionPerformed"/>
+                          </Events>
+                        </Component>
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="jPanel12">
@@ -2377,9 +2598,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Remove Event">
                             <Property name="tabTitle" type="java.lang.String" value="Remove Event"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\calendar-xmark.png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -2411,9 +2629,6 @@
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Event Reservations">
                     <Property name="tabTitle" type="java.lang.String" value="Event Reservations"/>
-                    <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\booking (Custom).png"/>
-                    </Property>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -2448,9 +2663,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="View Reservations">
                             <Property name="tabTitle" type="java.lang.String" value="View Reservations"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\overview.png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -2575,9 +2787,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Add Reservation">
                             <Property name="tabTitle" type="java.lang.String" value="Add Reservation"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\square-plus.png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -3110,9 +3319,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Cancel Reservation">
                             <Property name="tabTitle" type="java.lang.String" value="Cancel Reservation"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\calendar-xmark.png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -3266,42 +3472,42 @@
                         </Container>
                         <Component class="javax.swing.JLabel" name="jLabel36">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Reserved To:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Reserved To:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel37">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Event Name:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Event Name:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel38">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Room Assigned:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Room Assigned:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel39">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Event Date:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Event Date:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel40">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Duration:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Duration:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="reservedToCancel">
@@ -3334,42 +3540,42 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel41">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Room Charge:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Room Charge:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel58">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Catering Charge:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Catering Charge:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel59">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Request Charge:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Request Charge:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel60">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Taxes:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Taxes:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel61">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Total:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Total:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="roomChargeCancel">
@@ -3399,10 +3605,10 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="eventConfirmCancel">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Cancel Reservation"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="18" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Cancel Reservation"/>
                             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[75, 32]"/>
                             </Property>
@@ -3424,9 +3630,6 @@
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="Conference Rooms">
                     <Property name="tabTitle" type="java.lang.String" value="Conference Rooms"/>
-                    <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\podium.png"/>
-                    </Property>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
@@ -3466,9 +3669,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="View Conference Rooms">
                             <Property name="tabTitle" type="java.lang.String" value="View Conference Rooms"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\overview.png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -3525,9 +3725,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Add Conference Room">
                             <Property name="tabTitle" type="java.lang.String" value="Add Conference Room"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\square-plus.png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -3606,10 +3803,10 @@
                       <SubComponents>
                         <Component class="javax.swing.JLabel" name="jLabel31">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Conference Room Number:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Conference Room Number:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="addConfRoomNo">
@@ -3619,38 +3816,38 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel32">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Capacity:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Capacity:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="addConfRoomCap">
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel33">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Book Rate (per hour):"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Book Rate (per hour):"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="addConfRoomBook">
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel34">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Room Image:"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Room Image:"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JButton" name="uploadConf">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Upload"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="18" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Upload"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="confRoomImageUpload">
@@ -3664,10 +3861,10 @@
                         </Component>
                         <Component class="javax.swing.JButton" name="addConf">
                           <Properties>
+                            <Property name="text" type="java.lang.String" value="Add Conference Room"/>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="18" style="0"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Add Conference Room"/>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -3682,9 +3879,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Edit Conference Room">
                             <Property name="tabTitle" type="java.lang.String" value="Edit Conference Room"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\pen-square.png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -3770,9 +3964,6 @@
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="Remove Conference Room">
                             <Property name="tabTitle" type="java.lang.String" value="Remove Conference Room"/>
-                            <Property name="tabIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="2" name="C:\Users\admin\Documents\NetBeansProjects\HRMSnew\HRMSew\images\square-minus.png"/>
-                            </Property>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
