@@ -8,6 +8,8 @@ import com.github.lgooddatepicker.components.DatePicker;
 import com.github.lgooddatepicker.components.DateTimePicker;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
@@ -29,11 +31,6 @@ import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
-
-/**
- *
- * @author admin WOOOW
- */
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -46,6 +43,7 @@ public class MainMenu extends javax.swing.JFrame {
         FlatLightLaf.setup();
         initComponents();
         setLocationRelativeTo(null);
+
     }
 
     /**
@@ -70,6 +68,8 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         ViewRoomTable = new javax.swing.JTable();
+        roomImageLabel = new javax.swing.JLabel();
+        jLabel77 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel68 = new javax.swing.JLabel();
         addRoomRate = new javax.swing.JTextField();
@@ -211,34 +211,9 @@ public class MainMenu extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         EventTable = new javax.swing.JTable();
         jPanel10 = new javax.swing.JPanel();
-        jLabel76 = new javax.swing.JLabel();
-        guestfield1 = new javax.swing.JTextField();
-        jLabel77 = new javax.swing.JLabel();
-        firstfield1 = new javax.swing.JTextField();
-        jLabel78 = new javax.swing.JLabel();
-        homefield1 = new javax.swing.JTextField();
-        jLabel79 = new javax.swing.JLabel();
-        homefield2 = new javax.swing.JTextField();
-        jLabel80 = new javax.swing.JLabel();
-        homefield3 = new javax.swing.JTextField();
-        jLabel81 = new javax.swing.JLabel();
-        homefield4 = new javax.swing.JTextField();
         jPanel11 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         EventTable2 = new javax.swing.JTable();
-        jLabel82 = new javax.swing.JLabel();
-        editFirstName1 = new javax.swing.JTextField();
-        jLabel83 = new javax.swing.JLabel();
-        editFirstName2 = new javax.swing.JTextField();
-        jLabel84 = new javax.swing.JLabel();
-        editFirstName3 = new javax.swing.JTextField();
-        jLabel85 = new javax.swing.JLabel();
-        editFirstName4 = new javax.swing.JTextField();
-        jLabel86 = new javax.swing.JLabel();
-        editFirstName5 = new javax.swing.JTextField();
-        jLabel87 = new javax.swing.JLabel();
-        editFirstName6 = new javax.swing.JTextField();
-        editGuestConfirm1 = new javax.swing.JToggleButton();
         jPanel12 = new javax.swing.JPanel();
         EventReservation = new javax.swing.JPanel();
         EventRsection = new javax.swing.JTabbedPane();
@@ -360,20 +335,20 @@ public class MainMenu extends javax.swing.JFrame {
 
         ViewRoomTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Room No.", "Room Type", "Room Rate", "Room Limit", "Room Status"
+                "Room No.", "Room Type", "Room Rate", "Room Limit", "Room Status", " "
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -385,20 +360,46 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
         ViewRoomTable.setBackground(new java.awt.Color(239, 231, 221));
+        ViewRoomTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(ViewRoomTable);
+
+        roomImageLabel.setText("no image");
+        roomImageLabel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        roomImageLabel.setFocusTraversalPolicyProvider(true);
+        roomImageLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
+        roomImageLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        roomImageLabel.setToolTipText("");
+
+        jLabel77.setText("Room Image");
+        jLabel77.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1045, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(138, 138, 138)
+                        .addComponent(jLabel77))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addComponent(roomImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 655, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(roomImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel77)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        RoomPanel.addTab("View Rooms", null, jPanel5);
+        RoomPanel.addTab("View Rooms", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\overview.png"), jPanel5); // NOI18N
 
         jPanel6.setBackground(new java.awt.Color(239, 231, 221));
 
@@ -502,7 +503,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(284, Short.MAX_VALUE))
         );
 
-        RoomPanel.addTab("Add Room", null, jPanel6);
+        RoomPanel.addTab("Add Room", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\square-plus.png"), jPanel6); // NOI18N
 
         jPanel7.setBackground(new java.awt.Color(239, 231, 221));
 
@@ -615,7 +616,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        RoomPanel.addTab("Edit Room", null, jPanel7);
+        RoomPanel.addTab("Edit Room", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\pen-square.png"), jPanel7); // NOI18N
 
         jPanel8.setBackground(new java.awt.Color(239, 231, 221));
 
@@ -734,7 +735,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        RoomPanel.addTab("Remove Room", null, jPanel8);
+        RoomPanel.addTab("Remove Room", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\square-minus.png"), jPanel8); // NOI18N
 
         javax.swing.GroupLayout RoomSectionLayout = new javax.swing.GroupLayout(RoomSection);
         RoomSection.setLayout(RoomSectionLayout);
@@ -747,7 +748,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addComponent(RoomPanel)
         );
 
-        MainPanel.addTab("Room Management", null, RoomSection);
+        MainPanel.addTab("Room Management", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\bed-alt.png"), RoomSection); // NOI18N
 
         RoomRSection.setBackground(new java.awt.Color(216, 167, 144));
 
@@ -797,7 +798,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE)
         );
 
-        RReservationPanel.addTab("View Reservations", null, jPanel1);
+        RReservationPanel.addTab("View Reservations", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\reservation-table.png"), jPanel1); // NOI18N
 
         jPanel3.setBackground(new java.awt.Color(239, 231, 221));
 
@@ -1066,7 +1067,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        RReservationPanel.addTab("Add Reservation", null, jPanel3);
+        RReservationPanel.addTab("Add Reservation", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\check-in-calendar.png"), jPanel3); // NOI18N
 
         jPanel4.setBackground(new java.awt.Color(239, 231, 221));
 
@@ -1151,7 +1152,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(383, Short.MAX_VALUE))
         );
 
-        RReservationPanel.addTab("Check Out", null, jPanel4);
+        RReservationPanel.addTab("Check Out", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\check-out-calendar.png"), jPanel4); // NOI18N
 
         javax.swing.GroupLayout RoomRSectionLayout = new javax.swing.GroupLayout(RoomRSection);
         RoomRSection.setLayout(RoomRSectionLayout);
@@ -1164,7 +1165,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addComponent(RReservationPanel)
         );
 
-        MainPanel.addTab("Room Reservations", null, RoomRSection);
+        MainPanel.addTab("Room Reservations", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\booking.png"), RoomRSection); // NOI18N
 
         GuestSection.setBackground(new java.awt.Color(216, 167, 144));
 
@@ -1216,7 +1217,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE)
         );
 
-        GuestPanel.addTab("View Guests", null, ViewGuests);
+        GuestPanel.addTab("View Guests", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\overview.png"), ViewGuests); // NOI18N
 
         AddGuest.setBackground(new java.awt.Color(239, 231, 221));
 
@@ -1393,7 +1394,7 @@ public class MainMenu extends javax.swing.JFrame {
         mobilefield.setDocument(new JTextFieldLimit(11));
         emailfield.setDocument(new JTextFieldLimit(345));
 
-        GuestPanel.addTab("Add a Guest", null, AddGuest);
+        GuestPanel.addTab("Add a Guest", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\add-friend (Small) (Custom).png"), AddGuest); // NOI18N
 
         EditGuest.setBackground(new java.awt.Color(239, 231, 221));
 
@@ -1512,7 +1513,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        GuestPanel.addTab("Edit a Guest", null, EditGuest);
+        GuestPanel.addTab("Edit a Guest", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\user-pen.png"), EditGuest); // NOI18N
 
         javax.swing.GroupLayout GuestSectionLayout = new javax.swing.GroupLayout(GuestSection);
         GuestSection.setLayout(GuestSectionLayout);
@@ -1525,7 +1526,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addComponent(GuestPanel, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
-        MainPanel.addTab("Guest Management", null, GuestSection);
+        MainPanel.addTab("Guest Management", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\users.png"), GuestSection); // NOI18N
 
         EventSection.setBackground(new java.awt.Color(216, 167, 144));
 
@@ -1576,100 +1577,22 @@ public class MainMenu extends javax.swing.JFrame {
             .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE)
         );
 
-        EventPanel.addTab("View Events", null, jPanel9);
+        EventPanel.addTab("View Events", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\calendar-week.png"), jPanel9); // NOI18N
 
         jPanel10.setBackground(new java.awt.Color(239, 231, 221));
-
-        jLabel76.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
-        jLabel76.setText("Event ID:");
-
-        guestfield1.setEditable(false);
-
-        jLabel77.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
-        jLabel77.setText("Event Name:");
-
-        jLabel78.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
-        jLabel78.setText("Catering:");
-
-        jLabel79.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
-        jLabel79.setText("Audio Visual Request:");
-
-        jLabel80.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
-        jLabel80.setText("Room Setup:");
-
-        jLabel81.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
-        jLabel81.setText("Decoration:");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(106, 106, 106)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jLabel81)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(homefield4, javax.swing.GroupLayout.PREFERRED_SIZE, 726, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jLabel79)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(homefield2, javax.swing.GroupLayout.PREFERRED_SIZE, 726, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jLabel78)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(homefield1, javax.swing.GroupLayout.PREFERRED_SIZE, 726, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jLabel77)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(firstfield1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jLabel76)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(guestfield1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jLabel80, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(homefield3, javax.swing.GroupLayout.PREFERRED_SIZE, 726, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(47, Short.MAX_VALUE))
+            .addGap(0, 1045, Short.MAX_VALUE)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(144, 144, 144)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel76, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(guestfield1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel77)
-                    .addComponent(firstfield1))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel78)
-                    .addComponent(homefield1))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel79)
-                    .addComponent(homefield2))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel80)
-                    .addComponent(homefield3))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel81)
-                    .addComponent(homefield4))
-                .addGap(208, 208, 208))
+            .addGap(0, 725, Short.MAX_VALUE)
         );
 
-        firstfield.setDocument(new JTextFieldLimit(20));
-        homefield.setDocument(new JTextFieldLimit(60));
-        homefield.setDocument(new JTextFieldLimit(60));
-        homefield.setDocument(new JTextFieldLimit(60));
-        homefield.setDocument(new JTextFieldLimit(60));
-
-        EventPanel.addTab("Add Event", null, jPanel10);
+        EventPanel.addTab("Add Event", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\calendar-check (Custom).png"), jPanel10); // NOI18N
 
         jPanel11.setBackground(new java.awt.Color(239, 231, 221));
 
@@ -1701,96 +1624,24 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane7.setViewportView(EventTable2);
 
-        jLabel82.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        jLabel82.setText("Event ID:");
-
-        jLabel83.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        jLabel83.setText("Event Name:");
-
-        jLabel84.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        jLabel84.setText("Catering:");
-
-        jLabel85.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        jLabel85.setText("Audio Visual Setup:");
-
-        jLabel86.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        jLabel86.setText("Room Setup:");
-
-        jLabel87.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        jLabel87.setText("Decoration:");
-
-        editGuestConfirm1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        editGuestConfirm1.setText("Edit Event");
-        editGuestConfirm1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editGuestConfirm1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(editGuestConfirm1)
-                    .addComponent(jLabel83)
-                    .addComponent(jLabel82)
-                    .addComponent(jLabel84)
-                    .addComponent(jLabel85)
-                    .addComponent(jLabel86)
-                    .addComponent(jLabel87))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(editFirstName5, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
-                    .addComponent(editFirstName4, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(editFirstName3, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(editFirstName2, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(editFirstName1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(editFirstName6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(284, Short.MAX_VALUE)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 755, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGap(158, 158, 158)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel82)
-                            .addComponent(editFirstName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel83)
-                            .addComponent(editFirstName2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel84)
-                            .addComponent(editFirstName3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel85)
-                            .addComponent(editFirstName4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel86)
-                            .addComponent(editFirstName5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel87)
-                            .addComponent(editFirstName6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(10, 10, 10)
-                .addComponent(editGuestConfirm1)
-                .addContainerGap(198, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(331, Short.MAX_VALUE))
         );
 
-        EventPanel.addTab("Edit  Event", null, jPanel11);
+        EventPanel.addTab("Edit  Event", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\calendar-lines-pen.png"), jPanel11); // NOI18N
 
         jPanel12.setBackground(new java.awt.Color(239, 231, 221));
 
@@ -1805,7 +1656,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addGap(0, 725, Short.MAX_VALUE)
         );
 
-        EventPanel.addTab("Remove Event", null, jPanel12);
+        EventPanel.addTab("Remove Event", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\calendar-xmark.png"), jPanel12); // NOI18N
 
         javax.swing.GroupLayout EventSectionLayout = new javax.swing.GroupLayout(EventSection);
         EventSection.setLayout(EventSectionLayout);
@@ -1818,7 +1669,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addComponent(EventPanel)
         );
 
-        MainPanel.addTab("Event Management", null, EventSection);
+        MainPanel.addTab("Event Management", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\daily-calendar.png"), EventSection); // NOI18N
 
         EventReservation.setBackground(new java.awt.Color(216, 167, 144));
 
@@ -1869,7 +1720,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE)
         );
 
-        EventRsection.addTab("View Reservations", null, jPanel13);
+        EventRsection.addTab("View Reservations", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\overview.png"), jPanel13); // NOI18N
 
         jPanel16.setBackground(new java.awt.Color(239, 231, 221));
 
@@ -2184,7 +2035,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        EventRsection.addTab("Add Reservation", null, jPanel14);
+        EventRsection.addTab("Add Reservation", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\square-plus.png"), jPanel14); // NOI18N
 
         jPanel15.setBackground(new java.awt.Color(239, 231, 221));
 
@@ -2365,7 +2216,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(102, Short.MAX_VALUE))
         );
 
-        EventRsection.addTab("Cancel Reservation", null, jPanel15);
+        EventRsection.addTab("Cancel Reservation", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\calendar-xmark.png"), jPanel15); // NOI18N
 
         javax.swing.GroupLayout EventReservationLayout = new javax.swing.GroupLayout(EventReservation);
         EventReservation.setLayout(EventReservationLayout);
@@ -2378,7 +2229,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addComponent(EventRsection)
         );
 
-        MainPanel.addTab("Event Reservations", null, EventReservation);
+        MainPanel.addTab("Event Reservations", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\booking (Custom).png"), EventReservation); // NOI18N
 
         ConferenceRoom.setBackground(new java.awt.Color(216, 167, 144));
 
@@ -2430,7 +2281,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE)
         );
 
-        ConferenceSection.addTab("View Conference Rooms", null, jPanel17);
+        ConferenceSection.addTab("View Conference Rooms", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\overview.png"), jPanel17); // NOI18N
 
         jPanel18.setBackground(new java.awt.Color(239, 231, 221));
 
@@ -2511,7 +2362,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(298, Short.MAX_VALUE))
         );
 
-        ConferenceSection.addTab("Add Conference Room", null, jPanel18);
+        ConferenceSection.addTab("Add Conference Room", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\square-plus.png"), jPanel18); // NOI18N
 
         jPanel19.setBackground(new java.awt.Color(239, 231, 221));
 
@@ -2557,7 +2408,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(247, Short.MAX_VALUE))
         );
 
-        ConferenceSection.addTab("Edit Conference Room", null, jPanel19);
+        ConferenceSection.addTab("Edit Conference Room", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\pen-square.png"), jPanel19); // NOI18N
 
         jPanel20.setBackground(new java.awt.Color(239, 231, 221));
 
@@ -2603,7 +2454,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(249, Short.MAX_VALUE))
         );
 
-        ConferenceSection.addTab("Remove Conference Room", null, jPanel20);
+        ConferenceSection.addTab("Remove Conference Room", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\square-minus.png"), jPanel20); // NOI18N
 
         javax.swing.GroupLayout ConferenceRoomLayout = new javax.swing.GroupLayout(ConferenceRoom);
         ConferenceRoom.setLayout(ConferenceRoomLayout);
@@ -2616,7 +2467,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addComponent(ConferenceSection)
         );
 
-        MainPanel.addTab("Conference Rooms", null, ConferenceRoom);
+        MainPanel.addTab("Conference Rooms", new javax.swing.ImageIcon("C:\\Users\\admin\\Documents\\NetBeansProjects\\HRMSnew\\HRMSew\\images\\podium.png"), ConferenceRoom); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -2714,7 +2565,62 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void view_Roomtable() {
         DefaultTableModel tbmodel = (DefaultTableModel) ViewRoomTable.getModel();
+        TableActionEvent event = new TableActionEvent() {
+            @Override
+            public void onView(int row) {
+                try {
+                    System.out.println("eto ung row: " + row);
+                    String gid = (String) ViewRoomTable.getModel().getValueAt(row, 0);
+                    int id = Integer.parseInt(gid);
+                    System.out.println("eto ung id: " + id);
+                    Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+                    Statement stmt = con.createStatement();
+                    String sql = "SELECT RoomImage from Room where RoomNo = " + id;
+                    ResultSet rs = stmt.executeQuery(sql);
+                    if (rs.next()) {
+                        InputStream inputStream = rs.getBinaryStream("RoomImage");
+                        if (inputStream != null) {
+                            BufferedImage image = ImageIO.read(inputStream);
+                            if (image != null) {
+                                int scaledWidth = 370; // Replace with desired width
+                                int scaledHeight = 214; // Replace with desired height
+                                Image scaledImage = image.getScaledInstance(scaledWidth, scaledHeight, Image.SCALE_SMOOTH);
+
+                                // Set the scaled image to your JLabel or ImageIcon
+                                roomImageLabel.setIcon(new ImageIcon(scaledImage));
+                                roomImageLabel.setText("");
+                            } else {
+                                // Handle case where image couldn't be read
+                                System.err.println("Failed to read image from InputStream");
+                            }
+                        } else {
+                            // Handle case where InputStream is null
+                            System.err.println("No image found in database");
+                            roomImageLabel.setIcon(null);
+                            roomImageLabel.setText("no image");
+
+                        }
+                    } else {
+                        // Handle case where no rows were returned by the query
+                        System.err.println("No rows returned by query");
+                    }
+
+                    // Close resources
+                    rs.close();
+                    stmt.close();
+                    con.close();
+                } catch (SQLException | IOException ex) {
+                    Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
+        };
+
+        ViewRoomTable.getColumnModel().getColumn(5).setCellRenderer(new TableActionCellRender());
+        ViewRoomTable.getColumnModel().getColumn(5).setCellEditor(new TableActionCellEditor(event));
+        ViewRoomTable.getColumnModel().getColumn(5).setPreferredWidth(10);
         tbmodel.setRowCount(0);
+
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
@@ -3274,7 +3180,7 @@ public class MainMenu extends javax.swing.JFrame {
             Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
         if (Room.addRoom(roomid, roomtype, roomRate, roomLimit, imageFile)) {
-JOptionPane.showMessageDialog(this, "Room successfully added!");
+            JOptionPane.showMessageDialog(this, "Room successfully added!");
         } else {
             JOptionPane.showMessageDialog(this, "Data not Saved!");
         }
@@ -3296,10 +3202,6 @@ JOptionPane.showMessageDialog(this, "Room successfully added!");
             Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_uploadRoomActionPerformed
-
-    private void editGuestConfirm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editGuestConfirm1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_editGuestConfirm1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3374,14 +3276,7 @@ JOptionPane.showMessageDialog(this, "Room successfully added!");
     private javax.swing.JTextField editAddress;
     private javax.swing.JTextField editEmail;
     private javax.swing.JTextField editFirstName;
-    private javax.swing.JTextField editFirstName1;
-    private javax.swing.JTextField editFirstName2;
-    private javax.swing.JTextField editFirstName3;
-    private javax.swing.JTextField editFirstName4;
-    private javax.swing.JTextField editFirstName5;
-    private javax.swing.JTextField editFirstName6;
     private javax.swing.JToggleButton editGuestConfirm;
-    private javax.swing.JToggleButton editGuestConfirm1;
     private javax.swing.JTextField editLastName;
     private javax.swing.JCheckBox editMember;
     private javax.swing.JTextField editMiddleName;
@@ -3401,15 +3296,9 @@ JOptionPane.showMessageDialog(this, "Room successfully added!");
     private javax.swing.JTextField eventTaxesCancel;
     private javax.swing.JTextField eventTotalCancel;
     private javax.swing.JTextField firstfield;
-    private javax.swing.JTextField firstfield1;
     private javax.swing.ButtonGroup genderGroup;
     private javax.swing.JTextField guestfield;
-    private javax.swing.JTextField guestfield1;
     private javax.swing.JTextField homefield;
-    private javax.swing.JTextField homefield1;
-    private javax.swing.JTextField homefield2;
-    private javax.swing.JTextField homefield3;
-    private javax.swing.JTextField homefield4;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -3485,19 +3374,8 @@ JOptionPane.showMessageDialog(this, "Room successfully added!");
     private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
-    private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel77;
-    private javax.swing.JLabel jLabel78;
-    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel80;
-    private javax.swing.JLabel jLabel81;
-    private javax.swing.JLabel jLabel82;
-    private javax.swing.JLabel jLabel83;
-    private javax.swing.JLabel jLabel84;
-    private javax.swing.JLabel jLabel85;
-    private javax.swing.JLabel jLabel86;
-    private javax.swing.JLabel jLabel87;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -3566,6 +3444,7 @@ JOptionPane.showMessageDialog(this, "Room successfully added!");
     private javax.swing.JTextField reservedToCancel;
     private javax.swing.JTextField roomAssignedCancel;
     private javax.swing.JTextField roomChargeCancel;
+    private javax.swing.JLabel roomImageLabel;
     private javax.swing.JLabel roomImageUpload;
     private javax.swing.JTextField roomnumber;
     private javax.swing.JButton searchRoom;
