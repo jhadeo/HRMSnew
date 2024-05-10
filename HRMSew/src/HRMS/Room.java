@@ -112,19 +112,62 @@ public class Room {
         }
     }
 
-    static boolean addRoom(int roomNo, String roomType, double roomRate, int roomLimit,File roomImage) {
+    static boolean addRoom(int roomNo, String roomType, double roomRate, int roomLimit, File roomImage) {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
             String insertsql = "INSERT INTO Room (RoomNo, RoomType, RoomRate, RoomLimit, RoomImage, RoomStatus)VALUES (?,?,?,?,?,?)";
             PreparedStatement pstmt = con.prepareStatement(insertsql);
-            pstmt.setInt(1,roomNo);
+            pstmt.setInt(1, roomNo);
             pstmt.setString(2, roomType);
             pstmt.setDouble(3, roomRate);
             pstmt.setInt(4, roomLimit);
-           FileInputStream fis = new FileInputStream(roomImage);
+            FileInputStream fis = new FileInputStream(roomImage);
             pstmt.setBinaryStream(5, fis, (int) roomImage.length());
             pstmt.setString(6, "Available");
+            pstmt.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    //CONFERENCE ROOMS
+    static String getMaxConfRoomID() {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            Statement stmt = con.createStatement();
+            String search = "Select MAX(ConfRoomNo) AS [RoomNo] from ConferenceRooms";
+            ResultSet rs = stmt.executeQuery(search);
+            String test = "";
+            while (rs.next()) {
+                test = rs.getString("RoomNo");
+                if (test.isEmpty()) {
+                    return "";
+                } else {
+                    return test;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return "";
+
+    }
+
+    static boolean addConferenceRoom(int roomNo, double roomRate, int roomLimit, File roomImage) {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            String insertsql = "INSERT INTO ConferenceRooms (ConfRoomNo, Capacity, BookRate, RoomImage, ConfRoomStatus)VALUES (?,?,?,?,?)";
+            PreparedStatement pstmt = con.prepareStatement(insertsql);
+            pstmt.setInt(1, roomNo);
+            pstmt.setInt(2, roomLimit);
+            pstmt.setDouble(3, roomRate);
+            FileInputStream fis = new FileInputStream(roomImage);
+            pstmt.setBinaryStream(4, fis, (int) roomImage.length());
+            pstmt.setString(5, "Available");
             pstmt.executeUpdate();
             return true;
 
