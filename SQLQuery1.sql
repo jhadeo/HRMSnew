@@ -56,3 +56,5 @@ UPDATE RoomReservation SET PaymentStatus = 1, CheckOutStatus = 1 WHERE RoomNo = 
 alter table Room
 add RoomImage  VARBINARY(MAX);
 
+alter table ConferenceRooms
+add RoomImage  VARBINARY(MAX);
