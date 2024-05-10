@@ -1427,12 +1427,24 @@ public class MainMenu extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
         EditTable.setBackground(new java.awt.Color(239, 231, 221));
+        EditTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EditTableMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(EditTable);
 
         jLabel25.setText("Guest First Name:");
@@ -1459,46 +1471,53 @@ public class MainMenu extends javax.swing.JFrame {
 
         editGuestConfirm.setText("Edit Guest");
         editGuestConfirm.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        editGuestConfirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editGuestConfirmActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout EditGuestLayout = new javax.swing.GroupLayout(EditGuest);
         EditGuest.setLayout(EditGuestLayout);
         EditGuestLayout.setHorizontalGroup(
             EditGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditGuestLayout.createSequentialGroup()
-                .addGroup(EditGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditGuestLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(editGuestConfirm)
-                        .addGap(147, 147, 147))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditGuestLayout.createSequentialGroup()
-                        .addGroup(EditGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(EditGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(EditGuestLayout.createSequentialGroup()
+                        .addContainerGap(40, Short.MAX_VALUE)
+                        .addGroup(EditGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(EditGuestLayout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(editMember))
-                            .addGroup(EditGuestLayout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(EditGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(EditGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel26)
                                         .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING))
-                                    .addComponent(jLabel29)
-                                    .addComponent(jLabel30)
                                     .addComponent(jLabel28))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(EditGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(editFirstName)
+                                    .addComponent(editFirstName, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
                                     .addComponent(editMiddleName)
                                     .addComponent(editLastName, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(editPhone)
+                                    .addComponent(editPhone)))
+                            .addGroup(EditGuestLayout.createSequentialGroup()
+                                .addGroup(EditGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel29)
+                                    .addComponent(jLabel30))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(EditGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(editEmail)
-                                    .addComponent(editAddress))))
-                        .addGap(18, 18, 18)))
+                                    .addComponent(editAddress)))))
+                    .addGroup(EditGuestLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(EditGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(editMember)
+                            .addComponent(editGuestConfirm))))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 786, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         EditGuestLayout.setVerticalGroup(
             EditGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
             .addGroup(EditGuestLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(EditGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1524,7 +1543,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGroup(EditGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel30)
                     .addComponent(editAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(editMember)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(editGuestConfirm)
@@ -2330,7 +2349,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
-                .addContainerGap(248, Short.MAX_VALUE)
+                .addContainerGap(250, Short.MAX_VALUE)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -2350,7 +2369,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(jLabel34)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(uploadConf, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2413,20 +2432,20 @@ public class MainMenu extends javax.swing.JFrame {
 
         dispConfRoomStatus.setEditable(false);
 
-        jLabel76.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel76.setText("Conf. Room Rate:");
+        jLabel76.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel78.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel78.setText("Conf. Room Capacity:");
+        jLabel78.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel79.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel79.setText("Conf. Room Number:");
+        jLabel79.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel80.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel80.setText("Conf. Room Status:");
+        jLabel80.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        editConfRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         editConfRoom.setText("Edit Room");
+        editConfRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -2448,7 +2467,7 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(editConfRoomRate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(dispConfRoomStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(editConfRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -2510,8 +2529,8 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane11.setViewportView(jTable1);
 
-        jLabel81.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel81.setText("Conf. Room Number:");
+        jLabel81.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         dispConfRoomNo2.setEditable(false);
 
@@ -2521,17 +2540,17 @@ public class MainMenu extends javax.swing.JFrame {
 
         dispConfRoomStatus2.setEditable(false);
 
-        jLabel82.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel82.setText("Conf. Room Capacity:");
+        jLabel82.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel83.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel83.setText("Conf. Room Rate:");
+        jLabel83.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel84.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel84.setText("Conf. Room Status:");
+        jLabel84.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        deleteConfRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         deleteConfRoom.setText("Remove Room");
+        deleteConfRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
@@ -2553,7 +2572,7 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(dispConfRoomRate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(dispConfRoomStatus2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(deleteConfRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 689, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -3334,6 +3353,47 @@ public class MainMenu extends javax.swing.JFrame {
             Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_uploadRoomActionPerformed
+
+    private void editGuestConfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editGuestConfirmActionPerformed
+        // TODO add your handling code here:
+        try{
+        
+         boolean member = editMember.isSelected();
+
+         int GuestID = EditTable.getSelectedRow()+1;
+         int memberstatus = member ? 1 : 0;
+         Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+         Statement stmt = con.createStatement();
+         if (Guest.EditGuest(editFirstName.getText(), editMiddleName.getText(), editLastName.getText(), editPhone.getText(), editEmail.getText(), editAddress.getText(), memberstatus, GuestID)) {
+             JOptionPane.showMessageDialog(this, "Data Updated!");
+             firstfield.setText("");
+             lastfield.setText("");
+             middlefield.setText("");
+             homefield.setText("");
+             mobilefield.setText("");
+             emailfield.setText("");
+             membershipGroup.clearSelection();
+            }
+        }catch(Exception e){
+            
+        }
+    }//GEN-LAST:event_editGuestConfirmActionPerformed
+
+    private void EditTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditTableMouseClicked
+        int row = EditTable.getSelectedRow();
+        editFirstName.setText((String) EditTable.getValueAt(row, 0));
+        editMiddleName.setText((String) EditTable.getValueAt(row, 1));
+        editLastName.setText((String) EditTable.getValueAt(row, 2));
+        editPhone.setText((String) EditTable.getValueAt(row, 3));
+        editEmail.setText((String) EditTable.getValueAt(row, 4));
+        editAddress.setText((String) EditTable.getValueAt(row, 5));
+        
+        if ((boolean) EditTable.getValueAt(row, 8)) {
+            editMember.setSelected(true);
+        } else {
+            editMember.setSelected(false);
+        }
+    }//GEN-LAST:event_EditTableMouseClicked
 
     /**
      * @param args the command line arguments
