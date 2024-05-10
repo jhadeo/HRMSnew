@@ -52,3 +52,7 @@ VALUES
 (5, 105, '2024-11-17', '2024-11-20', 150, 18, 168, 0, 'Cash',0);
 
 UPDATE RoomReservation SET PaymentStatus = 1, CheckOutStatus = 1 WHERE RoomNo = 101 AND CheckOutStatus = 0 AND CheckInDate < GETDATE();
+
+alter table Room
+add RoomImage  VARBINARY(MAX);
+
