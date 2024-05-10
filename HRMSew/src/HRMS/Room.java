@@ -176,4 +176,41 @@ public class Room {
             return false;
         }
     }
+
+    static boolean editConferenceRoom(int roomNo, double roomRate, int roomLimit, File roomImage) {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            String insertsql = "UPDATE ConferenceRooms SET BookRate = ?, Capacity = ?, RoomImage = ? WHERE ConfRoomNo = ?";
+            PreparedStatement pstmt = con.prepareStatement(insertsql);
+            pstmt.setDouble(1, roomRate);
+            pstmt.setInt(2, roomLimit);
+
+            FileInputStream fis = new FileInputStream(roomImage);
+            pstmt.setBinaryStream(3, fis, (int) roomImage.length());
+            pstmt.setInt(4, roomNo);
+            pstmt.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    static boolean editConferenceRoom(int roomNo, double roomRate, int roomLimit) {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            String insertsql = "UPDATE ConferenceRooms SET BookRate = ?, Capacity = ? WHERE ConfRoomNo = ?";
+            PreparedStatement pstmt = con.prepareStatement(insertsql);
+            pstmt.setDouble(1, roomRate);
+            pstmt.setInt(2, roomLimit);
+            pstmt.setInt(3, roomNo);
+            pstmt.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
