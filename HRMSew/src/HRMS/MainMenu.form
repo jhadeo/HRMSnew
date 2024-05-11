@@ -105,7 +105,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="NumberFormat longFormat = NumberFormat.getIntegerInstance();&#xa;      InputNumberFilter numFormat = new InputNumberFilter(longFormat);&#xa;numFormat.setValueClass(Long.class);&#xa;numFormat.setAllowsInvalid(false);"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="NumberFormat longFormat = NumberFormat.getIntegerInstance();&#xa;      InputNumberFilter numFormat = new InputNumberFilter(longFormat);&#xa;numFormat.setValueClass(Long.class);&#xa;numFormat.setAllowsInvalid(false);&#xa;MaskFormatter currencyFormat = null;&#xa;        try {&#xa;currencyFormat = new MaskFormatter(&quot;$######.##&quot;);&#xa;currencyFormat.setPlaceholderCharacter(&apos;0&apos;);&#xa;        } catch (ParseException e) {&#xa;  e.printStackTrace();&#xa;}"/>
           </AuxValues>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
@@ -357,7 +357,7 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="addRoomRate">
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(numFormat)"/>
+                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(currencyFormat)"/>
                           </AuxValues>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel69">
@@ -485,7 +485,7 @@
                                               <Component id="editRR" alignment="0" max="32767" attributes="0"/>
                                               <Component id="editRS" alignment="0" max="32767" attributes="0"/>
                                               <Component id="editRoomType" min="-2" pref="100" max="-2" attributes="0"/>
-                                              <Component id="editRoomLimit" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="editRoomLimit" min="-2" pref="100" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -605,7 +605,7 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="editRR">
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(numFormat)"/>
+                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(currencyFormat)"/>
                           </AuxValues>
                         </Component>
                         <Component class="javax.swing.JTextField" name="editRS">
@@ -632,10 +632,12 @@
                             </Property>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="editRoomLimit">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(numFormat)"/>
-                          </AuxValues>
+                        <Component class="javax.swing.JSpinner" name="editRoomLimit">
+                          <Properties>
+                            <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                              <SpinnerModel initial="1" maximum="100" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                            </Property>
+                          </Properties>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -3005,14 +3007,11 @@
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JTextField" name="txtDecorationCharge1">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="0"/>
-                              </Properties>
                               <Events>
                                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDecorationCharge1ActionPerformed"/>
                               </Events>
                               <AuxValues>
-                                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(numFormat)"/>
+                                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(currencyFormat)"/>
                               </AuxValues>
                             </Component>
                             <Component class="javax.swing.JTextField" name="txtTotal2">
@@ -3041,14 +3040,11 @@
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JTextField" name="txtRequestCharge1">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="0"/>
-                              </Properties>
                               <Events>
                                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRequestCharge1ActionPerformed"/>
                               </Events>
                               <AuxValues>
-                                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(numFormat)"/>
+                                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(currencyFormat)"/>
                               </AuxValues>
                             </Component>
                             <Component class="javax.swing.JTextField" name="txtTaxes2">
@@ -3105,14 +3101,13 @@
                             </Component>
                             <Component class="javax.swing.JTextField" name="txtCateringCharge1">
                               <Properties>
-                                <Property name="text" type="java.lang.String" value="0"/>
-                                <Property name="name" type="java.lang.String" value="ASDASD" noResource="true"/>
+                                <Property name="name" type="java.lang.String" value="" noResource="true"/>
                               </Properties>
                               <Events>
                                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCateringCharge1ActionPerformed"/>
                               </Events>
                               <AuxValues>
-                                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(numFormat)"/>
+                                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(currencyFormat)"/>
                               </AuxValues>
                             </Component>
                             <Component class="javax.swing.JButton" name="confRoomSearch">
@@ -3699,7 +3694,7 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="addConfRoomBook">
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(numFormat)"/>
+                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(currencyFormat)"/>
                           </AuxValues>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel34">
@@ -3744,7 +3739,7 @@
                         <Component class="javax.swing.JSpinner" name="addConfRoomCap">
                           <Properties>
                             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-                              <SpinnerModel initial="1" maximum="100" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                              <SpinnerModel initial="10" maximum="100" minimum="10" numberType="java.lang.Integer" stepSize="1" type="number"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -3769,7 +3764,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace pref="9" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="confRoomImageLabel2" alignment="1" min="-2" pref="370" max="-2" attributes="0"/>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="1" attributes="0">
@@ -3780,14 +3775,12 @@
                                               <Component id="jLabel86" alignment="1" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="dispConfRoomNo" pref="100" max="32767" attributes="0"/>
-                                                  <Component id="editConfRoomRate" pref="100" max="32767" attributes="0"/>
-                                                  <Component id="dispConfRoomStatus" pref="100" max="32767" attributes="0"/>
-                                                  <Component id="editImageUpload" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Component id="editConfRoomCap" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="dispConfRoomNo" max="32767" attributes="0"/>
+                                              <Component id="editConfRoomRate" max="32767" attributes="0"/>
+                                              <Component id="dispConfRoomStatus" max="32767" attributes="0"/>
+                                              <Component id="editImageUpload" max="32767" attributes="0"/>
+                                              <Component id="editConfRoomCap" min="-2" pref="100" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Component id="editConfRoom" alignment="1" min="-2" pref="243" max="-2" attributes="0"/>
@@ -3811,7 +3804,7 @@
                                               <Component id="dispConfRoomNo" min="-2" pref="32" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel78" min="-2" max="-2" attributes="0"/>
                                               <Component id="editConfRoomCap" min="-2" pref="32" max="-2" attributes="0"/>
                                           </Group>
@@ -3905,7 +3898,7 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="editConfRoomRate">
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(numFormat)"/>
+                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(currencyFormat)"/>
                           </AuxValues>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel76">
@@ -3986,10 +3979,12 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editImageUploadActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="editConfRoomCap">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(numFormat)"/>
-                          </AuxValues>
+                        <Component class="javax.swing.JSpinner" name="editConfRoomCap">
+                          <Properties>
+                            <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                              <SpinnerModel initial="10" maximum="100" minimum="10" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                            </Property>
+                          </Properties>
                         </Component>
                       </SubComponents>
                     </Container>

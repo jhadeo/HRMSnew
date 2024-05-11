@@ -9,6 +9,7 @@ import javax.swing.text.NumberFormatter;
 
 /* How to use:
 *  Customize Code, change new javax.swing.JTextField() to new javax.swing.JFormattedTextField(numFormat)
+*                                                             javax.swing.JFormattedTextField(currencyFormat)
 */
 public class InputNumberFilter extends NumberFormatter{
 
