@@ -103,7 +103,7 @@ public class Room {
 
             String insertSql = "UPDATE Room SET RoomStatus = 'Available' WHERE RoomNo = " + RoomNo;
             stmt.execute(insertSql);
-            String Sql = "UPDATE RoomReservation SET PaymentStatus = 1, CheckOutStatus = 1 WHERE RoomNo = " + RoomNo + " AND CheckOutStatus = 0 AND CheckInDate < GETDATE();";
+            String Sql = "UPDATE RoomReservation SET PaymentStatus = 1, CheckOutStatus = 1 WHERE RoomNo = " + RoomNo + " AND CheckOutStatus = 0";
             stmt.execute(Sql);
             return true;
         } catch (Exception e) {
