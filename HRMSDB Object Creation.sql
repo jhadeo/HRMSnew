@@ -1,5 +1,6 @@
 --create Database HRSDB
 --use HRSDB
+--drop database HRSDB
 --Execute first to be safe
 
 CREATE TABLE Room(
@@ -35,12 +36,14 @@ RoomRate MONEY NOT NULL,
 --Derived from Room(RoomRate) * DATEDIFF(CheckInDate, CheckOutDate) - membership or birthday discounts
 Taxes MONEY NOT NULL,
 --Derived from RoomRate * 12%
+MiscCharge MONEY,
+--Charges accrued through misc. means, such as additional services or reparations
 Total MONEY NOT NULL,
---Derived from RoomRate + Taxes
+--Derived from RoomRate + Taxes + MiscCharge
 PaymentStatus INT DEFAULT 0,
 PayMethod VARCHAR(16) NOT NULL,
 CheckOutStatus INT DEFAULT 0,
-CONSTRAINT RoomReservationPK PRIMARY KEY(GuestID, RoomNo,CheckInDate),
+CONSTRAINT RoomReservationPK PRIMARY KEY(GuestID, RoomNo, CheckInDate),
 CONSTRAINT RoomReservationFK FOREIGN KEY (GuestID) REFERENCES Guest(GuestID),
 CONSTRAINT RoomReservationFK2 FOREIGN KEY (RoomNo) REFERENCES Room(RoomNo),
 CONSTRAINT RoomPaymentCheck CHECK (PaymentStatus=0 OR PaymentStatus=1),
@@ -64,7 +67,7 @@ ConfRoomNo INT CONSTRAINT ConferenceRoomsPK PRIMARY KEY,
 Capacity INT NOT NULL,
 BookRate MONEY NOT NULL,
 ConfRoomStatus VARCHAR(14) DEFAULT 'Available',
-ConfRoomImage VAR(MAX),
+ConfRoomImage VARBINARY(MAX),
 CONSTRAINT ConfRoomStatusCheck Check (ConfRoomStatus in ('Available', 'Occupied', 'Reserved', 'In Maintenance'))
 )
 
@@ -82,8 +85,10 @@ RequestCharge MONEY,
 DecorCharge MONEY,
 Taxes MONEY NOT NULL,
 --Derived from RoomRate * 12%
+MiscEventCharge MONEY,
+--Charges accrued through misc. means, such as additional services or reparations
 Total MONEY NOT NULL,
---Derived from RoomRate + Taxes
+--Derived from RoomRate + Taxes + MiscEventCharge
 PaymentStatus INT DEFAULT 0,
 PayMethod VARCHAR(16) NOT NULL,
 CONSTRAINT EventReservationPK PRIMARY KEY(GuestID, EventID, RoomAssigned, EventDate),
@@ -101,4 +106,3 @@ Request VARCHAR(255),
 CONSTRAINT EventRequestsFK FOREIGN KEY (EventID) REFERENCES HotelEvents(EventID)
 )
 
---drop database HRSDB
