@@ -4,11 +4,7 @@
  */
 package HRMS;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 /**
  *
@@ -79,11 +75,46 @@ public class Events {
             rs.executeUpdate();
             con.close();
             return true;
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
         return false;
+    }
+
+    static boolean editEvent(String eventID, String eventName, String catering, String avr, String roomSetup, String deco) {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            String insertsql = "UPDATE HotelEvents SET EventName = ?, Catering = ?, AudioVisualReq = ?, RoomSetup = ?, Decorations = ? WHERE EventID = ?";
+            PreparedStatement pstmt = con.prepareStatement(insertsql);
+            pstmt.setString(1, eventName);
+            pstmt.setString(2, catering);
+            pstmt.setString(3, avr);
+            pstmt.setString(4, roomSetup);
+            pstmt.setString(5, deco);
+            pstmt.setString(6, eventID);
+            pstmt.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    static boolean removeEvent(String eventID) {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            String insertsql = "DELETE FROM HotelEvents  WHERE EventID = ?;";
+            PreparedStatement pstmt = con.prepareStatement(insertsql);
+            pstmt.setString(1, eventID);
+            pstmt.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     //CONFERENCE ROOMS
