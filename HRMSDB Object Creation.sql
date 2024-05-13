@@ -28,6 +28,7 @@ MemberStatus INT DEFAULT 0
 )
 
 CREATE TABLE RoomReservation(
+ReservationID INT NOT NULL
 GuestID INT NOT NULL,
 RoomNo INT NOT NULL,
 CheckInDate DATETIME NOT NULL,
@@ -43,7 +44,7 @@ Total MONEY NOT NULL,
 PaymentStatus INT DEFAULT 0,
 PayMethod VARCHAR(16) NOT NULL,
 CheckOutStatus INT DEFAULT 0,
-CONSTRAINT RoomReservationPK PRIMARY KEY(GuestID, RoomNo, CheckInDate),
+CONSTRAINT RoomReservationPK PRIMARY KEY(ReservationID, CheckInDate),
 CONSTRAINT RoomReservationFK FOREIGN KEY (GuestID) REFERENCES Guest(GuestID),
 CONSTRAINT RoomReservationFK2 FOREIGN KEY (RoomNo) REFERENCES Room(RoomNo),
 CONSTRAINT RoomPaymentCheck CHECK (PaymentStatus=0 OR PaymentStatus=1),
