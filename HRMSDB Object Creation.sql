@@ -28,7 +28,7 @@ MemberStatus INT DEFAULT 0
 )
 
 CREATE TABLE RoomReservation(
-ReservationID INT NOT NULL
+ReservationID INT NOT NULL,
 GuestID INT NOT NULL,
 RoomNo INT NOT NULL,
 CheckInDate DATETIME NOT NULL,
