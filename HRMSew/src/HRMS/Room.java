@@ -150,6 +150,41 @@ public class Room {
             return false;
         }
     }
+    
+    static boolean editRoom(int roomNo, String roomType, double roomRate, int roomLimit, File roomImage) {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            String insertsql = "UPDATE Room SET RoomRate = ?, RoomType = ?, RoomLimit = ?, roomImage = ? WHERE RoomNo = ?";
+            PreparedStatement pstmt = con.prepareStatement(insertsql);
+            pstmt.setDouble(1, roomRate);
+            pstmt.setString(2, roomType);
+            pstmt.setInt(3, roomLimit);
+             FileInputStream fis = new FileInputStream(roomImage);
+            pstmt.setBinaryStream(4, fis, (int) roomImage.length());
+            pstmt.setInt(5, roomNo);
+            pstmt.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    static boolean removeRoom(String roomID) {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            String insertsql = "DELETE FROM Room  WHERE RoomNo = ?;";
+            PreparedStatement pstmt = con.prepareStatement(insertsql);
+            pstmt.setString(1, roomID);
+            pstmt.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
     //CONFERENCE ROOMS
     static String getMaxConfRoomID() {
