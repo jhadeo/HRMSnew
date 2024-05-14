@@ -1912,30 +1912,34 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(addEventButton, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(848, Short.MAX_VALUE))
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap(64, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel10Layout.createSequentialGroup()
-                        .addContainerGap(41, Short.MAX_VALUE)
-                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel90)
-                            .addComponent(jLabel88)
-                            .addComponent(jLabel87)
-                            .addComponent(jLabel89)
-                            .addComponent(jLabel91)
-                            .addComponent(jLabel92))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel90)
+                    .addComponent(jLabel88)
+                    .addComponent(jLabel87)
+                    .addComponent(jLabel89)
+                    .addComponent(jLabel91)
+                    .addComponent(jLabel92))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addComponent(addEventID, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(607, 607, 607))
-                            .addComponent(addDecoration)
+                            .addComponent(addDecoration, javax.swing.GroupLayout.DEFAULT_SIZE, 706, Short.MAX_VALUE)
                             .addComponent(addRoomSetup)
                             .addComponent(addAVR)
-                            .addComponent(addCatering)
-                            .addComponent(addEventName)))
+                            .addComponent(addCatering))
+                        .addContainerGap(118, Short.MAX_VALUE))
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(addEventButton, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(74, Short.MAX_VALUE))
+                        .addGap(6, 6, 6)
+                        .addComponent(addEventName)
+                        .addContainerGap())))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1945,10 +1949,10 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(jLabel87, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(addEventID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel88)
                     .addComponent(addEventName, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel90)
                     .addComponent(addCatering, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
@@ -1968,6 +1972,12 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(addEventButton, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(180, Short.MAX_VALUE))
         );
+
+        addEventName.setDocument(new JTextFieldLimit(20));
+        addCatering.setDocument(new JTextFieldLimit(255));
+        addAVR.setDocument(new JTextFieldLimit(255));
+        addRoomSetup.setDocument(new JTextFieldLimit(255));
+        addDecoration.setDocument(new JTextFieldLimit(255));
 
         EventPanel.addTab("Add Event", jPanel10);
 
@@ -2094,6 +2104,12 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(editEventButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9))
         );
+
+        editEventName.setDocument(new JTextFieldLimit(20));
+        editCatering.setDocument(new JTextFieldLimit(255));
+        editAVR.setDocument(new JTextFieldLimit(255));
+        editRoomSetup.setDocument(new JTextFieldLimit(255));
+        editDecoration.setDocument(new JTextFieldLimit(255));
 
         EventPanel.addTab("Edit  Event", jPanel11);
 
@@ -2237,7 +2253,7 @@ public class MainMenu extends javax.swing.JFrame {
         EventSection.setLayout(EventSectionLayout);
         EventSectionLayout.setHorizontalGroup(
             EventSectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(EventPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1021, Short.MAX_VALUE)
+            .addComponent(EventPanel)
         );
         EventSectionLayout.setVerticalGroup(
             EventSectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

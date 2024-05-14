@@ -2554,7 +2554,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="EventPanel" alignment="0" pref="1021" max="32767" attributes="0"/>
+                      <Component id="EventPanel" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -2644,36 +2644,41 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="addEventButton" min="-2" pref="256" max="-2" attributes="0"/>
+                                  <EmptySpace pref="848" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace pref="64" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace pref="41" max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="jLabel90" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel88" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel87" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel89" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel91" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel92" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel90" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel88" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel87" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel89" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel91" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel92" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" attributes="0">
                                                   <Component id="addEventID" min="-2" pref="77" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="607" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="addDecoration" max="32767" attributes="0"/>
+                                              <Component id="addDecoration" pref="706" max="32767" attributes="0"/>
                                               <Component id="addRoomSetup" alignment="0" max="32767" attributes="0"/>
                                               <Component id="addAVR" alignment="0" max="32767" attributes="0"/>
                                               <Component id="addCatering" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="addEventName" max="32767" attributes="0"/>
                                           </Group>
+                                          <EmptySpace pref="118" max="32767" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="1" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                          <Component id="addEventName" max="32767" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="addEventButton" min="-2" pref="256" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="74" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2686,11 +2691,11 @@
                                       <Component id="addEventID" alignment="1" min="-2" pref="32" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel88" min="-2" max="-2" attributes="0"/>
-                                      <Component id="addEventName" pref="34" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel88" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="addEventName" alignment="3" pref="34" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace pref="8" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel90" min="-2" max="-2" attributes="0"/>
                                       <Component id="addCatering" pref="38" max="32767" attributes="0"/>
@@ -2786,14 +2791,29 @@
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="addEventName">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="addEventName.setDocument(new JTextFieldLimit(20));"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JTextField" name="addCatering">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="addCatering.setDocument(new JTextFieldLimit(255));"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JTextField" name="addAVR">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="addAVR.setDocument(new JTextFieldLimit(255));"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JTextField" name="addRoomSetup">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="addRoomSetup.setDocument(new JTextFieldLimit(255));"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JTextField" name="addDecoration">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="addDecoration.setDocument(new JTextFieldLimit(255));"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -2966,14 +2986,29 @@
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="editEventName">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="editEventName.setDocument(new JTextFieldLimit(20));&#xd;&#xa;"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JTextField" name="editCatering">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="editCatering.setDocument(new JTextFieldLimit(255));"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JTextField" name="editAVR">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="editAVR.setDocument(new JTextFieldLimit(255));"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JTextField" name="editRoomSetup">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="editRoomSetup.setDocument(new JTextFieldLimit(255));"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JTextField" name="editDecoration">
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="editDecoration.setDocument(new JTextFieldLimit(255));"/>
+                          </AuxValues>
                         </Component>
                         <Component class="javax.swing.JButton" name="editEventButton">
                           <Properties>
