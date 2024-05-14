@@ -133,6 +133,23 @@ public class Room {
             return false;
         }
     }
+    static boolean editRoom(int roomNo, String roomType, double roomRate, int roomLimit) {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            String insertsql = "UPDATE Room SET RoomRate = ?, RoomType = ?, RoomLimit = ? WHERE RoomNo = ?";
+            PreparedStatement pstmt = con.prepareStatement(insertsql);
+            pstmt.setDouble(1, roomRate);
+            pstmt.setString(2, roomType);
+            pstmt.setInt(3, roomLimit);
+            pstmt.setInt(4, roomNo);
+            pstmt.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
     //CONFERENCE ROOMS
     static String getMaxConfRoomID() {

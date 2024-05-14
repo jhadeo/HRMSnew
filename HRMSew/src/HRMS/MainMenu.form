@@ -127,7 +127,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="RoomPanel" pref="694" max="32767" attributes="0"/>
+                      <Component id="RoomPanel" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -267,7 +267,7 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="80" pref="190" max="32767" attributes="0"/>
+                                  <EmptySpace min="80" pref="191" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="1" attributes="0">
@@ -298,14 +298,14 @@
                                           <Component id="uploadRoom" min="-2" pref="121" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="297" max="32767" attributes="0"/>
+                                  <EmptySpace pref="296" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace pref="188" max="32767" attributes="0"/>
+                                  <EmptySpace pref="189" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="1" attributes="0">
@@ -339,7 +339,7 @@
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="addRoom" min="-2" pref="43" max="-2" attributes="0"/>
-                                  <EmptySpace pref="220" max="32767" attributes="0"/>
+                                  <EmptySpace pref="219" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -464,7 +464,7 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace pref="147" max="32767" attributes="0"/>
+                                  <EmptySpace pref="159" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jButton2" alignment="1" min="-2" pref="243" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
@@ -553,6 +553,9 @@
                                   </Table>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="editRoomTableMouseClicked"/>
+                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -597,9 +600,6 @@
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="editRN">
-                          <Properties>
-                            <Property name="editable" type="boolean" value="false"/>
-                          </Properties>
                         </Component>
                         <Component class="javax.swing.JTextField" name="editRR">
                           <AuxValues>
@@ -618,6 +618,9 @@
                               <Font name="Segoe UI Light" size="24" style="0"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JSpinner" name="editRoomType">
                           <Properties>
@@ -657,7 +660,7 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="109" max="32767" attributes="0"/>
+                                  <EmptySpace pref="108" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="1" attributes="0">
@@ -689,7 +692,7 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                   <Component id="jScrollPane14" min="-2" pref="646" max="-2" attributes="0"/>
-                                  <EmptySpace pref="55" max="32767" attributes="0"/>
+                                  <EmptySpace pref="56" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -857,7 +860,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="RReservationPanel" alignment="0" pref="694" max="32767" attributes="0"/>
+                      <Component id="RReservationPanel" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -953,7 +956,7 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace pref="126" max="32767" attributes="0"/>
+                                  <EmptySpace pref="127" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -1051,7 +1054,7 @@
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="173" max="32767" attributes="0"/>
+                                  <EmptySpace pref="172" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1438,7 +1441,7 @@
                                           <Component id="checkoutbutton" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
-                                          <EmptySpace pref="184" max="32767" attributes="0"/>
+                                          <EmptySpace pref="185" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="jScrollPane9" max="32767" attributes="0"/>
                                               <Group type="102" alignment="1" attributes="0">
@@ -1447,7 +1450,7 @@
                                                   <Component id="roomnumber" min="-2" pref="136" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="searchRoomCheckout" min="-2" pref="134" max="-2" attributes="0"/>
-                                                  <EmptySpace pref="302" max="32767" attributes="0"/>
+                                                  <EmptySpace pref="301" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -1591,7 +1594,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="GuestPanel" alignment="1" pref="694" max="32767" attributes="0"/>
+                      <Component id="GuestPanel" alignment="1" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -1691,7 +1694,7 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace pref="106" max="32767" attributes="0"/>
+                                  <EmptySpace pref="107" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                           <Group type="102" attributes="0">
@@ -1753,14 +1756,14 @@
                                           <Component id="jRadioButton6" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="124" max="32767" attributes="0"/>
+                                  <EmptySpace pref="123" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace pref="112" max="32767" attributes="0"/>
+                                  <EmptySpace pref="113" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="jLabel2" pref="36" max="32767" attributes="0"/>
                                       <Component id="guestfield" max="32767" attributes="0"/>
@@ -1809,7 +1812,7 @@
                                       </Group>
                                       <Component id="jLabel9" min="-2" pref="35" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="184" max="32767" attributes="0"/>
+                                  <EmptySpace pref="183" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2252,7 +2255,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="EventPanel" alignment="0" pref="694" max="32767" attributes="0"/>
+                      <Component id="EventPanel" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -2339,7 +2342,7 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace pref="98" max="32767" attributes="0"/>
+                                          <EmptySpace pref="87" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="jLabel90" alignment="1" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel88" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -2366,7 +2369,7 @@
                                           <Component id="addEventButton" min="-2" pref="256" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="103" max="32767" attributes="0"/>
+                                  <EmptySpace pref="121" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2386,7 +2389,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel90" min="-2" max="-2" attributes="0"/>
-                                      <Component id="addCatering" pref="35" max="32767" attributes="0"/>
+                                      <Component id="addCatering" pref="39" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -2405,7 +2408,7 @@
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="addEventButton" min="-2" pref="64" max="-2" attributes="0"/>
-                                  <EmptySpace pref="189" max="32767" attributes="0"/>
+                                  <EmptySpace pref="185" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2913,7 +2916,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="EventRsection" alignment="0" pref="694" max="32767" attributes="0"/>
+                      <Component id="EventRsection" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -3624,11 +3627,11 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="eventDateCancel" max="32767" attributes="0"/>
                                               <Component id="eventDurationCancel" max="32767" attributes="0"/>
-                                              <Component id="reservedToCancel" pref="166" max="32767" attributes="0"/>
+                                              <Component id="reservedToCancel" pref="165" max="32767" attributes="0"/>
                                               <Component id="eventNameCancel" alignment="0" max="32767" attributes="0"/>
                                               <Component id="roomAssignedCancel" alignment="0" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="117" max="32767" attributes="0"/>
+                                          <EmptySpace pref="119" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="jLabel58" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
@@ -3638,7 +3641,7 @@
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="roomChargeCancel" pref="147" max="32767" attributes="0"/>
+                                              <Component id="roomChargeCancel" pref="146" max="32767" attributes="0"/>
                                               <Component id="cateringCancel" max="32767" attributes="0"/>
                                               <Component id="requestCancel" max="32767" attributes="0"/>
                                               <Component id="eventTaxesCancel" max="32767" attributes="0"/>
@@ -3918,14 +3921,14 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="ConferenceSection" pref="1108" max="32767" attributes="0"/>
+                          <Component id="ConferenceSection" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="ConferenceSection" alignment="0" pref="694" max="32767" attributes="0"/>
+                      <Component id="ConferenceSection" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -4059,7 +4062,7 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace pref="149" max="32767" attributes="0"/>
+                                  <EmptySpace pref="150" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="1" attributes="0">
@@ -4085,14 +4088,14 @@
                                           <Component id="uploadConf" min="-2" pref="121" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="211" max="32767" attributes="0"/>
+                                  <EmptySpace pref="210" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace pref="193" max="32767" attributes="0"/>
+                                  <EmptySpace pref="194" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="confRoomImageUpload" min="-2" pref="150" max="-2" attributes="0"/>
@@ -4121,7 +4124,7 @@
                                           <Component id="addConf" min="-2" pref="43" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="270" max="32767" attributes="0"/>
+                                  <EmptySpace pref="269" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -4258,7 +4261,7 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace pref="94" max="32767" attributes="0"/>
+                                  <EmptySpace pref="95" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" attributes="0">
                                           <Component id="confRoomImageLabel2" min="-2" pref="214" max="-2" attributes="0"/>
@@ -4292,7 +4295,7 @@
                                       </Group>
                                       <Component id="jScrollPane10" min="-2" pref="472" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="97" max="32767" attributes="0"/>
+                                  <EmptySpace pref="96" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -4317,11 +4320,6 @@
                                 </Property>
                                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                                   <TableColumnModel selectionModel="0">
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                      <Title/>
-                                      <Editor/>
-                                      <Renderer/>
-                                    </Column>
                                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                       <Title/>
                                       <Editor/>
