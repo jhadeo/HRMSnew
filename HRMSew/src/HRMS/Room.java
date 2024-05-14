@@ -265,4 +265,18 @@ public class Room {
             return false;
         }
     }
+    static boolean removeConferenceRoom(String roomNo) {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            String insertsql = "DELETE FROM ConferenceRooms  WHERE ConfRoomNo = ?;";
+            PreparedStatement pstmt = con.prepareStatement(insertsql);
+            pstmt.setString(1, roomNo);
+            pstmt.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

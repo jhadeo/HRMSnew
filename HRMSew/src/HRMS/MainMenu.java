@@ -382,7 +382,7 @@ public class MainMenu extends javax.swing.JFrame {
         editConfRoomCap = new javax.swing.JSpinner();
         jPanel20 = new javax.swing.JPanel();
         jScrollPane11 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        removeConfTable = new javax.swing.JTable();
         jLabel81 = new javax.swing.JLabel();
         dispConfRoomNo2 = new javax.swing.JTextField();
         dispConfRoomCap = new javax.swing.JTextField();
@@ -660,19 +660,19 @@ public class MainMenu extends javax.swing.JFrame {
 
         editRoomLimit.setModel(new javax.swing.SpinnerNumberModel(1, 1, 100, 1));
 
-        editRoomLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         editRoomLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         editRoomLabel.setText("no image");
-        editRoomLabel.setToolTipText("");
         editRoomLabel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         editRoomLabel.setFocusTraversalPolicyProvider(true);
+        editRoomLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         editRoomLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        editRoomLabel.setToolTipText("");
 
-        jLabel101.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel101.setText("Edit Image:");
+        jLabel101.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        editRoomUpload.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         editRoomUpload.setText("Upload");
+        editRoomUpload.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         editRoomUpload.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editRoomUploadActionPerformed(evt);
@@ -814,13 +814,13 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        removeRoomLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         removeRoomLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         removeRoomLabel.setText("no image");
-        removeRoomLabel.setToolTipText("");
         removeRoomLabel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         removeRoomLabel.setFocusTraversalPolicyProvider(true);
+        removeRoomLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         removeRoomLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        removeRoomLabel.setToolTipText("");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -2993,7 +2993,7 @@ public class MainMenu extends javax.swing.JFrame {
 
         jPanel20.setBackground(new java.awt.Color(239, 231, 221));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        removeConfTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -3016,12 +3016,22 @@ public class MainMenu extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane11.setViewportView(jTable1);
+        removeConfTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                removeConfTableMouseClicked(evt);
+            }
+        });
+        jScrollPane11.setViewportView(removeConfTable);
 
         jLabel81.setText("Conf. Room Number:");
         jLabel81.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         dispConfRoomNo2.setEditable(false);
+        dispConfRoomNo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dispConfRoomNo2ActionPerformed(evt);
+            }
+        });
 
         dispConfRoomCap.setEditable(false);
 
@@ -3040,6 +3050,11 @@ public class MainMenu extends javax.swing.JFrame {
 
         deleteConfRoom.setText("Remove Room");
         deleteConfRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+        deleteConfRoom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteConfRoomActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
@@ -3513,6 +3528,29 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }
     //</editor-fold>
+    private void view_removeConfRoom() {
+        DefaultTableModel tbmodel = (DefaultTableModel) removeConfTable.getModel();
+
+        tbmodel.setRowCount(0);
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            Statement stmt = con.createStatement();
+            String sql = "select * from ConferenceRooms";
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                String RoomNo = String.valueOf(rs.getInt("ConfRoomNo"));
+                String RoomType = rs.getString("Capacity");
+                String RoomRate = rs.getString("BookRate");
+                String RoomStatus = rs.getString("ConfRoomStatus");
+
+                tbmodel.addRow(new Object[]{RoomNo, RoomType, RoomRate, RoomStatus});
+            }
+            con.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     // <editor-fold defaultstate="collapsed" desc="getSelectedButtonText">     
     String getSelectedButtonText(ButtonGroup buttonGroup) {
@@ -3678,6 +3716,7 @@ public class MainMenu extends javax.swing.JFrame {
                 view_editConfRoom();
                 break;
             case 3:
+                view_removeConfRoom();
                 break;
             default:
                 break;
@@ -4521,7 +4560,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_removeRoomTableMouseClicked
 
     private void removeRButionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeRButionActionPerformed
-        int reply = JOptionPane.showConfirmDialog(this, "Are you sure you want to delete this event?", "Delete Event", JOptionPane.YES_NO_OPTION);
+        int reply = JOptionPane.showConfirmDialog(this, "Are you sure you want to delete this room?", "Delete Room", JOptionPane.YES_NO_OPTION);
         if (reply == JOptionPane.YES_OPTION && removeRS.getText().equalsIgnoreCase("AVAILABLE")) {
             try {
                 if (Room.removeRoom(removeRN.getText())) {
@@ -4535,6 +4574,80 @@ public class MainMenu extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_removeRButionActionPerformed
+
+    private void deleteConfRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteConfRoomActionPerformed
+        // TODO add your handling code here:
+        int reply = JOptionPane.showConfirmDialog(this, "Are you sure you want to delete this room?", "Delete Room", JOptionPane.YES_NO_OPTION);
+        if (reply == JOptionPane.YES_OPTION && dispConfRoomStatus2.getText().equalsIgnoreCase("AVAILABLE")) {
+            try {
+                if (Room.removeConferenceRoom(dispConfRoomNo2.getText())) {
+                    JOptionPane.showMessageDialog(this, "Event successfully deleted!");
+                    view_removeConfRoom();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Event deletion failed!");
+                }
+            } catch (Exception e) {
+
+            }
+        }
+    }//GEN-LAST:event_deleteConfRoomActionPerformed
+
+    private void removeConfTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeConfTableMouseClicked
+        // TODO add your handling code here:
+        int row = removeConfTable.getSelectedRow();
+        dispConfRoomNo2.setText((String) removeConfTable.getValueAt(row, 0));
+        dispConfRoomCap.setText((String) removeConfTable.getValueAt(row, 1));
+        dispConfRoomRate.setText((String) removeConfTable.getValueAt(row, 2));
+        dispConfRoomStatus2.setText((String) removeConfTable.getValueAt(row, 3));
+        try {
+            System.out.println("eto ung row: " + row);
+            String gid = (String) removeConfTable.getModel().getValueAt(row, 0);
+            int id = Integer.parseInt(gid);
+            System.out.println("eto ung id: " + id);
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            Statement stmt = con.createStatement();
+            String sql = "SELECT RoomImage from ConferenceRooms where ConfRoomNo = " + id;
+            ResultSet rs = stmt.executeQuery(sql);
+            if (rs.next()) {
+                InputStream inputStream = rs.getBinaryStream("RoomImage");
+                if (inputStream != null) {
+                    BufferedImage image = ImageIO.read(inputStream);
+                    if (image != null) {
+                        int scaledWidth = 370; // Replace with desired width
+                        int scaledHeight = 214; // Replace with desired height
+                        Image scaledImage = image.getScaledInstance(scaledWidth, scaledHeight, Image.SCALE_SMOOTH);
+
+                        // Set the scaled image to your JLabel or ImageIcon
+                        confRoomImageLabel2.setIcon(new ImageIcon(scaledImage));
+                        confRoomImageLabel2.setText("");
+                    } else {
+                        // Handle case where image couldn't be read
+                        System.err.println("Failed to read image from InputStream");
+                    }
+                } else {
+                    // Handle case where InputStream is null
+                    System.err.println("No image found in database");
+                    confRoomImageLabel2.setIcon(null);
+                    confRoomImageLabel2.setText("no image");
+
+                }
+            } else {
+                // Handle case where no rows were returned by the query
+                System.err.println("No rows returned by query");
+            }
+
+            // Close resources
+            rs.close();
+            stmt.close();
+            con.close();
+        } catch (SQLException | IOException ex) {
+            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_removeConfTableMouseClicked
+
+    private void dispConfRoomNo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dispConfRoomNo2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dispConfRoomNo2ActionPerformed
 
     public static void main(String args[]) {
 
@@ -4819,7 +4932,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
@@ -4829,6 +4941,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField mobilefield;
     private javax.swing.ButtonGroup paymentRoomGroup;
     private javax.swing.ButtonGroup paymentRoomStatus;
+    private javax.swing.JTable removeConfTable;
     private javax.swing.JButton removeRBution;
     private javax.swing.JTextField removeRL;
     private javax.swing.JTextField removeRN;
