@@ -27,6 +27,7 @@ MemberStatus INT DEFAULT 0
 )
 
 CREATE TABLE RoomReservation(
+ReservationID INT,
 GuestID INT NOT NULL,
 RoomNo INT NOT NULL,
 CheckInDate DATETIME NOT NULL,
@@ -41,12 +42,12 @@ Total MONEY NOT NULL,
 PaymentStatus INT DEFAULT 0,
 PayMethod VARCHAR(16),
 CheckOutStatus INT DEFAULT 0,
-CONSTRAINT RoomReservationPK PRIMARY KEY(GuestID, RoomNo,CheckInDate),
+CONSTRAINT RoomReservationPK PRIMARY KEY(ReservationID),
 CONSTRAINT RoomReservationFK FOREIGN KEY (GuestID) REFERENCES Guest(GuestID),
 CONSTRAINT RoomReservationFK2 FOREIGN KEY (RoomNo) REFERENCES Room(RoomNo),
 CONSTRAINT RoomPaymentCheck CHECK (PaymentStatus=0 OR PaymentStatus=1),
 --simulates boolean value for payment status
-CONSTRAINT CheckOutStatus CHECK (PaymentStatus=0 OR PaymentStatus=1),
+CONSTRAINT CheckOutStatus CHECK (CheckOutStatus=0 OR CheckOutStatus=1),
 --simulates boolean value for payment status
 CONSTRAINT RoomPayMethodCheck CHECK (PayMethod in ('Cash','Bank Transfer','Cheque','CashApp'))
 )
