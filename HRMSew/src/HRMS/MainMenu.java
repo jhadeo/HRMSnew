@@ -43,6 +43,7 @@ public class MainMenu extends javax.swing.JFrame {
     public MainMenu() {
         FlatLightLaf.setup();
         initComponents();
+        setDateLabel();
         setLocationRelativeTo(null);
     }
 
@@ -62,6 +63,12 @@ public class MainMenu extends javax.swing.JFrame {
         paymentRoomStatus = new javax.swing.ButtonGroup();
         EventReservationPGroup = new javax.swing.ButtonGroup();
         EventReservationPMGroup = new javax.swing.ButtonGroup();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        jPanel22 = new javax.swing.JPanel();
+        logOutButton = new javax.swing.JButton();
+        jLabel111 = new javax.swing.JLabel();
+        jLabel109 = new javax.swing.JLabel();
+        dateLabel = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         NumberFormat longFormat = NumberFormat.getIntegerInstance();
         InputNumberFilter numFormat = new InputNumberFilter(longFormat);
@@ -398,6 +405,7 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel83 = new javax.swing.JLabel();
         jLabel84 = new javax.swing.JLabel();
         deleteConfRoom = new javax.swing.JButton();
+        confRoomImageLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Serendipity System");
@@ -405,11 +413,61 @@ public class MainMenu extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setSize(new java.awt.Dimension(1152, 768));
 
+        jPanel22.setOpaque(false);
+
+        logOutButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        logOutButton.setText("Log out");
+        logOutButton.setToolTipText("");
+        logOutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logOutButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel111.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel111.setText("Hello!");
+
+        jLabel109.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel109.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel109.setText("The date today is:");
+
+        dateLabel.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        dateLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(logOutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel109, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel111)
+                        .addGap(37, 37, 37))
+                    .addComponent(dateLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel111)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel109)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 340, Short.MAX_VALUE)
+                .addComponent(logOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
         jPanel2.setBackground(new java.awt.Color(216, 167, 144));
         jPanel2.setPreferredSize(new java.awt.Dimension(1152, 768));
 
-        MainPanel.setBackground(new java.awt.Color(216, 167, 144));
         MainPanel.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        MainPanel.setBackground(new java.awt.Color(216, 167, 144));
         MainPanel.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         MainPanel.setMaximumSize(new java.awt.Dimension(1920, 1080));
         MainPanel.setPreferredSize(new java.awt.Dimension(1166, 557));
@@ -460,16 +518,16 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(ViewRoomTable);
 
-        roomImageLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         roomImageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         roomImageLabel.setText("no image");
-        roomImageLabel.setToolTipText("");
         roomImageLabel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         roomImageLabel.setFocusTraversalPolicyProvider(true);
+        roomImageLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         roomImageLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        roomImageLabel.setToolTipText("");
 
-        jLabel77.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel77.setText("Room Image");
+        jLabel77.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -488,7 +546,7 @@ public class MainMenu extends javax.swing.JFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 665, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 792, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(roomImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -501,14 +559,14 @@ public class MainMenu extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(239, 231, 221));
 
-        jLabel68.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel68.setText("Book Rate (per day):");
+        jLabel68.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel69.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel69.setText("Room Image:");
+        jLabel69.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        uploadRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         uploadRoom.setText("Upload");
+        uploadRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         uploadRoom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uploadRoomActionPerformed(evt);
@@ -519,14 +577,14 @@ public class MainMenu extends javax.swing.JFrame {
 
         addRoomType.setModel(new javax.swing.SpinnerListModel(new String[] {"Single", "Double", "Suite"}));
 
-        jLabel71.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel71.setText("Room Number:");
+        jLabel71.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel72.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel72.setText("Room Limit:");
+        jLabel72.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        addRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         addRoom.setText("Add Room");
+        addRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         addRoom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addRoomActionPerformed(evt);
@@ -535,8 +593,8 @@ public class MainMenu extends javax.swing.JFrame {
 
         addRoomNo.setEditable(false);
 
-        jLabel73.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel73.setText("Room Type:");
+        jLabel73.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         addRoomLimit.setModel(new javax.swing.SpinnerNumberModel(1, 1, 100, 1));
 
@@ -569,7 +627,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(jLabel69)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(uploadRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(221, Short.MAX_VALUE))
+                .addContainerGap(328, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -600,7 +658,7 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(uploadRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(addRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(217, Short.MAX_VALUE))
+                .addContainerGap(344, Short.MAX_VALUE))
         );
 
         RoomPanel.addTab("Add Room", jPanel6);
@@ -637,25 +695,25 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane13.setViewportView(editRoomTable);
 
-        jLabel35.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel35.setText("Room Number:");
+        jLabel35.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel62.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel62.setText("Room Rate:");
+        jLabel62.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel63.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel63.setText("Room Type:");
+        jLabel63.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel64.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel64.setText("Room Limit:");
+        jLabel64.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel65.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel65.setText("Room Status:");
+        jLabel65.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         editRS.setEditable(false);
 
-        editRoomButton.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         editRoomButton.setText("Edit Room");
+        editRoomButton.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         editRoomButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editRoomButtonActionPerformed(evt);
@@ -666,19 +724,19 @@ public class MainMenu extends javax.swing.JFrame {
 
         editRoomLimit.setModel(new javax.swing.SpinnerNumberModel(1, 1, 100, 1));
 
-        editRoomLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         editRoomLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         editRoomLabel.setText("no image");
-        editRoomLabel.setToolTipText("");
         editRoomLabel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         editRoomLabel.setFocusTraversalPolicyProvider(true);
+        editRoomLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         editRoomLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        editRoomLabel.setToolTipText("");
 
-        jLabel101.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel101.setText("Edit Image:");
+        jLabel101.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        editRoomUpload.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         editRoomUpload.setText("Upload");
+        editRoomUpload.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         editRoomUpload.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editRoomUploadActionPerformed(evt);
@@ -690,7 +748,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(editRoomButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -719,7 +777,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(editRoomLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -750,7 +808,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addComponent(editRoomButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane13))
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         RoomPanel.addTab("Edit Room", jPanel7);
@@ -789,51 +847,51 @@ public class MainMenu extends javax.swing.JFrame {
 
         removeRT.setEditable(false);
 
-        jLabel66.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel66.setText("Room Number:");
+        jLabel66.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel67.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel67.setText("Room Rate:");
+        jLabel67.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         removeRR.setEditable(false);
 
-        jLabel70.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel70.setText("Room Type:");
+        jLabel70.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel74.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel74.setText("Room Limit:");
+        jLabel74.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         removeRS.setEditable(false);
 
-        jLabel75.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel75.setText("Room Status:");
+        jLabel75.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         removeRL.setEditable(false);
 
         removeRN.setEditable(false);
 
-        removeRBution.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         removeRBution.setText("Remove Room");
+        removeRBution.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         removeRBution.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeRButionActionPerformed(evt);
             }
         });
 
-        removeRoomLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         removeRoomLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         removeRoomLabel.setText("no image");
-        removeRoomLabel.setToolTipText("");
         removeRoomLabel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         removeRoomLabel.setFocusTraversalPolicyProvider(true);
+        removeRoomLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         removeRoomLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        removeRoomLabel.setToolTipText("");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel8Layout.createSequentialGroup()
@@ -864,7 +922,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(83, 83, 83)
+                .addGap(0, 157, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane14)
                     .addGroup(jPanel8Layout.createSequentialGroup()
@@ -891,7 +949,7 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(removeRS, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(removeRBution, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         RoomPanel.addTab("Remove Room", jPanel8);
@@ -900,11 +958,13 @@ public class MainMenu extends javax.swing.JFrame {
         RoomSection.setLayout(RoomSectionLayout);
         RoomSectionLayout.setHorizontalGroup(
             RoomSectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(RoomPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1057, Short.MAX_VALUE)
+            .addGroup(RoomSectionLayout.createSequentialGroup()
+                .addComponent(RoomPanel)
+                .addContainerGap())
         );
         RoomSectionLayout.setVerticalGroup(
             RoomSectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(RoomPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 594, Short.MAX_VALUE)
+            .addComponent(RoomPanel)
         );
 
         MainPanel.addTab("Room Management", RoomSection);
@@ -950,11 +1010,11 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1021, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1164, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 792, Short.MAX_VALUE)
         );
 
         RReservationPanel.addTab("View Reservations", jPanel1);
@@ -965,22 +1025,22 @@ public class MainMenu extends javax.swing.JFrame {
         txtRoomRate.setDragEnabled(true);
         txtRoomRate.setEnabled(false);
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel11.setText("Check Out:");
+        jLabel11.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         txtTaxes.setEditable(false);
         txtTaxes.setDragEnabled(true);
         txtTaxes.setEnabled(false);
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel12.setText("Room Number:");
+        jLabel12.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         txtTotal.setEditable(false);
         txtTotal.setDragEnabled(true);
         txtTotal.setEnabled(false);
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel13.setText("Check In:");
+        jLabel13.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         submitRoomReservation.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         submitRoomReservation.setText("Submit Reservation");
@@ -991,18 +1051,18 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel14.setText("Mobile Number:");
+        jLabel14.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         paymentRoomGroup.add(jRadioButton7);
         jRadioButton7.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton7.setText("CashApp");
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel15.setText("Email:");
+        jLabel15.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel16.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel16.setText("Payment Method");
+        jLabel16.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         CheckOutDate.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
@@ -1011,42 +1071,42 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         paymentRoomGroup.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton2.setText("Cash");
+        jRadioButton2.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         paymentRoomGroup.add(jRadioButton8);
-        jRadioButton8.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton8.setText("Card");
+        jRadioButton8.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         paymentRoomGroup.add(jRadioButton9);
-        jRadioButton9.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton9.setText("Bank Transfer");
+        jRadioButton9.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         paymentRoomGroup.add(jRadioButton10);
-        jRadioButton10.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton10.setText("Cheque");
+        jRadioButton10.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         jTextField3.setEditable(false);
 
         jTextField4.setEditable(false);
 
-        jLabel17.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel17.setText(" Payment Status:");
+        jLabel17.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel19.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel19.setText("Down Payment:");
+        jLabel19.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel20.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel20.setText("Total:");
+        jLabel20.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel21.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel21.setText("Taxes:");
+        jLabel21.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel22.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel22.setText("Room Rate:");
+        jLabel22.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel23.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel23.setText("Guest  ID:");
+        jLabel23.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         SearchID.setText("Search");
         SearchID.addActionListener(new java.awt.event.ActionListener() {
@@ -1063,32 +1123,48 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         paymentRoomStatus.add(jRadioButton11);
-        jRadioButton11.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton11.setText("Paid");
+        jRadioButton11.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         paymentRoomStatus.add(jRadioButton12);
-        jRadioButton12.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton12.setText("Pending");
+        jRadioButton12.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         jTextField1.setEditable(false);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
-        jLabel24.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel24.setText("Name:");
+        jLabel24.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(81, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioButton11)
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioButton12))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(jLabel22)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtRoomRate, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel14)
                             .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.TRAILING)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(submitRoomReservation, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1104,7 +1180,7 @@ public class MainMenu extends javax.swing.JFrame {
                                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(CheckInDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(60, 60, 60)
                                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING))))
@@ -1114,30 +1190,9 @@ public class MainMenu extends javax.swing.JFrame {
                                         .addComponent(txtRoomNo, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(searchRoom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(CheckOutDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(CheckOutDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextField1)))
                             .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel19)
-                            .addComponent(jLabel20)
-                            .addComponent(jLabel21)
-                            .addComponent(jLabel22)
-                            .addComponent(jLabel17))
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtTotal, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtTaxes, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtRoomRate, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtDownPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jRadioButton11)
-                                .addGap(18, 18, 18)
-                                .addComponent(jRadioButton12))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(75, 75, 75)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1152,78 +1207,92 @@ public class MainMenu extends javax.swing.JFrame {
                                         .addComponent(jRadioButton10)
                                         .addGap(18, 18, 18)
                                         .addComponent(jRadioButton7))
-                                    .addComponent(jRadioButton9))))))
-                .addContainerGap(125, Short.MAX_VALUE))
+                                    .addComponent(jRadioButton9)))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel19)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtDownPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel21)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtTaxes, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(121, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtRoomNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(searchRoom))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CheckOutDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtRoomNo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(searchRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addComponent(CheckOutDate, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtGuestID)
-                                .addComponent(SearchID))
-                            .addComponent(jLabel12))
+                            .addComponent(jLabel23)
+                            .addComponent(jLabel12)
+                            .addComponent(txtGuestID, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SearchID, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(CheckInDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CheckInDate, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
-                    .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel24)
+                    .addComponent(jLabel14)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField4))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel16)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jRadioButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jRadioButton2)
+                    .addComponent(jRadioButton9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jRadioButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jRadioButton8)
+                    .addComponent(jRadioButton10)
                     .addComponent(jRadioButton7))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtRoomRate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtRoomRate, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtTaxes))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTaxes, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtTotal))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel20)
+                    .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtDownPayment))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtDownPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
                     .addComponent(jRadioButton11)
                     .addComponent(jRadioButton12))
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
                 .addComponent(submitRoomReservation, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
         RReservationPanel.addTab("Add Reservation", jPanel3);
@@ -1260,17 +1329,17 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane16.setViewportView(editRoomReservationTable);
 
-        jLabel102.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel102.setText("Room Number:");
+        jLabel102.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel107.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel107.setText("Check-Out Date:");
+        jLabel107.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel108.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel108.setText("Check-In Date:");
+        jLabel108.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel110.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel110.setText("Add Misc. Charges:");
+        jLabel110.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         editMiscCharge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1278,8 +1347,8 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        editReservation.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         editReservation.setText("Edit Reservation");
+        editReservation.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         editReservation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editReservationActionPerformed(evt);
@@ -1291,7 +1360,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel21Layout.setHorizontalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel21Layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(editReservation, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
@@ -1335,15 +1404,15 @@ public class MainMenu extends javax.swing.JFrame {
                         .addGap(36, 36, 36)
                         .addComponent(editReservation, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 533, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         RReservationPanel.addTab("Edit Reservation", jPanel21);
 
         jPanel4.setBackground(new java.awt.Color(239, 231, 221));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel1.setText("Enter Room Number:");
+        jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         roomnumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1376,16 +1445,16 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane9.setViewportView(checkoutTable);
 
-        searchRoomCheckout.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         searchRoomCheckout.setText("Search");
+        searchRoomCheckout.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         searchRoomCheckout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchRoomCheckoutActionPerformed(evt);
             }
         });
 
-        checkoutbutton.setFont(new java.awt.Font("Segoe UI Light", 0, 36)); // NOI18N
         checkoutbutton.setText("Check Out");
+        checkoutbutton.setFont(new java.awt.Font("Segoe UI Light", 0, 36)); // NOI18N
         checkoutbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkoutbuttonActionPerformed(evt);
@@ -1402,7 +1471,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(checkoutbutton))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap(162, Short.MAX_VALUE)
+                        .addContainerGap(149, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane9)
                             .addGroup(jPanel4Layout.createSequentialGroup()
@@ -1411,13 +1480,13 @@ public class MainMenu extends javax.swing.JFrame {
                                 .addComponent(roomnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(searchRoomCheckout, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 277, Short.MAX_VALUE)))))
-                .addContainerGap(87, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 254, Short.MAX_VALUE)))))
+                .addContainerGap(266, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(77, Short.MAX_VALUE)
+                .addContainerGap(194, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
                         .addComponent(roomnumber, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
@@ -1427,7 +1496,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(checkoutbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(297, Short.MAX_VALUE))
+                .addContainerGap(413, Short.MAX_VALUE))
         );
 
         RReservationPanel.addTab("Check Out", jPanel4);
@@ -1436,7 +1505,9 @@ public class MainMenu extends javax.swing.JFrame {
         RoomRSection.setLayout(RoomRSectionLayout);
         RoomRSectionLayout.setHorizontalGroup(
             RoomRSectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(RReservationPanel)
+            .addGroup(RoomRSectionLayout.createSequentialGroup()
+                .addComponent(RReservationPanel)
+                .addContainerGap())
         );
         RoomRSectionLayout.setVerticalGroup(
             RoomRSectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1487,73 +1558,73 @@ public class MainMenu extends javax.swing.JFrame {
         ViewGuestsLayout.setHorizontalGroup(
             ViewGuestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ViewGuestsLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1035, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1164, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
         ViewGuestsLayout.setVerticalGroup(
             ViewGuestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 526, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 792, Short.MAX_VALUE)
         );
 
         GuestPanel.addTab("View Guests", ViewGuests);
 
         AddGuest.setBackground(new java.awt.Color(239, 231, 221));
 
-        jLabel18.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel18.setText("Membership:");
+        jLabel18.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         membershipGroup.add(jRadioButton5);
-        jRadioButton5.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton5.setText("Active");
+        jRadioButton5.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         membershipGroup.add(jRadioButton6);
-        jRadioButton6.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton6.setText("Inactive");
+        jRadioButton6.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel2.setText("Guest  ID:");
+        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel9.setText("Middle Name:");
+        jLabel9.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel3.setText("Date of Birth:");
+        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel4.setText("First Name:");
+        jLabel4.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel10.setText("Mobile Number:");
+        jLabel10.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel5.setText("Last Name:");
+        jLabel5.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel6.setText("Home Address:");
+        jLabel6.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel7.setText("Email:");
+        jLabel7.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel8.setText("Gender:");
+        jLabel8.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         guestfield.setEditable(false);
 
         genderGroup.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton1.setText("Male");
+        jRadioButton1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         genderGroup.add(jRadioButton3);
-        jRadioButton3.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton3.setText("Female");
+        jRadioButton3.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         genderGroup.add(jRadioButton4);
-        jRadioButton4.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton4.setText("Other");
+        jRadioButton4.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jButton1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jButton1.setText("Submit Information");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1confirm(evt);
@@ -1565,7 +1636,7 @@ public class MainMenu extends javax.swing.JFrame {
         AddGuestLayout.setHorizontalGroup(
             AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AddGuestLayout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
+                .addContainerGap(135, Short.MAX_VALUE)
                 .addGroup(AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(AddGuestLayout.createSequentialGroup()
@@ -1618,12 +1689,12 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(jRadioButton5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jRadioButton6)))
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addContainerGap(145, Short.MAX_VALUE))
         );
         AddGuestLayout.setVerticalGroup(
             AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AddGuestLayout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
+                .addContainerGap(181, Short.MAX_VALUE)
                 .addGroup(AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                     .addComponent(guestfield))
@@ -1663,7 +1734,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addGap(9, 9, 9)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(244, Short.MAX_VALUE))
         );
 
         lastfield.setDocument(new JTextFieldLimit(20));
@@ -1701,30 +1772,30 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(EditTable);
 
-        jLabel25.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel25.setText("Guest First Name:");
+        jLabel25.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jLabel26.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel26.setText("Guest Middle Name:");
+        jLabel26.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jLabel27.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel27.setText("Guest Last Name:");
+        jLabel27.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jLabel28.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel28.setText("Phone Number:");
+        jLabel28.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jLabel29.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel29.setText("Email:");
+        jLabel29.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jLabel30.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel30.setText("Address:");
+        jLabel30.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        editMember.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         editMember.setText("Is member?");
+        editMember.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         editMember.setToolTipText("");
 
-        editGuestConfirm.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         editGuestConfirm.setText("Edit Guest");
+        editGuestConfirm.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         editGuestConfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editGuestConfirmActionPerformed(evt);
@@ -1771,7 +1842,7 @@ public class MainMenu extends javax.swing.JFrame {
         );
         EditGuestLayout.setVerticalGroup(
             EditGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 526, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 792, Short.MAX_VALUE)
             .addGroup(EditGuestLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(EditGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1810,11 +1881,13 @@ public class MainMenu extends javax.swing.JFrame {
         GuestSection.setLayout(GuestSectionLayout);
         GuestSectionLayout.setHorizontalGroup(
             GuestSectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(GuestPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1035, Short.MAX_VALUE)
+            .addGroup(GuestSectionLayout.createSequentialGroup()
+                .addComponent(GuestPanel)
+                .addContainerGap())
         );
         GuestSectionLayout.setVerticalGroup(
             GuestSectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(GuestPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 557, Short.MAX_VALUE)
+            .addComponent(GuestPanel, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         MainPanel.addTab("Guest Management", GuestSection);
@@ -1861,38 +1934,38 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 1021, Short.MAX_VALUE)
+            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 1164, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 653, Short.MAX_VALUE)
+            .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 792, Short.MAX_VALUE)
         );
 
         EventPanel.addTab("View Events", jPanel9);
 
         jPanel10.setBackground(new java.awt.Color(239, 231, 221));
 
-        jLabel87.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel87.setText("Event  ID:");
+        jLabel87.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel88.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel88.setText("Event  Name:");
+        jLabel88.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel89.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel89.setText("Room Setup:");
+        jLabel89.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel90.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel90.setText("Catering:");
+        jLabel90.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel91.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel91.setText("Audio Visual Request:");
+        jLabel91.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel92.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel92.setText("Decoration:");
+        jLabel92.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        addEventButton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         addEventButton.setText("Submit Information");
         addEventButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addEventButton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         addEventButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addEventButtonconfirm(evt);
@@ -1906,39 +1979,33 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(addEventButton, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(848, Short.MAX_VALUE))
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap(64, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel90)
-                    .addComponent(jLabel88)
-                    .addComponent(jLabel87)
-                    .addComponent(jLabel89)
-                    .addComponent(jLabel91)
-                    .addComponent(jLabel92))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(addEventButton, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel90)
+                            .addComponent(jLabel88)
+                            .addComponent(jLabel87)
+                            .addComponent(jLabel89)
+                            .addComponent(jLabel91)
+                            .addComponent(jLabel92))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel10Layout.createSequentialGroup()
-                                .addComponent(addEventID, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(607, 607, 607))
-                            .addComponent(addDecoration, javax.swing.GroupLayout.DEFAULT_SIZE, 706, Short.MAX_VALUE)
+                            .addComponent(addEventID, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addDecoration)
                             .addComponent(addRoomSetup)
                             .addComponent(addAVR)
-                            .addComponent(addCatering))
-                        .addContainerGap(118, Short.MAX_VALUE))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(addEventName)
-                        .addContainerGap())))
+                            .addComponent(addCatering)
+                            .addComponent(addEventName))))
+                .addGap(122, 122, 122))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap(152, Short.MAX_VALUE)
+                .addContainerGap(178, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel87, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(addEventID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1946,25 +2013,25 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel88)
                     .addComponent(addEventName, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel90)
-                    .addComponent(addCatering, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                    .addComponent(addCatering, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel91)
-                    .addComponent(addAVR, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                    .addComponent(addAVR, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel89)
-                    .addComponent(addRoomSetup, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+                    .addComponent(addRoomSetup, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel92, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(addDecoration, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(addEventButton, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(180, Short.MAX_VALUE))
+                .addContainerGap(197, Short.MAX_VALUE))
         );
 
         addEventName.setDocument(new JTextFieldLimit(20));
@@ -2010,28 +2077,28 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane7.setViewportView(editEventTable);
 
-        jLabel99.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel99.setText("Event ID:");
+        jLabel99.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel93.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel93.setText("Event Name:");
+        jLabel93.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel94.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel94.setText("Catering:");
+        jLabel94.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel95.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel95.setText("Audio Visual Request:");
+        jLabel95.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel96.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel96.setText("Room Setup:");
+        jLabel96.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel97.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel97.setText("Decoration:");
+        jLabel97.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         editEventID.setEditable(false);
 
-        editEventButton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         editEventButton.setText("Edit Event");
+        editEventButton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         editEventButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editEventButtonActionPerformed(evt);
@@ -2045,7 +2112,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 1009, Short.MAX_VALUE)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 1152, Short.MAX_VALUE)
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel95)
@@ -2148,35 +2215,35 @@ public class MainMenu extends javax.swing.JFrame {
 
         deleteRoomSetup.setEditable(false);
 
-        jLabel100.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel100.setText("Event ID:");
+        jLabel100.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         deleteDeco.setEditable(false);
 
-        jLabel98.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel98.setText("Event Name:");
+        jLabel98.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        deleteEventButton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         deleteEventButton.setText("Remove Event");
+        deleteEventButton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         deleteEventButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteEventButtonActionPerformed(evt);
             }
         });
 
-        jLabel103.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel103.setText("Catering:");
+        jLabel103.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel104.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel104.setText("Decoration:");
+        jLabel104.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel105.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel105.setText("Audio Visual Request:");
+        jLabel105.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         deleteEventID.setEditable(false);
 
-        jLabel106.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel106.setText("Room Setup:");
+        jLabel106.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         deleteEventName.setEditable(false);
 
@@ -2204,7 +2271,7 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(deleteAVR)
                             .addComponent(deleteRoomSetup)
                             .addComponent(deleteDeco, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 350, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 493, Short.MAX_VALUE)
                         .addComponent(deleteEventButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -2247,11 +2314,13 @@ public class MainMenu extends javax.swing.JFrame {
         EventSection.setLayout(EventSectionLayout);
         EventSectionLayout.setHorizontalGroup(
             EventSectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(EventPanel)
+            .addGroup(EventSectionLayout.createSequentialGroup()
+                .addComponent(EventPanel)
+                .addContainerGap())
         );
         EventSectionLayout.setVerticalGroup(
             EventSectionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(EventPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 684, Short.MAX_VALUE)
+            .addComponent(EventPanel)
         );
 
         MainPanel.addTab("Event Management", EventSection);
@@ -2298,62 +2367,62 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 1021, Short.MAX_VALUE)
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 1164, Short.MAX_VALUE)
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 629, Short.MAX_VALUE)
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 792, Short.MAX_VALUE)
         );
 
         EventRsection.addTab("View Reservations", jPanel13);
 
         jPanel16.setBackground(new java.awt.Color(239, 231, 221));
 
-        jLabel42.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel42.setText("hours");
+        jLabel42.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         EventReservationPMGroup.add(JBCheque1);
-        JBCheque1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         JBCheque1.setText("Cheque");
+        JBCheque1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         EventReservationPMGroup.add(JBCashApp1);
-        JBCashApp1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         JBCashApp1.setText("CashApp");
+        JBCashApp1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jLabel43.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel43.setText("Event ID:");
+        jLabel43.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel44.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel44.setText("Payment Status:");
+        jLabel44.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel45.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel45.setText("Event Start:");
+        jLabel45.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         EventReservationPGroup.add(RBPaid1);
-        RBPaid1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         RBPaid1.setText("Paid");
+        RBPaid1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jLabel46.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel46.setText("Guest ID:");
+        jLabel46.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         EventReservationPGroup.add(RBPending1);
-        RBPending1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         RBPending1.setText("Pending");
+        RBPending1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jLabel47.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel47.setText("Event Duration:");
+        jLabel47.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         spinEventID1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
 
-        jLabel48.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel48.setText("Event Room ID:");
+        jLabel48.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel49.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel49.setText("Payment Method:");
+        jLabel49.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         EventReservationPMGroup.add(JBBankTransfer1);
-        JBBankTransfer1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         JBBankTransfer1.setText("Bank Transfer");
+        JBBankTransfer1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         DCEventStart1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
@@ -2362,8 +2431,8 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         EventReservationPMGroup.add(JBCash1);
-        JBCash1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         JBCash1.setText("Cash");
+        JBCash1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         spinEventDuration1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
         spinEventDuration1.setName(""); // NOI18N
@@ -2374,20 +2443,20 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         EventReservationPMGroup.add(JBCard1);
-        JBCard1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         JBCard1.setText("Card");
+        JBCard1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        ConfirmButton1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         ConfirmButton1.setText("Reserve Event");
         ConfirmButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ConfirmButton1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         ConfirmButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConfirmButton1ActionPerformed(evt);
             }
         });
 
-        jLabel52.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel52.setText("Breakdown of Charges");
+        jLabel52.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
 
         txtDownPayment2.setDragEnabled(true);
         txtDownPayment2.setEnabled(false);
@@ -2406,11 +2475,11 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jLabel51.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel51.setText("Down Payment");
+        jLabel51.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel57.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel57.setText("Taxes:");
+        jLabel57.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         txtRequestCharge1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2421,23 +2490,23 @@ public class MainMenu extends javax.swing.JFrame {
         txtTaxes2.setDragEnabled(true);
         txtTaxes2.setEnabled(false);
 
-        jLabel54.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel54.setText("Catering Charge:");
+        jLabel54.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel56.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel56.setText("Decoration Charge:");
+        jLabel56.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel53.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel53.setText("Rental Fee:");
+        jLabel53.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         txtRentalFee1.setDragEnabled(true);
         txtRentalFee1.setEnabled(false);
 
-        jLabel55.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel55.setText("Request Charge:");
+        jLabel55.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel50.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel50.setText("Total:");
+        jLabel50.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         txtCateringCharge1.setName(""); // NOI18N
         txtCateringCharge1.addActionListener(new java.awt.event.ActionListener() {
@@ -2530,7 +2599,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
-                .addContainerGap(90, Short.MAX_VALUE)
+                .addContainerGap(172, Short.MAX_VALUE)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addComponent(jLabel52)
@@ -2603,7 +2672,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(JBBankTransfer1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(JBCashApp1)))
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addContainerGap(245, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
@@ -2646,20 +2715,20 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane12.setViewportView(cancelReservation);
 
-        jLabel36.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel36.setText("Reserved To:");
+        jLabel36.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel37.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel37.setText("Event Name:");
+        jLabel37.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel38.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel38.setText("Room Assigned:");
+        jLabel38.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel39.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel39.setText("Event Date:");
+        jLabel39.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel40.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel40.setText("Duration:");
+        jLabel40.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         reservedToCancel.setEditable(false);
 
@@ -2676,20 +2745,20 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jLabel41.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel41.setText("Room Charge:");
+        jLabel41.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel58.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel58.setText("Catering Charge:");
+        jLabel58.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel59.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel59.setText("Request Charge:");
+        jLabel59.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel60.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel60.setText("Taxes:");
+        jLabel60.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel61.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel61.setText("Total:");
+        jLabel61.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         roomChargeCancel.setEditable(false);
 
@@ -2701,8 +2770,8 @@ public class MainMenu extends javax.swing.JFrame {
 
         eventTotalCancel.setEditable(false);
 
-        eventConfirmCancel.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         eventConfirmCancel.setText("Cancel Reservation");
+        eventConfirmCancel.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         eventConfirmCancel.setPreferredSize(new java.awt.Dimension(75, 32));
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
@@ -2725,10 +2794,10 @@ public class MainMenu extends javax.swing.JFrame {
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(eventDateCancel)
                             .addComponent(eventDurationCancel)
-                            .addComponent(reservedToCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+                            .addComponent(reservedToCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
                             .addComponent(eventNameCancel)
                             .addComponent(roomAssignedCancel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel58)
                             .addComponent(jLabel41)
@@ -2737,7 +2806,7 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(jLabel61))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(roomChargeCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                            .addComponent(roomChargeCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
                             .addComponent(cateringCancel)
                             .addComponent(requestCancel)
                             .addComponent(eventTaxesCancel)
@@ -2804,11 +2873,13 @@ public class MainMenu extends javax.swing.JFrame {
         EventReservation.setLayout(EventReservationLayout);
         EventReservationLayout.setHorizontalGroup(
             EventReservationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(EventRsection, javax.swing.GroupLayout.DEFAULT_SIZE, 1021, Short.MAX_VALUE)
+            .addGroup(EventReservationLayout.createSequentialGroup()
+                .addComponent(EventRsection)
+                .addContainerGap())
         );
         EventReservationLayout.setVerticalGroup(
             EventReservationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(EventRsection, javax.swing.GroupLayout.PREFERRED_SIZE, 660, Short.MAX_VALUE)
+            .addComponent(EventRsection)
         );
 
         MainPanel.addTab("Event Reservations", EventReservation);
@@ -2855,34 +2926,34 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane8.setViewportView(ConfRoomTable);
 
-        roomImageLabel1.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         roomImageLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         roomImageLabel1.setText("no image");
-        roomImageLabel1.setToolTipText("");
         roomImageLabel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         roomImageLabel1.setFocusTraversalPolicyProvider(true);
+        roomImageLabel1.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         roomImageLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        roomImageLabel1.setToolTipText("");
 
-        jLabel85.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel85.setText("Room Image");
+        jLabel85.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel17Layout.createSequentialGroup()
-                .addContainerGap(61, Short.MAX_VALUE)
+                .addContainerGap(104, Short.MAX_VALUE)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addGap(127, 127, 127)
                         .addComponent(jLabel85))
                     .addComponent(roomImageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 526, Short.MAX_VALUE)
+            .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 792, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(roomImageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2895,22 +2966,22 @@ public class MainMenu extends javax.swing.JFrame {
 
         jPanel18.setBackground(new java.awt.Color(239, 231, 221));
 
-        jLabel31.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel31.setText("Conference Room Number:");
+        jLabel31.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         addConfRoomNo.setEditable(false);
 
-        jLabel32.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel32.setText("Capacity:");
+        jLabel32.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel33.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel33.setText("Book Rate (per hour):");
+        jLabel33.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel34.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel34.setText("Room Image:");
+        jLabel34.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        uploadConf.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         uploadConf.setText("Upload");
+        uploadConf.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         uploadConf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uploadConfActionPerformed(evt);
@@ -2919,8 +2990,8 @@ public class MainMenu extends javax.swing.JFrame {
 
         confRoomImageUpload.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        addConf.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         addConf.setText("Add Conference Room");
+        addConf.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         addConf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addConfActionPerformed(evt);
@@ -2934,7 +3005,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
-                .addContainerGap(139, Short.MAX_VALUE)
+                .addContainerGap(208, Short.MAX_VALUE)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -2954,12 +3025,12 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(jLabel34)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(uploadConf, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(198, Short.MAX_VALUE))
+                .addContainerGap(208, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
-                .addContainerGap(126, Short.MAX_VALUE)
+                .addContainerGap(279, Short.MAX_VALUE)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel18Layout.createSequentialGroup()
                         .addComponent(confRoomImageUpload, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2981,7 +3052,7 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(addConfRoomBook, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(addConf, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(200, Short.MAX_VALUE))
+                .addContainerGap(313, Short.MAX_VALUE))
         );
 
         ConferenceSection.addTab("Add Conference Room", jPanel18);
@@ -3022,39 +3093,39 @@ public class MainMenu extends javax.swing.JFrame {
 
         dispConfRoomStatus.setEditable(false);
 
-        jLabel76.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel76.setText("Conf. Room Rate:");
+        jLabel76.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel78.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel78.setText("Conf. Room Capacity:");
+        jLabel78.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel79.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel79.setText("Conf. Room Number:");
+        jLabel79.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel80.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel80.setText("Conf. Room Status:");
+        jLabel80.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        editConfRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         editConfRoom.setText("Edit Room");
+        editConfRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         editConfRoom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editConfRoomActionPerformed(evt);
             }
         });
 
-        confRoomImageLabel2.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         confRoomImageLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         confRoomImageLabel2.setText("no image");
-        confRoomImageLabel2.setToolTipText("");
         confRoomImageLabel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         confRoomImageLabel2.setFocusTraversalPolicyProvider(true);
+        confRoomImageLabel2.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         confRoomImageLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        confRoomImageLabel2.setToolTipText("");
 
-        jLabel86.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel86.setText("Edit Image:");
+        jLabel86.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        editImageUpload.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         editImageUpload.setText("Upload");
+        editImageUpload.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         editImageUpload.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editImageUploadActionPerformed(evt);
@@ -3093,7 +3164,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel19Layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+                .addContainerGap(313, Short.MAX_VALUE)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel19Layout.createSequentialGroup()
                         .addComponent(confRoomImageLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3120,7 +3191,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(editConfRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         ConferenceSection.addTab("Edit Conference Room", jPanel19);
@@ -3157,8 +3228,8 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane11.setViewportView(removeConfTable);
 
-        jLabel81.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel81.setText("Conf. Room Number:");
+        jLabel81.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         dispConfRoomNo2.setEditable(false);
         dispConfRoomNo2.addActionListener(new java.awt.event.ActionListener() {
@@ -3173,54 +3244,69 @@ public class MainMenu extends javax.swing.JFrame {
 
         dispConfRoomStatus2.setEditable(false);
 
-        jLabel82.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel82.setText("Conf. Room Capacity:");
+        jLabel82.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel83.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel83.setText("Conf. Room Rate:");
+        jLabel83.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel84.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel84.setText("Conf. Room Status:");
+        jLabel84.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        deleteConfRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         deleteConfRoom.setText("Remove Room");
+        deleteConfRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         deleteConfRoom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteConfRoomActionPerformed(evt);
             }
         });
 
+        confRoomImageLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        confRoomImageLabel3.setText("no image");
+        confRoomImageLabel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        confRoomImageLabel3.setFocusTraversalPolicyProvider(true);
+        confRoomImageLabel3.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
+        confRoomImageLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        confRoomImageLabel3.setToolTipText("");
+
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
         jPanel20Layout.setHorizontalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel20Layout.createSequentialGroup()
-                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel82)
-                            .addComponent(jLabel81)
-                            .addComponent(jLabel83)
-                            .addComponent(jLabel84))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
+                        .addComponent(deleteConfRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dispConfRoomNo2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dispConfRoomCap, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dispConfRoomRate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dispConfRoomStatus2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(deleteConfRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                            .addComponent(confRoomImageLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
+                                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel82)
+                                    .addComponent(jLabel81)
+                                    .addComponent(jLabel83)
+                                    .addComponent(jLabel84))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(dispConfRoomNo2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dispConfRoomCap, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dispConfRoomRate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dispConfRoomStatus2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(18, 18, 18)))
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 689, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap(315, Short.MAX_VALUE)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel20Layout.createSequentialGroup()
+                        .addComponent(confRoomImageLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel81)
                             .addComponent(dispConfRoomNo2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -3236,7 +3322,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel84)
                             .addComponent(dispConfRoomStatus2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27)
+                        .addGap(52, 52, 52)
                         .addComponent(deleteConfRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -3247,13 +3333,13 @@ public class MainMenu extends javax.swing.JFrame {
         ConferenceRoom.setLayout(ConferenceRoomLayout);
         ConferenceRoomLayout.setHorizontalGroup(
             ConferenceRoomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ConferenceRoomLayout.createSequentialGroup()
-                .addComponent(ConferenceSection, javax.swing.GroupLayout.DEFAULT_SIZE, 1085, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ConferenceRoomLayout.createSequentialGroup()
+                .addComponent(ConferenceSection)
                 .addContainerGap())
         );
         ConferenceRoomLayout.setVerticalGroup(
             ConferenceRoomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ConferenceSection, javax.swing.GroupLayout.DEFAULT_SIZE, 557, Short.MAX_VALUE)
+            .addComponent(ConferenceSection)
         );
 
         MainPanel.addTab("Conference Rooms", ConferenceRoom);
@@ -3262,24 +3348,48 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(MainPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1315, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE)
+                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 823, Short.MAX_VALUE)
                 .addContainerGap())
+        );
+
+        jLayeredPane1.setLayer(jPanel22, javax.swing.JLayeredPane.DRAG_LAYER);
+        jLayeredPane1.setLayer(jPanel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1315, Short.MAX_VALUE)
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(1175, Short.MAX_VALUE)))
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 829, Short.MAX_VALUE)
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
+                    .addContainerGap(364, Short.MAX_VALUE)
+                    .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1259, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -3700,6 +3810,13 @@ public class MainMenu extends javax.swing.JFrame {
     }
     //</editor-fold>
 
+    private void setDateLabel() {
+    Date date = new Date(); // current date
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy");
+        String formattedDate = dateFormat.format(date);
+        dateLabel.setText(formattedDate);
+    }
+    
 
     private void GuestPanelStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_GuestPanelStateChanged
         switch (GuestPanel.getSelectedIndex()) {
@@ -4795,6 +4912,16 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_editMiscChargeActionPerformed
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void logOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOutButtonActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new LogIn().setVisible(true);
+    }//GEN-LAST:event_logOutButtonActionPerformed
+
     public static void main(String args[]) {
 
         /* Create and display the form */
@@ -4866,8 +4993,10 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTable checkoutTable;
     private javax.swing.JButton checkoutbutton;
     private javax.swing.JLabel confRoomImageLabel2;
+    private javax.swing.JLabel confRoomImageLabel3;
     private javax.swing.JLabel confRoomImageUpload;
     private javax.swing.JButton confRoomSearch;
+    private javax.swing.JLabel dateLabel;
     private com.toedter.calendar.JDateChooser datebirthchooser;
     private javax.swing.JTextField deleteAVR;
     private javax.swing.JTextField deleteCatering;
@@ -4943,8 +5072,10 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel106;
     private javax.swing.JLabel jLabel107;
     private javax.swing.JLabel jLabel108;
+    private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel110;
+    private javax.swing.JLabel jLabel111;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -5041,6 +5172,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel97;
     private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;
+    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -5055,6 +5187,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -5094,6 +5227,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField lastfield;
+    private javax.swing.JButton logOutButton;
     private javax.swing.ButtonGroup membershipGroup;
     private javax.swing.JTextField middlefield;
     private javax.swing.JTextField mobilefield;
