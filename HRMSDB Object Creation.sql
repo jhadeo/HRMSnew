@@ -35,8 +35,9 @@ RoomRate MONEY NOT NULL,
 --Derived from Room(RoomRate) * DATEDIFF(CheckInDate, CheckOutDate) - membership or birthday discounts
 Taxes MONEY NOT NULL,
 --Derived from RoomRate * 12%
+MiscCharges MONEY,
 Total MONEY NOT NULL,
---Derived from RoomRate + Taxes
+--Derived from RoomRate + Taxes + MiscCharges
 PaymentStatus INT DEFAULT 0,
 PayMethod VARCHAR(16),
 CheckOutStatus INT DEFAULT 0,
