@@ -9,7 +9,7 @@ import java.io.FileInputStream;
 import java.sql.*;
 
 public class Room {
-    
+
     static String getMaxRoomID() {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
@@ -95,6 +95,33 @@ public class Room {
 
     }
 
+    static boolean editReservation(String rID, String roomNo, String checkInDate, String checkOutDate, String miscCharge, String total) {
+        
+        double misc = Double.valueOf(miscCharge);
+        double totaldoble = Double.valueOf(total);
+        double totalnow = misc + totaldoble;
+        total = ""+totalnow;
+        
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            Statement stmt = con.createStatement();
+
+            String insertsql = "UPDATE RoomReservation SET roomNo = ?, CheckInDate = ?, CheckOutDate = ?, MiscCharges = ?, Total = ? WHERE ReservationID = ?";
+            PreparedStatement pstmt = con.prepareStatement(insertsql);
+            pstmt.setString(1, roomNo);
+            pstmt.setString(2, checkInDate);
+            pstmt.setString(3, checkOutDate);
+            pstmt.setString(4, miscCharge);
+            pstmt.setString(5, total);
+            pstmt.setString(6, rID);
+            pstmt.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     static boolean CheckOut(int RoomNo) {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
@@ -132,6 +159,7 @@ public class Room {
             return false;
         }
     }
+
     static boolean editRoom(int roomNo, String roomType, double roomRate, int roomLimit) {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
@@ -149,7 +177,7 @@ public class Room {
             return false;
         }
     }
-    
+
     static boolean editRoom(int roomNo, String roomType, double roomRate, int roomLimit, File roomImage) {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
@@ -158,7 +186,7 @@ public class Room {
             pstmt.setDouble(1, roomRate);
             pstmt.setString(2, roomType);
             pstmt.setInt(3, roomLimit);
-             FileInputStream fis = new FileInputStream(roomImage);
+            FileInputStream fis = new FileInputStream(roomImage);
             pstmt.setBinaryStream(4, fis, (int) roomImage.length());
             pstmt.setInt(5, roomNo);
             pstmt.executeUpdate();
@@ -169,7 +197,7 @@ public class Room {
             return false;
         }
     }
-    
+
     static boolean removeRoom(String roomID) {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
@@ -264,6 +292,7 @@ public class Room {
             return false;
         }
     }
+
     static boolean removeConferenceRoom(String roomNo) {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
