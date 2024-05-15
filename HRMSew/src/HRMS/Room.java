@@ -68,12 +68,12 @@ public class Room {
         return rate;
     }
 
-    static boolean AddReservation(int guestID, String roomNo, String checkInDate, String checkOutDate, String roomRate, String payMethod, String Taxes, String Total, boolean status) {
+    static boolean AddReservation(int guestID, String roomNo, String checkInDate, String checkOutDate, String roomRate, String payMethod, String Taxes, String Total) {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
 
-            String insertsql = "INSERT INTO RoomReservation (GuestID, RoomNo, CheckInDate, CheckOutDate, RoomRate, PayMethod, Taxes,Total,PaymentStatus) values(?, ?, ?, ?, ?, ?, ?,?,?)";
+            String insertsql = "INSERT INTO RoomReservation (GuestID, RoomNo, CheckInDate, CheckOutDate, RoomRate, PayMethod, Taxes,Total) values(?, ?, ?, ?, ?, ?, ?,?)";
             PreparedStatement pstmt = con.prepareStatement(insertsql);
             pstmt.setInt(1, guestID);
             pstmt.setString(2, roomNo);
@@ -83,7 +83,6 @@ public class Room {
             pstmt.setString(6, payMethod);
             pstmt.setString(7, Taxes);
             pstmt.setString(8, Total);
-            pstmt.setBoolean(9, status);
             pstmt.executeUpdate();
 
             String sql2 = "UPDATE Room SET RoomStatus = 'Reserved' WHERE RoomNo = " + roomNo;
