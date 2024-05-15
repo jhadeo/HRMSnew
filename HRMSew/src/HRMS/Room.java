@@ -103,7 +103,7 @@ public class Room {
 
             String insertSql = "UPDATE Room SET RoomStatus = 'Available' WHERE RoomNo = " + RoomNo;
             stmt.execute(insertSql);
-            String Sql = "UPDATE RoomReservation SET PaymentStatus = 1, CheckOutStatus = 1 WHERE RoomNo = " + RoomNo + " AND CheckOutStatus = 0 AND CheckInDate < GETDATE();";
+            String Sql = "UPDATE RoomReservation SET PaymentStatus = 1, CheckOutStatus = 1 WHERE RoomNo = " + RoomNo + " AND CheckOutStatus = 0";
             stmt.execute(Sql);
             return true;
         } catch (Exception e) {
@@ -125,6 +125,58 @@ public class Room {
             FileInputStream fis = new FileInputStream(roomImage);
             pstmt.setBinaryStream(5, fis, (int) roomImage.length());
             pstmt.setString(6, "Available");
+            pstmt.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    static boolean editRoom(int roomNo, String roomType, double roomRate, int roomLimit) {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            String insertsql = "UPDATE Room SET RoomRate = ?, RoomType = ?, RoomLimit = ? WHERE RoomNo = ?";
+            PreparedStatement pstmt = con.prepareStatement(insertsql);
+            pstmt.setDouble(1, roomRate);
+            pstmt.setString(2, roomType);
+            pstmt.setInt(3, roomLimit);
+            pstmt.setInt(4, roomNo);
+            pstmt.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    static boolean editRoom(int roomNo, String roomType, double roomRate, int roomLimit, File roomImage) {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            String insertsql = "UPDATE Room SET RoomRate = ?, RoomType = ?, RoomLimit = ?, roomImage = ? WHERE RoomNo = ?";
+            PreparedStatement pstmt = con.prepareStatement(insertsql);
+            pstmt.setDouble(1, roomRate);
+            pstmt.setString(2, roomType);
+            pstmt.setInt(3, roomLimit);
+             FileInputStream fis = new FileInputStream(roomImage);
+            pstmt.setBinaryStream(4, fis, (int) roomImage.length());
+            pstmt.setInt(5, roomNo);
+            pstmt.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    static boolean removeRoom(String roomID) {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            String insertsql = "DELETE FROM Room  WHERE RoomNo = ?;";
+            PreparedStatement pstmt = con.prepareStatement(insertsql);
+            pstmt.setString(1, roomID);
             pstmt.executeUpdate();
             return true;
 
@@ -205,6 +257,20 @@ public class Room {
             pstmt.setDouble(1, roomRate);
             pstmt.setInt(2, roomLimit);
             pstmt.setInt(3, roomNo);
+            pstmt.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    static boolean removeConferenceRoom(String roomNo) {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            String insertsql = "DELETE FROM ConferenceRooms  WHERE ConfRoomNo = ?;";
+            PreparedStatement pstmt = con.prepareStatement(insertsql);
+            pstmt.setString(1, roomNo);
             pstmt.executeUpdate();
             return true;
 

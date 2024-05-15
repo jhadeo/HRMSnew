@@ -13,7 +13,7 @@ import java.sql.*;
 public class conSQL {
 
     private static String hostname = "localhost";
-    private static String sqlInstanceName = "MSI\\HRSSQL"; //computer name 
+    private static String sqlInstanceName = "DESKTOP-DUP7HF2\\JAVACONNECT"; //computer name 
     private static String sqlDatabase = "HRSDB";  //sql server database name
     private static String sqlUser = "sa";
     private static String sqlPassword = "1234"; //password
