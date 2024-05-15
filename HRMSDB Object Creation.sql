@@ -38,7 +38,7 @@ Taxes MONEY NOT NULL,
 Total MONEY NOT NULL,
 --Derived from RoomRate + Taxes
 PaymentStatus INT DEFAULT 0,
-PayMethod VARCHAR(16) NOT NULL,
+PayMethod VARCHAR(16),
 CheckOutStatus INT DEFAULT 0,
 CONSTRAINT RoomReservationPK PRIMARY KEY(GuestID, RoomNo,CheckInDate),
 CONSTRAINT RoomReservationFK FOREIGN KEY (GuestID) REFERENCES Guest(GuestID),
