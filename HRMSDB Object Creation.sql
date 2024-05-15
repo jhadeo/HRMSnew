@@ -49,7 +49,7 @@ CONSTRAINT RoomPaymentCheck CHECK (PaymentStatus=0 OR PaymentStatus=1),
 --simulates boolean value for payment status
 CONSTRAINT CheckOutStatus CHECK (CheckOutStatus=0 OR CheckOutStatus=1),
 --simulates boolean value for payment status
-CONSTRAINT RoomPayMethodCheck CHECK (PayMethod in ('Cash','Bank Transfer','Cheque','CashApp'))
+CONSTRAINT RoomPayMethodCheck CHECK (PayMethod in ('Cash','Bank Transfer','Cheque','CashApp','Card'))
 )
 
 CREATE TABLE HotelEvents(
