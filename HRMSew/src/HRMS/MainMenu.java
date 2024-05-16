@@ -60,7 +60,6 @@ public class MainMenu extends javax.swing.JFrame {
         paymentRoomGroup = new javax.swing.ButtonGroup();
         genderGroup = new javax.swing.ButtonGroup();
         membershipGroup = new javax.swing.ButtonGroup();
-        paymentRoomStatus = new javax.swing.ButtonGroup();
         EventReservationPGroup = new javax.swing.ButtonGroup();
         EventReservationPMGroup = new javax.swing.ButtonGroup();
         jLayeredPane1 = new javax.swing.JLayeredPane();
@@ -111,7 +110,6 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel64 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
         editRN = new javax.swing.JTextField();
-        editRS = new javax.swing.JTextField();
         editRoomButton = new javax.swing.JButton();
         editRoomType = new javax.swing.JSpinner();
         editRoomLimit = new javax.swing.JSpinner();
@@ -119,6 +117,7 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel101 = new javax.swing.JLabel();
         editRoomUpload = new javax.swing.JButton();
         editRR = new javax.swing.JFormattedTextField(currencyFormat);
+        editRS = new javax.swing.JSpinner();
         jPanel8 = new javax.swing.JPanel();
         jScrollPane14 = new javax.swing.JScrollPane();
         removeRoomTable = new javax.swing.JTable();
@@ -191,9 +190,6 @@ public class MainMenu extends javax.swing.JFrame {
         jRadioButton8 = new javax.swing.JRadioButton();
         jRadioButton10 = new javax.swing.JRadioButton();
         jRadioButton7 = new javax.swing.JRadioButton();
-        jLabel17 = new javax.swing.JLabel();
-        jRadioButton11 = new javax.swing.JRadioButton();
-        jRadioButton12 = new javax.swing.JRadioButton();
         GuestSection = new javax.swing.JPanel();
         GuestPanel = new javax.swing.JTabbedPane();
         ViewGuests = new javax.swing.JPanel();
@@ -223,7 +219,7 @@ public class MainMenu extends javax.swing.JFrame {
         jRadioButton4 = new javax.swing.JRadioButton();
         mobilefield = new javax.swing.JTextField();
         emailfield = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        addGuestButton = new javax.swing.JButton();
         EditGuest = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         EditTable = new javax.swing.JTable();
@@ -319,7 +315,7 @@ public class MainMenu extends javax.swing.JFrame {
         JBCash1 = new javax.swing.JRadioButton();
         spinEventDuration1 = new javax.swing.JSpinner();
         JBCard1 = new javax.swing.JRadioButton();
-        ConfirmButton1 = new javax.swing.JButton();
+        addEventRbutton = new javax.swing.JButton();
         jLabel52 = new javax.swing.JLabel();
         txtDownPayment2 = new javax.swing.JTextField();
         txtDecorationCharge1 = new javax.swing.JFormattedTextField(currencyFormat);
@@ -712,8 +708,6 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel65.setText("Room Status:");
         jLabel65.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        editRS.setEditable(false);
-
         editRoomButton.setText("Edit Room");
         editRoomButton.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         editRoomButton.addActionListener(new java.awt.event.ActionListener() {
@@ -745,6 +739,8 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        editRS.setModel(new javax.swing.SpinnerListModel(new String[] {"Available", "Reserved", "Occupied", "In Maintenance"}));
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -766,11 +762,11 @@ public class MainMenu extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(editRN)
-                                .addComponent(editRS)
                                 .addComponent(editRoomType)
                                 .addComponent(editRoomLimit)
-                                .addComponent(editRoomUpload, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(editRR))))
+                                .addComponent(editRoomUpload, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
+                                .addComponent(editRR)
+                                .addComponent(editRS))))
                     .addComponent(editRoomLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 646, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -779,7 +775,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(143, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(editRoomLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -802,7 +798,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel65, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(editRS, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(editRS))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel101, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -810,7 +806,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addComponent(editRoomButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane13))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
 
         RoomPanel.addTab("Edit Room", jPanel7);
@@ -1311,8 +1307,8 @@ public class MainMenu extends javax.swing.JFrame {
                         .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(editCheckInDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(editCheckOutDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(editRoomReservationSearch, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(editMiscCharge, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(editMiscCharge, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(editRoomReservationSearch, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(23, Short.MAX_VALUE))
@@ -1363,14 +1359,14 @@ public class MainMenu extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Guest Name", "Check Out Date", "Total", "Payment Status"
+                "Room Number", "Guest Name", "Check Out Date", "Total", "Payment Status", "Checked Out?"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -1422,17 +1418,6 @@ public class MainMenu extends javax.swing.JFrame {
         jRadioButton7.setText("CashApp");
         jRadioButton7.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jLabel17.setText(" Payment Status:");
-        jLabel17.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
-
-        paymentRoomStatus.add(jRadioButton11);
-        jRadioButton11.setText("Paid");
-        jRadioButton11.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-
-        paymentRoomStatus.add(jRadioButton12);
-        jRadioButton12.setText("Pending");
-        jRadioButton12.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -1464,12 +1449,7 @@ public class MainMenu extends javax.swing.JFrame {
                                         .addComponent(jRadioButton10)
                                         .addGap(18, 18, 18)
                                         .addComponent(jRadioButton7))
-                                    .addComponent(jRadioButton9)))
-                            .addComponent(jLabel17)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jRadioButton11)
-                                .addGap(18, 18, 18)
-                                .addComponent(jRadioButton12)))
+                                    .addComponent(jRadioButton9))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(checkoutbutton)))
                 .addContainerGap(269, Short.MAX_VALUE))
@@ -1498,13 +1478,7 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(jRadioButton8)
                             .addComponent(jRadioButton10)
                             .addComponent(jRadioButton7))))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel17)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton11)
-                    .addComponent(jRadioButton12))
-                .addGap(270, 270, 270))
+                .addGap(368, 368, 368))
         );
 
         RReservationPanel.addTab("Check Out", jPanel4);
@@ -1630,12 +1604,12 @@ public class MainMenu extends javax.swing.JFrame {
         jRadioButton4.setText("Other");
         jRadioButton4.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jButton1.setText("Submit Information");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        addGuestButton.setText("Submit Information");
+        addGuestButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addGuestButton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        addGuestButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1confirm(evt);
+                addGuestButtonconfirm(evt);
             }
         });
 
@@ -1649,7 +1623,7 @@ public class MainMenu extends javax.swing.JFrame {
                     .addGroup(AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(AddGuestLayout.createSequentialGroup()
                             .addGap(627, 627, 627)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(addGuestButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AddGuestLayout.createSequentialGroup()
                             .addComponent(jLabel8)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1740,7 +1714,7 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(jRadioButton3)
                             .addComponent(jRadioButton4))
                         .addGap(9, 9, 9)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(addGuestButton, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(249, Short.MAX_VALUE))
         );
@@ -2432,12 +2406,6 @@ public class MainMenu extends javax.swing.JFrame {
         JBBankTransfer1.setText("Bank Transfer");
         JBBankTransfer1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        DCEventStart1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                DCEventStart1PropertyChange(evt);
-            }
-        });
-
         EventReservationPMGroup.add(JBCash1);
         JBCash1.setText("Cash");
         JBCash1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
@@ -2454,12 +2422,12 @@ public class MainMenu extends javax.swing.JFrame {
         JBCard1.setText("Card");
         JBCard1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        ConfirmButton1.setText("Reserve Event");
-        ConfirmButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ConfirmButton1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        ConfirmButton1.addActionListener(new java.awt.event.ActionListener() {
+        addEventRbutton.setText("Reserve Event");
+        addEventRbutton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addEventRbutton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        addEventRbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConfirmButton1ActionPerformed(evt);
+                addEventRbuttonActionPerformed(evt);
             }
         });
 
@@ -2601,7 +2569,7 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(txtTaxes2)
                             .addComponent(txtTotal2)
                             .addComponent(txtDownPayment2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(ConfirmButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addEventRbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
@@ -2640,7 +2608,7 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(jLabel51)
                             .addComponent(txtDownPayment2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(ConfirmButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(addEventRbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel43)
@@ -3538,20 +3506,22 @@ public class MainMenu extends javax.swing.JFrame {
     //</editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Checkout Table">     
-    private void view_checkOut(int RoomNo) {
+    private void view_checkOut(int reservationID) {
         DefaultTableModel tbmodel = (DefaultTableModel) checkoutTable.getModel();
         tbmodel.setRowCount(0);
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
-            String sql = "select concat(Guest.FirstName, ' ',Guest.LastName) as[Name],RoomReservation.CheckOutDate, RoomReservation.Total, RoomReservation.PaymentStatus from RoomReservation join Guest on Guest.GuestID = RoomReservation.GuestID join Room on Room.RoomNo = RoomReservation.RoomNo where RoomStatus = 'Reserved' and RoomReservation.RoomNo = " + RoomNo;
+            String sql = "select RoomReservation.RoomNo, concat(Guest.FirstName, ' ',Guest.LastName) as[Name],RoomReservation.CheckOutDate, RoomReservation.Total, RoomReservation.PaymentStatus, RoomReservation.CheckOutStatus from RoomReservation join Guest on Guest.GuestID = RoomReservation.GuestID join Room on Room.RoomNo = RoomReservation.RoomNo where RoomReservation.ReservationID = " + reservationID;
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
+                String roomNo = rs.getString("RoomNo");
                 String RoomNoe = rs.getString("Name");
                 String RoomType = rs.getString("CheckOutDate");
                 String RoomRate = rs.getString("Total");
                 boolean status = rs.getBoolean("PaymentStatus");
-                tbmodel.addRow(new Object[]{RoomNoe, RoomType, RoomRate, status});
+                boolean checkstatus = rs.getBoolean("CheckOutStatus");
+                tbmodel.addRow(new Object[]{roomNo, RoomNoe, RoomType, RoomRate, status, checkstatus});
                 if (RoomNoe.isBlank()) {
                     JOptionPane.showMessageDialog(this, "No rooms available for checkout!");
                 }
@@ -3600,6 +3570,7 @@ public class MainMenu extends javax.swing.JFrame {
     }
     //</editor-fold>
 
+    // <editor-fold defaultstate="collapsed" desc="View Edit Room Reservations Table">   
     private void view_eRReservation() {
         DefaultTableModel tbmodel = (DefaultTableModel) editRoomReservationTable.getModel();
         tbmodel.setRowCount(0);
@@ -3629,6 +3600,7 @@ public class MainMenu extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
+    //</editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="View Events Table">     
     private void view_Events() {
@@ -3799,6 +3771,7 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     //</editor-fold>
+    // <editor-fold defaultstate="collapsed" desc="View Remove Room Table">   
     private void view_removeConfRoom() {
         DefaultTableModel tbmodel = (DefaultTableModel) removeConfTable.getModel();
 
@@ -3822,6 +3795,7 @@ public class MainMenu extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
+    //</editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="getSelectedButtonText">     
     String getSelectedButtonText(ButtonGroup buttonGroup) {
@@ -3837,13 +3811,14 @@ public class MainMenu extends javax.swing.JFrame {
     }
     //</editor-fold>
 
+    // <editor-fold defaultstate="collapsed" desc="Set Date Widget">   
     private void setDateLabel() {
         Date date = new Date(); // current date
         SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy");
         String formattedDate = dateFormat.format(date);
         dateLabel.setText(formattedDate);
     }
-
+    //</editor-fold>
 
     private void GuestPanelStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_GuestPanelStateChanged
         switch (GuestPanel.getSelectedIndex()) {
@@ -3871,11 +3846,11 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_GuestPanelStateChanged
 
-    private void jButton1confirm(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1confirm
+    private void addGuestButtonconfirm(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addGuestButtonconfirm
         // TODO add your handling code here:
         try {
             String choice = getSelectedButtonText(genderGroup);
-            if (choice == "Other") {
+            if (choice.equals("Other")) {
                 choice = JOptionPane.showInputDialog(null, "Enter gender: ");
             }
 
@@ -3909,7 +3884,7 @@ public class MainMenu extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }//GEN-LAST:event_jButton1confirm
+    }//GEN-LAST:event_addGuestButtonconfirm
 
     private void RoomPanelStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_RoomPanelStateChanged
         switch (RoomPanel.getSelectedIndex()) {
@@ -4005,8 +3980,6 @@ public class MainMenu extends javax.swing.JFrame {
     private void submitRoomReservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitRoomReservationActionPerformed
         // TODO add your handling code here:
         try {
-            String choice = getSelectedButtonText(paymentRoomGroup);
-            String paid = getSelectedButtonText(paymentRoomStatus);
 
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
@@ -4014,7 +3987,7 @@ public class MainMenu extends javax.swing.JFrame {
             String date1 = CheckInDate.getDateTimeStrict().format(DateTimeFormatter.ISO_DATE_TIME);
             String date2 = CheckOutDate.getDateTimeStrict().format(DateTimeFormatter.ISO_DATE_TIME);
 
-            if (Room.AddReservation(Integer.parseInt(txtGuestID.getText()), txtRoomNo.getText(), date1, date2, txtRoomRate.getText(), choice, txtTaxes.getText(), txtTotal.getText())) {
+            if (Room.AddReservation(Room.getReservationID(), Integer.parseInt(txtGuestID.getText()), txtRoomNo.getText(), date1, date2, txtRoomRate.getText(), txtTaxes.getText(), txtTotal.getText())) {
                 JOptionPane.showMessageDialog(this, "Reservation Success!");
             } else {
                 JOptionPane.showMessageDialog(this, "Reservation Unsuccessful!");
@@ -4085,14 +4058,23 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_CheckOutDatePropertyChange
 
     private void checkoutbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkoutbuttonActionPerformed
-        if (Room.CheckOut(Integer.parseInt(roomnumber.getText())) && checkoutTable.getColumnCount() == 1) {
-            JOptionPane.showMessageDialog(this, "Checkout Success!");
-        } else
-            JOptionPane.showMessageDialog(this, "Checkout failed!");
+        if ((boolean) checkoutTable.getValueAt(0, 5)) {
+            JOptionPane.showMessageDialog(this, "Already Checked out!");
+        } else {
+            String payment = getSelectedButtonText(paymentRoomGroup);
+            String roomNo = (String) checkoutTable.getValueAt(0, 0);
+            if (Room.CheckOut(Integer.parseInt(roomnumber.getText()), payment, roomNo)) {
+
+                JOptionPane.showMessageDialog(this, "Checkout Success!");
+            } else {
+                JOptionPane.showMessageDialog(this, "Checkout failed!");
+            }
+        }
     }//GEN-LAST:event_checkoutbuttonActionPerformed
 
     private void searchRoomCheckoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchRoomCheckoutActionPerformed
         // TODO add your handling code here:
+
         try {
             view_checkOut(Integer.parseInt(roomnumber.getText()));
         } catch (Exception e) {
@@ -4101,7 +4083,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     }//GEN-LAST:event_searchRoomCheckoutActionPerformed
 
-    private void ConfirmButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmButton1ActionPerformed
+    private void addEventRbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEventRbuttonActionPerformed
         try {
             String choice1 = getSelectedButtonText(EventReservationPMGroup);
             String status = getSelectedButtonText(EventReservationPGroup);
@@ -4132,11 +4114,7 @@ public class MainMenu extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }//GEN-LAST:event_ConfirmButton1ActionPerformed
-
-    private void DCEventStart1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_DCEventStart1PropertyChange
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DCEventStart1PropertyChange
+    }//GEN-LAST:event_addEventRbuttonActionPerformed
     Double eventrent;
     private void confRoomSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confRoomSearchActionPerformed
         int RoomID = Integer.parseInt(txtEventRoomID1.getText());
@@ -4664,17 +4642,26 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void editRoomButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editRoomButtonActionPerformed
         // TODO add your handling code here:
-        String substring = editRR.getText().toString().substring(1);
+        int row = editRoomTable.getSelectedRow();
+        String substring = editRR.getText().substring(1);
         String roomType = (String) editRoomType.getValue();
+        String rs = (String) editRS.getValue();
+        String initialrs = (String) editRoomTable.getValueAt(row, 4);
 
-        if (editRS.getText().equalsIgnoreCase("RESERVED")) { // replace this with roomstatus column on respective table
+        if (initialrs.equalsIgnoreCase("RESERVED")) { // replace this with roomstatus column on respective table
             // check editRS if "occupied"
             // else VVVV
             JOptionPane.showMessageDialog(this, "Room still reserved!");
-        } else if (imagepath != null && editRS.getText().equalsIgnoreCase("AVAILABLE")) {
+            if (initialrs.equalsIgnoreCase("OCCUPIED")) {
+                JOptionPane.showMessageDialog(this, "Room currently occupied!");
+            }
+
+        } else if (imagepath != null && initialrs.equalsIgnoreCase("AVAILABLE")) {
             int roomid = Integer.parseInt(editRN.getText());
             try {
                 editRoomLimit.commitEdit();
+                editRoomType.commitEdit();
+                editRS.commitEdit();
             } catch (java.text.ParseException e) {
             }
             int roomLimit = (Integer) editRoomLimit.getValue();
@@ -4693,11 +4680,12 @@ public class MainMenu extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(this, "Data not Saved!");
             }
-        } else if (imagepath == null && editRS.getText().equalsIgnoreCase("AVAILABLE")) {
+        } else if (imagepath == null && initialrs.equalsIgnoreCase("AVAILABLE")) {
             int roomid = Integer.parseInt(editRN.getText());
             try {
                 editRoomLimit.commitEdit();
                 editRoomType.commitEdit();
+                editRS.commitEdit();
             } catch (java.text.ParseException e) {
             }
             int roomLimit = (Integer) editRoomLimit.getValue();
@@ -4721,7 +4709,7 @@ public class MainMenu extends javax.swing.JFrame {
         editRoomType.setValue((String) editRoomTable.getValueAt(row, 1));
         editRR.setValue(InputNumberFilter.currencyConverter(editRoomTable.getValueAt(row, 2)));
         editRoomLimit.setValue(Integer.valueOf((String) editRoomTable.getValueAt(row, 3)));
-        editRS.setText((String) editRoomTable.getValueAt(row, 4));
+        editRS.setValue((String) editRoomTable.getValueAt(row, 4));
         try {
             System.out.println("eto ung row: " + row);
             String gid = (String) editRoomTable.getModel().getValueAt(row, 0);
@@ -4928,6 +4916,7 @@ public class MainMenu extends javax.swing.JFrame {
     private void editRoomReservationTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editRoomReservationTableMouseClicked
         // TODO add your handling code here: this is a nightmare to code util.Date and sql.Date conflict 
         int row = editRoomReservationTable.getSelectedRow();
+
         editRoomReservationSearch.setText((String) editRoomReservationTable.getValueAt(row, 1));
         java.sql.Date sqlCheckinDate = (java.sql.Date) editRoomReservationTable.getValueAt(row, 2);
         java.sql.Time checkinTime = (java.sql.Time) editRoomReservationTable.getValueAt(row, 3);
@@ -4941,11 +4930,12 @@ public class MainMenu extends javax.swing.JFrame {
         LocalDateTime checkout = LocalDateTime.of(localDate2, localTime2);
         editCheckInDate.setDateTimeStrict(checkin);
         editCheckOutDate.setDateTimeStrict(checkout);
-        if(editRoomReservationTable.getValueAt(row, 6)!= null){
+        if (editRoomReservationTable.getValueAt(row, 6) != null) {
             editMiscCharge.setValue(InputNumberFilter.currencyConverter(editRoomReservationTable.getValueAt(row, 6)));
-        } else
-            editMiscCharge.repaint();
-        
+        } else {
+            editMiscCharge.setValue("₱00000.00");
+        }
+
 
     }//GEN-LAST:event_editRoomReservationTableMouseClicked
 
@@ -4954,18 +4944,19 @@ public class MainMenu extends javax.swing.JFrame {
         int row = editRoomReservationTable.getSelectedRow();
         String date1 = editCheckInDate.getDateTimeStrict().format(DateTimeFormatter.ISO_DATE_TIME);
         String date2 = editCheckOutDate.getDateTimeStrict().format(DateTimeFormatter.ISO_DATE_TIME);
+        String initialMisc = (String) editRoomReservationTable.getValueAt(row, 6);
         String id = (String) editRoomReservationTable.getValueAt(row, 0);
         String roomNo = editRoomReservationSearch.getText();
         String total = (String) editRoomReservationTable.getValueAt(row, 7);
         String misc = editMiscCharge.getText();
         String miscTable = (String) editRoomReservationTable.getValueAt(row, 6);
-        if (misc.equalsIgnoreCase("₱00000.00") || misc.substring(1, 8).equalsIgnoreCase(miscTable.substring(0,7))) {
+        if (misc.equalsIgnoreCase("₱00000.00") || misc.substring(1, 8).equalsIgnoreCase(miscTable.substring(0, 7))) {
             misc = "0";
         } else {
             misc = misc.substring(1, 8);
         }
         try {
-            if (Room.editReservation(id, roomNo, date1, date2, misc, total)) {
+            if (Room.editReservation(id, roomNo, date1, date2, misc, total, initialMisc)) {
                 JOptionPane.showMessageDialog(this, "Room Reservation successfully edited!");
                 view_eRReservation();
             } else {
@@ -5004,7 +4995,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTable ConfRoomTable;
     private javax.swing.JPanel ConferenceRoom;
     private javax.swing.JTabbedPane ConferenceSection;
-    private javax.swing.JButton ConfirmButton1;
     private com.toedter.calendar.JDateChooser DCEventStart1;
     private javax.swing.JTable EditConfTable;
     private javax.swing.JPanel EditGuest;
@@ -5046,6 +5036,8 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton addEventButton;
     private javax.swing.JTextField addEventID;
     private javax.swing.JTextField addEventName;
+    private javax.swing.JButton addEventRbutton;
+    private javax.swing.JButton addGuestButton;
     private javax.swing.JButton addRoom;
     private javax.swing.JSpinner addRoomLimit;
     private javax.swing.JTextField addRoomNo;
@@ -5101,7 +5093,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField editPhone;
     private javax.swing.JTextField editRN;
     private javax.swing.JFormattedTextField editRR;
-    private javax.swing.JTextField editRS;
+    private javax.swing.JSpinner editRS;
     private javax.swing.JButton editReservation;
     private javax.swing.JButton editRoomButton;
     private javax.swing.JLabel editRoomLabel;
@@ -5124,7 +5116,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.ButtonGroup genderGroup;
     private javax.swing.JTextField guestfield;
     private javax.swing.JTextField homefield;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -5146,7 +5137,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -5262,8 +5252,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton10;
-    private javax.swing.JRadioButton jRadioButton11;
-    private javax.swing.JRadioButton jRadioButton12;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
@@ -5297,7 +5285,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField middlefield;
     private javax.swing.JTextField mobilefield;
     private javax.swing.ButtonGroup paymentRoomGroup;
-    private javax.swing.ButtonGroup paymentRoomStatus;
     private javax.swing.JTable removeConfTable;
     private javax.swing.JButton removeRBution;
     private javax.swing.JTextField removeRL;

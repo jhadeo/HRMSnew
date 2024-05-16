@@ -68,19 +68,35 @@ public class Room {
         return rate;
     }
 
-    static boolean AddReservation(int guestID, String roomNo, String checkInDate, String checkOutDate, String roomRate, String payMethod, String Taxes, String Total) {
+    static String getReservationID() {
+        String rate = "";
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            Statement stmt = con.createStatement();
+            String search = "select MAX(ReservationID)+1 as  [ReservationID] from RoomReservation ";
+            ResultSet rs = stmt.executeQuery(search);
+            while (rs.next()) {
+                rate = rs.getString("ReservationID");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return rate;
+    }
+
+    static boolean AddReservation(String reservationID, int guestID, String roomNo, String checkInDate, String checkOutDate, String roomRate, String Taxes, String Total) {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
 
-            String insertsql = "INSERT INTO RoomReservation (GuestID, RoomNo, CheckInDate, CheckOutDate, RoomRate, PayMethod, Taxes,Total) values(?, ?, ?, ?, ?, ?, ?,?)";
+            String insertsql = "INSERT INTO RoomReservation (ReservationID, GuestID, RoomNo, CheckInDate, CheckOutDate, RoomRate, Taxes,Total) values(?,?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement pstmt = con.prepareStatement(insertsql);
-            pstmt.setInt(1, guestID);
-            pstmt.setString(2, roomNo);
-            pstmt.setString(3, checkInDate);
-            pstmt.setString(4, checkOutDate);
-            pstmt.setString(5, roomRate);
-            pstmt.setString(6, payMethod);
+            pstmt.setString(1, reservationID);
+            pstmt.setInt(2, guestID);
+            pstmt.setString(3, roomNo);
+            pstmt.setString(4, checkInDate);
+            pstmt.setString(5, checkOutDate);
+            pstmt.setString(6, roomRate);
             pstmt.setString(7, Taxes);
             pstmt.setString(8, Total);
             pstmt.executeUpdate();
@@ -95,13 +111,17 @@ public class Room {
 
     }
 
-    static boolean editReservation(String rID, String roomNo, String checkInDate, String checkOutDate, String miscCharge, String total) {
-        
+    static boolean editReservation(String rID, String roomNo, String checkInDate, String checkOutDate, String miscCharge, String total, String initialMisc) {
+
+        double intialmisc = Double.valueOf(initialMisc);
+
         double misc = Double.valueOf(miscCharge);
+
+        misc = misc - intialmisc;
         double totaldoble = Double.valueOf(total);
         double totalnow = misc + totaldoble;
-        total = ""+totalnow;
-        
+        total = "" + totalnow;
+
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
@@ -122,15 +142,21 @@ public class Room {
         }
     }
 
-    static boolean CheckOut(int RoomNo) {
+    static boolean CheckOut(int rID, String paymentMethod,String roomNo) {
         try {
-            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
-            Statement stmt = con.createStatement();
 
-            String insertSql = "UPDATE Room SET RoomStatus = 'Available' WHERE RoomNo = " + RoomNo;
-            stmt.execute(insertSql);
-            String Sql = "UPDATE RoomReservation SET PaymentStatus = 1, CheckOutStatus = 1 WHERE RoomNo = " + RoomNo + " AND CheckOutStatus = 0";
-            stmt.execute(Sql);
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            
+            String insertsql = "UPDATE RoomReservation SET PaymentStatus = 1, CheckOutStatus = 1, PayMethod =? WHERE ReservationID = ?";
+            PreparedStatement pstmt = con.prepareStatement(insertsql);
+            pstmt.setString(1, paymentMethod);
+            pstmt.setInt(2, rID);
+            pstmt.executeUpdate();
+            
+            String update = "UPDATE Room SET RoomStatus = 'Available' WHERE RoomNo = ?";
+            PreparedStatement pstmt2 = con.prepareStatement(update);
+            pstmt2.setString(1,roomNo);
+            pstmt2.executeUpdate();
             return true;
         } catch (Exception e) {
             e.printStackTrace();

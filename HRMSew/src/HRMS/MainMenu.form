@@ -8,8 +8,6 @@
     </Component>
     <Component class="javax.swing.ButtonGroup" name="membershipGroup">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="paymentRoomStatus">
-    </Component>
     <Component class="javax.swing.ButtonGroup" name="EventReservationPGroup">
     </Component>
     <Component class="javax.swing.ButtonGroup" name="EventReservationPMGroup">
@@ -584,11 +582,11 @@
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                       <Component id="editRN" max="32767" attributes="0"/>
-                                                      <Component id="editRS" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="editRoomType" max="32767" attributes="0"/>
                                                       <Component id="editRoomLimit" max="32767" attributes="0"/>
-                                                      <Component id="editRoomUpload" max="32767" attributes="0"/>
+                                                      <Component id="editRoomUpload" pref="96" max="32767" attributes="0"/>
                                                       <Component id="editRR" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="editRS" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                           </Group>
@@ -603,7 +601,7 @@
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="143" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Component id="editRoomLabel" min="-2" pref="214" max="-2" attributes="0"/>
@@ -630,7 +628,7 @@
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                   <Component id="jLabel65" max="32767" attributes="0"/>
-                                                  <Component id="editRS" min="-2" pref="32" max="-2" attributes="0"/>
+                                                  <Component id="editRS" max="32767" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
@@ -642,7 +640,7 @@
                                           </Group>
                                           <Component id="jScrollPane13" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="144" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -747,11 +745,6 @@
                             </Component>
                             <Component class="javax.swing.JTextField" name="editRN">
                             </Component>
-                            <Component class="javax.swing.JTextField" name="editRS">
-                              <Properties>
-                                <Property name="editable" type="boolean" value="false"/>
-                              </Properties>
-                            </Component>
                             <Component class="javax.swing.JButton" name="editRoomButton">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Edit Room"/>
@@ -821,6 +814,18 @@
                               <AuxValues>
                                 <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(currencyFormat)"/>
                               </AuxValues>
+                            </Component>
+                            <Component class="javax.swing.JSpinner" name="editRS">
+                              <Properties>
+                                <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                                  <SpinnerModel type="list">
+                                    <ListItem value="Available"/>
+                                    <ListItem value="Reserved"/>
+                                    <ListItem value="Occupied"/>
+                                    <ListItem value="In Maintenance"/>
+                                  </SpinnerModel>
+                                </Property>
+                              </Properties>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -1624,8 +1629,8 @@
                                               <Group type="103" groupAlignment="1" attributes="0">
                                                   <Component id="editCheckInDate" min="-2" max="-2" attributes="0"/>
                                                   <Component id="editCheckOutDate" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="editRoomReservationSearch" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                                  <Component id="editMiscCharge" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="editMiscCharge" alignment="0" min="-2" pref="138" max="-2" attributes="0"/>
+                                                  <Component id="editRoomReservationSearch" alignment="0" min="-2" pref="138" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -1840,12 +1845,6 @@
                                                           <Component id="jRadioButton9" min="-2" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
-                                                  <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Component id="jRadioButton11" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="jRadioButton12" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
                                               </Group>
                                               <EmptySpace max="32767" attributes="0"/>
                                               <Component id="checkoutbutton" min="-2" max="-2" attributes="0"/>
@@ -1884,14 +1883,7 @@
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jLabel17" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jRadioButton11" alignment="3" max="-2" attributes="0"/>
-                                          <Component id="jRadioButton12" alignment="3" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="270" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="368" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -1923,11 +1915,13 @@
                                 <Component class="javax.swing.JTable" name="checkoutTable">
                                   <Properties>
                                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                      <Table columnCount="4" rowCount="0">
+                                      <Table columnCount="6" rowCount="0">
+                                        <Column editable="false" title="Room Number" type="java.lang.String"/>
                                         <Column editable="false" title="Guest Name" type="java.lang.String"/>
                                         <Column editable="false" title="Check Out Date" type="java.lang.String"/>
                                         <Column editable="false" title="Total" type="java.lang.String"/>
                                         <Column editable="false" title="Payment Status" type="java.lang.Boolean"/>
+                                        <Column editable="false" title="Checked Out?" type="java.lang.Boolean"/>
                                       </Table>
                                     </Property>
                                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -2041,36 +2035,6 @@
                                   <ComponentRef name="paymentRoomGroup"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="CashApp"/>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Light" size="18" style="0"/>
-                                </Property>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel17">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value=" Payment Status:"/>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Light" size="24" style="0"/>
-                                </Property>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton11">
-                              <Properties>
-                                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="paymentRoomStatus"/>
-                                </Property>
-                                <Property name="text" type="java.lang.String" value="Paid"/>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Light" size="18" style="0"/>
-                                </Property>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JRadioButton" name="jRadioButton12">
-                              <Properties>
-                                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-                                  <ComponentRef name="paymentRoomStatus"/>
-                                </Property>
-                                <Property name="text" type="java.lang.String" value="Pending"/>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Segoe UI Light" size="18" style="0"/>
                                 </Property>
@@ -2212,7 +2176,7 @@
                                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                               <Group type="102" attributes="0">
                                                   <EmptySpace min="-2" pref="627" max="-2" attributes="0"/>
-                                                  <Component id="jButton1" max="32767" attributes="0"/>
+                                                  <Component id="addGuestButton" max="32767" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
@@ -2321,7 +2285,7 @@
                                                   <Component id="jRadioButton4" alignment="3" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                                              <Component id="jButton1" min="-2" pref="64" max="-2" attributes="0"/>
+                                              <Component id="addGuestButton" min="-2" pref="64" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="jLabel9" min="-2" pref="35" max="-2" attributes="0"/>
                                       </Group>
@@ -2503,7 +2467,7 @@
                                 <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value=" emailfield.setDocument(new JTextFieldLimit(345));"/>
                               </AuxValues>
                             </Component>
-                            <Component class="javax.swing.JButton" name="jButton1">
+                            <Component class="javax.swing.JButton" name="addGuestButton">
                               <Properties>
                                 <Property name="text" type="java.lang.String" value="Submit Information"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -2514,7 +2478,7 @@
                                 </Property>
                               </Properties>
                               <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1confirm"/>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addGuestButtonconfirm"/>
                               </Events>
                             </Component>
                           </SubComponents>
@@ -3717,7 +3681,7 @@
                                                       <Component id="txtDownPayment2" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <Component id="ConfirmButton1" min="-2" pref="137" max="-2" attributes="0"/>
+                                              <Component id="addEventRbutton" min="-2" pref="137" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="32767" attributes="0"/>
                                       </Group>
@@ -3766,7 +3730,7 @@
                                                       <Component id="txtDownPayment2" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="ConfirmButton1" min="-2" pref="43" max="-2" attributes="0"/>
+                                                  <Component id="addEventRbutton" min="-2" pref="43" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -3959,9 +3923,6 @@
                                   </AuxValues>
                                 </Component>
                                 <Component class="com.toedter.calendar.JDateChooser" name="DCEventStart1">
-                                  <Events>
-                                    <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="DCEventStart1PropertyChange"/>
-                                  </Events>
                                 </Component>
                                 <Component class="javax.swing.JRadioButton" name="JBCash1">
                                   <Properties>
@@ -3996,7 +3957,7 @@
                                     </Property>
                                   </Properties>
                                 </Component>
-                                <Component class="javax.swing.JButton" name="ConfirmButton1">
+                                <Component class="javax.swing.JButton" name="addEventRbutton">
                                   <Properties>
                                     <Property name="text" type="java.lang.String" value="Reserve Event"/>
                                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -4007,7 +3968,7 @@
                                     </Property>
                                   </Properties>
                                   <Events>
-                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConfirmButton1ActionPerformed"/>
+                                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addEventRbuttonActionPerformed"/>
                                   </Events>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel52">
