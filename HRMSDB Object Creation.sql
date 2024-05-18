@@ -37,7 +37,7 @@ RoomRate MONEY NOT NULL,
 --Derived from Room(RoomRate) * DATEDIFF(CheckInDate, CheckOutDate) - membership or birthday discounts
 Taxes MONEY NOT NULL,
 --Derived from RoomRate * 12%
-MiscCharge MONEY,
+MiscCharge MONEY DEFAULT 0,
 --Charges accrued through misc. means, such as additional services or reparations
 Total MONEY NOT NULL,
 --Derived from RoomRate + Taxes + MiscCharge
