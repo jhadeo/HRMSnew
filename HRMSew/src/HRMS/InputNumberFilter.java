@@ -33,15 +33,19 @@ public class InputNumberFilter extends NumberFormatter {
         return super.stringToValue(text);
     }
 
-    public static String currencyConverter(Object initial){
+    public static String currencyConverter(double initial){
        String converted = "";
        String result;
        converted = initial + "";
        int length = converted.length();
-       converted = converted.substring(0,length-2);
        while(converted.length()!=8){
        converted = "0" + converted;
        }
+       if(converted.indexOf('.')!=5){
+       converted = converted.substring(1) + "0";
+       }  
+       converted = converted.substring(0,8);
+       System.out.println(converted);
        converted ="₱" + converted;
        return converted;
    }

@@ -48,6 +48,10 @@ public class MainMenu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
 
+    //variables
+    Double eventrent;
+    String imagepath = null;
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -333,9 +337,36 @@ public class MainMenu extends javax.swing.JFrame {
         txtCateringCharge1 = new javax.swing.JFormattedTextField(currencyFormat);
         confRoomSearch = new javax.swing.JButton();
         eventGuestIDsearch = new javax.swing.JButton();
+        jPanel23 = new javax.swing.JPanel();
+        jLabel113 = new javax.swing.JLabel();
+        jLabel114 = new javax.swing.JLabel();
+        jLabel115 = new javax.swing.JLabel();
+        jLabel116 = new javax.swing.JLabel();
+        jLabel117 = new javax.swing.JLabel();
+        jLabel118 = new javax.swing.JLabel();
+        reservedToEdit = new javax.swing.JTextField();
+        eventNameEdit = new javax.swing.JTextField();
+        roomAssignedEdit = new javax.swing.JTextField();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        editEventReservationTable = new javax.swing.JTable();
+        editEventReservation = new javax.swing.JButton();
+        jLabel119 = new javax.swing.JLabel();
+        jLabel120 = new javax.swing.JLabel();
+        jLabel121 = new javax.swing.JLabel();
+        jLabel122 = new javax.swing.JLabel();
+        editEventDate = new com.github.lgooddatepicker.components.DatePicker();
+        editEventRSpinner = new javax.swing.JSpinner();
+        jLabel123 = new javax.swing.JLabel();
+        editRoomCeventR = new javax.swing.JFormattedTextField(currencyFormat);
+        editCateringCeventR = new javax.swing.JFormattedTextField(currencyFormat);
+        editDecoCeventR = new javax.swing.JFormattedTextField(currencyFormat);
+        editRequestCeventR = new javax.swing.JFormattedTextField(currencyFormat);
+        editTaxesEventR = new javax.swing.JFormattedTextField(currencyFormat);
+        editTotalEventR = new javax.swing.JFormattedTextField(currencyFormat);
+        extendTime = new javax.swing.JButton();
         jPanel15 = new javax.swing.JPanel();
         jScrollPane12 = new javax.swing.JScrollPane();
-        cancelReservation = new javax.swing.JTable();
+        cancelEventReservationTable = new javax.swing.JTable();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
@@ -357,6 +388,8 @@ public class MainMenu extends javax.swing.JFrame {
         eventTaxesCancel = new javax.swing.JTextField();
         eventTotalCancel = new javax.swing.JTextField();
         eventConfirmCancel = new javax.swing.JButton();
+        jLabel124 = new javax.swing.JLabel();
+        decoCancel = new javax.swing.JTextField();
         ConferenceRoom = new javax.swing.JPanel();
         ConferenceSection = new javax.swing.JTabbedPane();
         jPanel17 = new javax.swing.JPanel();
@@ -775,7 +808,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap(143, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(editRoomLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -806,7 +839,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addComponent(editRoomButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane13))
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         RoomPanel.addTab("Edit Room", jPanel7);
@@ -1095,11 +1128,6 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         jTextField1.setEditable(false);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
 
         jLabel24.setText("Name:");
         jLabel24.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
@@ -1294,7 +1322,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel21Layout.setHorizontalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel21Layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(editReservation, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
@@ -1311,7 +1339,7 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(editRoomReservationSearch, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1618,7 +1646,7 @@ public class MainMenu extends javax.swing.JFrame {
         AddGuestLayout.setHorizontalGroup(
             AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AddGuestLayout.createSequentialGroup()
-                .addContainerGap(137, Short.MAX_VALUE)
+                .addContainerGap(139, Short.MAX_VALUE)
                 .addGroup(AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(AddGuestLayout.createSequentialGroup()
@@ -1671,7 +1699,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(jRadioButton5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jRadioButton6)))
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
         AddGuestLayout.setVerticalGroup(
             AddGuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1987,7 +2015,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap(180, Short.MAX_VALUE)
+                .addContainerGap(240, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel87, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(addEventID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1996,24 +2024,24 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(jLabel88)
                     .addComponent(addEventName, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel90)
-                    .addComponent(addCatering, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE))
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel90, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addCatering))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel91)
-                    .addComponent(addAVR, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE))
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel91, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addAVR))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel89)
-                    .addComponent(addRoomSetup, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE))
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel89, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addRoomSetup))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel92, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(addDecoration, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(addEventButton, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(197, Short.MAX_VALUE))
+                .addContainerGap(254, Short.MAX_VALUE))
         );
 
         addEventName.setDocument(new JTextFieldLimit(20));
@@ -2575,7 +2603,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
-                .addContainerGap(175, Short.MAX_VALUE)
+                .addContainerGap(177, Short.MAX_VALUE)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addComponent(jLabel52)
@@ -2648,7 +2676,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(JBBankTransfer1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(JBCashApp1)))
-                .addContainerGap(254, Short.MAX_VALUE))
+                .addContainerGap(252, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
@@ -2664,21 +2692,45 @@ public class MainMenu extends javax.swing.JFrame {
 
         EventRsection.addTab("Add Reservation", jPanel14);
 
-        jPanel15.setBackground(new java.awt.Color(239, 231, 221));
+        jPanel23.setBackground(new java.awt.Color(239, 231, 221));
 
-        cancelReservation.setModel(new javax.swing.table.DefaultTableModel(
+        jLabel113.setText("Request Charge:");
+        jLabel113.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+
+        jLabel114.setText("Room Assigned:");
+        jLabel114.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+
+        jLabel115.setText("Taxes:");
+        jLabel115.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+
+        jLabel116.setText("Event Date:");
+        jLabel116.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+
+        jLabel117.setText("Total:");
+        jLabel117.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+
+        jLabel118.setText("Duration:");
+        jLabel118.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+
+        reservedToEdit.setEditable(false);
+
+        eventNameEdit.setEditable(false);
+
+        roomAssignedEdit.setEditable(false);
+
+        editEventReservationTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Reserved To", "Event Name", "Room Assigned", "Event Date", "Duration", "Room Charge", "Catering Charge", "Request Charge", "Taxes", "Total", "Payment Status", "Payment Method"
+                "Reserved To", "Event Name", "Room Assigned", "Event Date", "Duration", "Room Charge", "Catering Charge", "Request Charge", "Decor Charge", "Taxes", "Total", "Payment Status", "Payment Method"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -2689,7 +2741,209 @@ public class MainMenu extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane12.setViewportView(cancelReservation);
+        editEventReservationTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                editEventReservationTableMouseClicked(evt);
+            }
+        });
+        jScrollPane17.setViewportView(editEventReservationTable);
+
+        editEventReservation.setText("Edit Reservation");
+        editEventReservation.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        editEventReservation.setPreferredSize(new java.awt.Dimension(75, 32));
+        editEventReservation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editEventReservationActionPerformed(evt);
+            }
+        });
+
+        jLabel119.setText("Room Charge:");
+        jLabel119.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+
+        jLabel120.setText("Reserved To:");
+        jLabel120.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+
+        jLabel121.setText("Catering Charge:");
+        jLabel121.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+
+        jLabel122.setText("Event Name:");
+        jLabel122.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+
+        editEventRSpinner.setModel(new javax.swing.SpinnerNumberModel(1, null, 8, 1));
+
+        jLabel123.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+        jLabel123.setText("Decoration Charge:");
+
+        editRoomCeventR.setEditable(false);
+
+        editCateringCeventR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editCateringCeventRActionPerformed(evt);
+            }
+        });
+
+        editDecoCeventR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editDecoCeventRActionPerformed(evt);
+            }
+        });
+
+        editRequestCeventR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editRequestCeventRActionPerformed(evt);
+            }
+        });
+
+        editTaxesEventR.setEditable(false);
+
+        editTotalEventR.setEditable(false);
+
+        extendTime.setText("Confirm");
+        extendTime.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                extendTimeActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane17)
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel114)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel120)
+                                .addComponent(jLabel122))
+                            .addComponent(jLabel116, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel118, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel23Layout.createSequentialGroup()
+                                .addComponent(editEventRSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(extendTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(reservedToEdit)
+                            .addComponent(eventNameEdit)
+                            .addComponent(roomAssignedEdit)
+                            .addComponent(editEventDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(123, 123, 123)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel121)
+                            .addComponent(jLabel119)
+                            .addComponent(jLabel113)
+                            .addComponent(jLabel115)
+                            .addComponent(jLabel117)
+                            .addComponent(jLabel123))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(editRoomCeventR, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                            .addComponent(editCateringCeventR)
+                            .addComponent(editRequestCeventR)
+                            .addComponent(editDecoCeventR)
+                            .addComponent(editTaxesEventR)
+                            .addComponent(editTotalEventR))
+                        .addGap(181, 181, 181)
+                        .addComponent(editEventReservation, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(reservedToEdit)
+                                .addComponent(jLabel120, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(editEventReservation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel122, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(eventNameEdit, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(roomAssignedEdit)
+                            .addComponent(jLabel114, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel116, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(editEventDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel119, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(editRoomCeventR))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel121, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(editCateringCeventR))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel23Layout.createSequentialGroup()
+                                .addComponent(jLabel113)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel123))
+                            .addGroup(jPanel23Layout.createSequentialGroup()
+                                .addComponent(editRequestCeventR)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(editDecoCeventR)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel115, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(editTaxesEventR))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel117, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(editTotalEventR)))
+                    .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(extendTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel118, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(editEventRSpinner, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        EventRsection.addTab("Edit Reservation", jPanel23);
+
+        jPanel15.setBackground(new java.awt.Color(239, 231, 221));
+
+        cancelEventReservationTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Reserved To", "Event Name", "Room Assigned", "Event Date", "Duration", "Room Charge", "Catering Charge", "Request Charge", "Decor Charge", "Taxes", "Total", "Payment Status", "Payment Method"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        cancelEventReservationTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cancelEventReservationTableMouseClicked(evt);
+            }
+        });
+        jScrollPane12.setViewportView(cancelEventReservationTable);
 
         jLabel36.setText("Reserved To:");
         jLabel36.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
@@ -2749,6 +3003,16 @@ public class MainMenu extends javax.swing.JFrame {
         eventConfirmCancel.setText("Cancel Reservation");
         eventConfirmCancel.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         eventConfirmCancel.setPreferredSize(new java.awt.Dimension(75, 32));
+        eventConfirmCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eventConfirmCancelActionPerformed(evt);
+            }
+        });
+
+        jLabel124.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+        jLabel124.setText("Decoration Charge:");
+
+        decoCancel.setEditable(false);
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -2770,23 +3034,25 @@ public class MainMenu extends javax.swing.JFrame {
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(eventDateCancel)
                             .addComponent(eventDurationCancel)
-                            .addComponent(reservedToCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+                            .addComponent(reservedToCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
                             .addComponent(eventNameCancel)
                             .addComponent(roomAssignedCancel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
-                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel58)
-                            .addComponent(jLabel41)
-                            .addComponent(jLabel59)
-                            .addComponent(jLabel60)
-                            .addComponent(jLabel61))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel58, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel41, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel59, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel60, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel61, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel124, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(roomChargeCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                            .addComponent(roomChargeCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
                             .addComponent(cateringCancel)
                             .addComponent(requestCancel)
                             .addComponent(eventTaxesCancel)
-                            .addComponent(eventTotalCancel))
+                            .addComponent(eventTotalCancel)
+                            .addComponent(decoCancel))
                         .addGap(125, 125, 125)
                         .addComponent(eventConfirmCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -2797,7 +3063,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -2815,11 +3081,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(eventDateCancel, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(eventDurationCancel, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(eventDateCancel, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel41, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2832,15 +3094,24 @@ public class MainMenu extends javax.swing.JFrame {
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(requestCancel)
                             .addComponent(jLabel59, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel124)
+                            .addComponent(decoCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(eventTaxesCancel)
-                            .addComponent(jLabel60, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel60, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel61, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(eventTotalCancel))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(eventTotalCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(eventDurationCancel, javax.swing.GroupLayout.Alignment.TRAILING)))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
 
         EventRsection.addTab("Cancel Reservation", jPanel15);
@@ -2850,7 +3121,7 @@ public class MainMenu extends javax.swing.JFrame {
         EventReservationLayout.setHorizontalGroup(
             EventReservationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EventReservationLayout.createSequentialGroup()
-                .addComponent(EventRsection)
+                .addComponent(EventRsection, javax.swing.GroupLayout.DEFAULT_SIZE, 1164, Short.MAX_VALUE)
                 .addContainerGap())
         );
         EventReservationLayout.setVerticalGroup(
@@ -2918,13 +3189,13 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel17Layout.setHorizontalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel17Layout.createSequentialGroup()
-                .addContainerGap(102, Short.MAX_VALUE)
+                .addContainerGap(100, Short.MAX_VALUE)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addGap(127, 127, 127)
                         .addComponent(jLabel85))
                     .addComponent(roomImageLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel17Layout.setVerticalGroup(
@@ -2981,7 +3252,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
-                .addContainerGap(264, Short.MAX_VALUE)
+                .addContainerGap(262, Short.MAX_VALUE)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -3001,7 +3272,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(jLabel34)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(uploadConf, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(259, Short.MAX_VALUE))
+                .addContainerGap(261, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3719,6 +3990,74 @@ public class MainMenu extends javax.swing.JFrame {
     }
     //</editor-fold>
 
+    // <editor-fold defaultstate="collapsed" desc="View Edit Events Reservation Table">     
+    private void view_EditEventsR() {
+        DefaultTableModel tbmodel = (DefaultTableModel) editEventReservationTable.getModel();
+        tbmodel.setRowCount(0);
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            Statement stmt = con.createStatement();
+            String sql = "select concat(Guest.FirstName, ' ', Guest.LastName) as [ReservedTo], HotelEvents.EventName, ConferenceRooms.ConfRoomNo, EventReservation.EventDate,EventReservation.Duration, EventReservation.ConfRoomCharge, EventReservation.CateringCharge, EventReservation.RequestCharge, EventReservation.DecorCharge, EventReservation.Taxes, EventReservation.Total, EventReservation.PaymentStatus, EventReservation.PayMethod from EventReservation join Guest on EventReservation.GuestID = Guest.GuestID join ConferenceRooms on EventReservation.RoomAssigned = ConferenceRooms.ConfRoomNo join HotelEvents on HotelEvents.EventID = EventReservation.EventID";
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                String guestname = rs.getString("ReservedTo");
+                String EventName = rs.getString("EventName");
+                String conf = rs.getString("ConfRoomNo");
+                Date date = rs.getDate("EventDate");
+                String dura = rs.getString("Duration");
+                String rocharge = rs.getString("ConfRoomCharge");
+                String catcharge = rs.getString("CateringCharge");
+                String reqcharge = rs.getString("RequestCharge");
+                String deccharge = rs.getString("DecorCharge");
+                String tax = rs.getString("Taxes");
+                String total = rs.getString("Total");
+                boolean stat = rs.getBoolean("PaymentStatus");
+                String method = rs.getString("PayMethod");
+
+                tbmodel.addRow(new Object[]{guestname, EventName, conf, date, dura, rocharge, catcharge, reqcharge, deccharge, tax, total, stat, method});
+            }
+            con.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    //</editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="View Delete Events Reservation Table">     
+    private void view_deleteEventsR() {
+        DefaultTableModel tbmodel = (DefaultTableModel) cancelEventReservationTable.getModel();
+        tbmodel.setRowCount(0);
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            Statement stmt = con.createStatement();
+            String sql = "select concat(Guest.FirstName, ' ', Guest.LastName) as [ReservedTo], HotelEvents.EventName, ConferenceRooms.ConfRoomNo, EventReservation.EventDate,EventReservation.Duration, EventReservation.ConfRoomCharge, EventReservation.CateringCharge, EventReservation.RequestCharge, EventReservation.DecorCharge, EventReservation.Taxes, EventReservation.Total, EventReservation.PaymentStatus, EventReservation.PayMethod from EventReservation join Guest on EventReservation.GuestID = Guest.GuestID join ConferenceRooms on EventReservation.RoomAssigned = ConferenceRooms.ConfRoomNo join HotelEvents on HotelEvents.EventID = EventReservation.EventID";
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                String guestname = rs.getString("ReservedTo");
+                String EventName = rs.getString("EventName");
+                String conf = rs.getString("ConfRoomNo");
+                Date date = rs.getDate("EventDate");
+                String dura = rs.getString("Duration");
+                String rocharge = rs.getString("ConfRoomCharge");
+                String catcharge = rs.getString("CateringCharge");
+                String reqcharge = rs.getString("RequestCharge");
+                String deccharge = rs.getString("DecorCharge");
+                String tax = rs.getString("Taxes");
+                String total = rs.getString("Total");
+                boolean stat = rs.getBoolean("PaymentStatus");
+                String method = rs.getString("PayMethod");
+
+                tbmodel.addRow(new Object[]{guestname, EventName, conf, date, dura, rocharge, catcharge, reqcharge, deccharge, tax, total, stat, method});
+            }
+            con.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    //</editor-fold>
+
     // <editor-fold defaultstate="collapsed" desc="View Conference Room Table">     
     private void view_ConfRoom() {
         DefaultTableModel tbmodel = (DefaultTableModel) ConfRoomTable.getModel();
@@ -3769,8 +4108,8 @@ public class MainMenu extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-
     //</editor-fold>
+
     // <editor-fold defaultstate="collapsed" desc="View Remove Room Table">   
     private void view_removeConfRoom() {
         DefaultTableModel tbmodel = (DefaultTableModel) removeConfTable.getModel();
@@ -3817,6 +4156,44 @@ public class MainMenu extends javax.swing.JFrame {
         SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy");
         String formattedDate = dateFormat.format(date);
         dateLabel.setText(formattedDate);
+    }
+    //</editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Compute Event Reservation Total">   
+    private void computeReservationTotal() {
+        int hours = (Integer) spinEventDuration1.getValue();
+        double newrate = eventrent * hours;
+        double catering = Double.parseDouble(txtCateringCharge1.getText().substring(1));
+        double req = Double.parseDouble(txtRequestCharge1.getText().substring(1));
+        double decor = Double.parseDouble(txtDecorationCharge1.getText().substring(1));
+        double taxes = (newrate + catering + req + decor) * 0.12;
+        double total = newrate + taxes + catering + req + decor;
+
+        txtRentalFee1.setText("" + newrate);
+        txtTotal2.setText("" + total);
+        txtTaxes2.setText("" + taxes);
+    }
+    //</editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Compute Edit Event Reservation Total">   
+    private void computeEditReservationTotal(String roomAssigned) {
+        int roomNo = Integer.parseInt(roomAssigned);
+        String rento = Events.getRoomRate(roomNo);
+
+        double rent = Double.parseDouble(rento);
+        int hours = (Integer) editEventRSpinner.getValue();
+        double newrate = rent * hours;
+
+        double catering = Double.parseDouble(editCateringCeventR.getText().substring(1));
+        double req = Double.parseDouble(editRequestCeventR.getText().substring(1));
+        double decor = Double.parseDouble(editDecoCeventR.getText().substring(1));
+
+        double taxes = (newrate + catering + req + decor) * 0.12;
+        double total = newrate + taxes + catering + req + decor;
+
+        editRoomCeventR.setValue(InputNumberFilter.currencyConverter(newrate));
+        editTaxesEventR.setValue(InputNumberFilter.currencyConverter(taxes));
+        editTotalEventR.setValue(InputNumberFilter.currencyConverter(total));
     }
     //</editor-fold>
 
@@ -3946,11 +4323,12 @@ public class MainMenu extends javax.swing.JFrame {
                 view_EventsR();
                 break;
             case 1:
-
                 break;
             case 2:
+                view_EditEventsR();
                 break;
             case 3:
+                view_deleteEventsR();
                 break;
             default:
                 break;
@@ -4115,7 +4493,7 @@ public class MainMenu extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_addEventRbuttonActionPerformed
-    Double eventrent;
+
     private void confRoomSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confRoomSearchActionPerformed
         int RoomID = Integer.parseInt(txtEventRoomID1.getText());
         if (Events.searchRoomID(RoomID)) {
@@ -4128,76 +4506,28 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void spinEventDuration1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spinEventDuration1StateChanged
 
-        int hours = (Integer) spinEventDuration1.getValue();
-        double newrate = eventrent * hours;
-        double catering = txtCateringCharge1.getText() == "" ? 0 : Double.valueOf(txtCateringCharge1.getText());
-        double req = txtRequestCharge1.getText() == "" ? 0 : Double.valueOf(txtRequestCharge1.getText());
-        double decor = txtDecorationCharge1.getText() == "" ? 0 : Double.valueOf(txtDecorationCharge1.getText());
-        double taxes = (newrate + catering + req + decor) * 0.12;
-        double total = newrate + taxes + catering + req + decor;
+        System.out.println(eventrent);
+        computeReservationTotal();
 
-        txtRentalFee1.setText("" + newrate);
-        txtTotal2.setText("" + total);
-        txtTaxes2.setText("" + taxes);
     }//GEN-LAST:event_spinEventDuration1StateChanged
 
     private void txtTotal2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotal2ActionPerformed
-        int hours = (Integer) spinEventDuration1.getValue();
-        double newrate = eventrent * hours;
-        double catering = txtCateringCharge1.getText() == "" ? 0 : Double.valueOf(txtCateringCharge1.getText());
-        double req = txtRequestCharge1.getText() == "" ? 0 : Double.valueOf(txtRequestCharge1.getText());
-        double decor = txtDecorationCharge1.getText() == "" ? 0 : Double.valueOf(txtDecorationCharge1.getText());
-        double taxes = (newrate + catering + req + decor) * 0.12;
-        double total = newrate + taxes + catering + req + decor;
-
-        txtRentalFee1.setText("" + newrate);
-        txtTotal2.setText("" + total);
-        txtTaxes2.setText("" + taxes);
+        computeReservationTotal();
     }//GEN-LAST:event_txtTotal2ActionPerformed
 
     private void txtCateringCharge1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCateringCharge1ActionPerformed
         // TODO add your handling code here:
-        int hours = (Integer) spinEventDuration1.getValue();
-        double newrate = eventrent * hours;
-        double catering = txtCateringCharge1.getText() == "" ? 0 : Double.valueOf(txtCateringCharge1.getText());
-        double req = txtRequestCharge1.getText() == "" ? 0 : Double.valueOf(txtRequestCharge1.getText());
-        double decor = txtDecorationCharge1.getText() == "" ? 0 : Double.valueOf(txtDecorationCharge1.getText());
-        double taxes = (newrate + catering + req + decor) * 0.12;
-        double total = newrate + taxes + catering + req + decor;
-
-        txtRentalFee1.setText("" + newrate);
-        txtTotal2.setText("" + total);
-        txtTaxes2.setText("" + taxes);
+        computeReservationTotal();
     }//GEN-LAST:event_txtCateringCharge1ActionPerformed
 
     private void txtRequestCharge1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRequestCharge1ActionPerformed
         // TODO add your handling code here:
-        int hours = (Integer) spinEventDuration1.getValue();
-        double newrate = eventrent * hours;
-        double catering = txtCateringCharge1.getText() == "" ? 0 : Double.valueOf(txtCateringCharge1.getText());
-        double req = txtRequestCharge1.getText() == "" ? 0 : Double.valueOf(txtRequestCharge1.getText());
-        double decor = txtDecorationCharge1.getText() == "" ? 0 : Double.valueOf(txtDecorationCharge1.getText());
-        double taxes = (newrate + catering + req + decor) * 0.12;
-        double total = newrate + taxes + catering + req + decor;
-
-        txtRentalFee1.setText("" + newrate);
-        txtTotal2.setText("" + total);
-        txtTaxes2.setText("" + taxes);
+        computeReservationTotal();
     }//GEN-LAST:event_txtRequestCharge1ActionPerformed
 
     private void txtDecorationCharge1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDecorationCharge1ActionPerformed
         // TODO add your handling code here:
-        int hours = (Integer) spinEventDuration1.getValue();
-        double newrate = eventrent * hours;
-        double catering = txtCateringCharge1.getText() == "" ? 0 : Double.valueOf(txtCateringCharge1.getText());
-        double req = txtRequestCharge1.getText() == "" ? 0 : Double.valueOf(txtRequestCharge1.getText());
-        double decor = txtDecorationCharge1.getText() == "" ? 0 : Double.valueOf(txtDecorationCharge1.getText());
-        double taxes = (newrate + catering + req + decor) * 0.12;
-        double total = newrate + taxes + catering + req + decor;
-
-        txtRentalFee1.setText("" + newrate);
-        txtTotal2.setText("" + total);
-        txtTaxes2.setText("" + taxes);
+        computeReservationTotal();
     }//GEN-LAST:event_txtDecorationCharge1ActionPerformed
 
     private void eventGuestIDsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventGuestIDsearchActionPerformed
@@ -4217,18 +4547,18 @@ public class MainMenu extends javax.swing.JFrame {
     private void eventDurationCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventDurationCancelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_eventDurationCancelActionPerformed
-    String imagepath = null;
+
     private void addRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addRoomActionPerformed
         int roomid = Integer.parseInt(addRoomNo.getText());
         String roomtype = (String) addRoomType.getValue();
-        String substring = addRoomRate.getText().toString().substring(1);
+        String substring = addRoomRate.getText().substring(1);
         try {
             addRoomLimit.commitEdit();
         } catch (java.text.ParseException e) {
         }
         int roomLimit = (Integer) addRoomLimit.getValue();
         //int roomLimit = Integer.parseInt((String) addRoomLimit.getValue());
-        double roomRate = Double.valueOf(substring);
+        double roomRate = Double.parseDouble(substring);
         File imageFile = new File(imagepath);
         try {
             InputStream is = new FileInputStream(imageFile);
@@ -4406,7 +4736,7 @@ public class MainMenu extends javax.swing.JFrame {
         int row = EditConfTable.getSelectedRow();
         dispConfRoomNo.setText((String) EditConfTable.getValueAt(row, 0));
         editConfRoomCap.setValue(Integer.valueOf((String) EditConfTable.getValueAt(row, 1)));
-        editConfRoomRate.setText(InputNumberFilter.currencyConverter(EditConfTable.getValueAt(row, 2)));
+        editConfRoomRate.setText(InputNumberFilter.currencyConverter(Double.parseDouble((String) EditConfTable.getValueAt(row, 2))));
         dispConfRoomStatus.setText((String) EditConfTable.getValueAt(row, 3));
 
         try {
@@ -4707,7 +5037,7 @@ public class MainMenu extends javax.swing.JFrame {
         int row = editRoomTable.getSelectedRow();
         editRN.setText((String) editRoomTable.getValueAt(row, 0));
         editRoomType.setValue((String) editRoomTable.getValueAt(row, 1));
-        editRR.setValue(InputNumberFilter.currencyConverter(editRoomTable.getValueAt(row, 2)));
+        editRR.setValue(InputNumberFilter.currencyConverter(Double.parseDouble((String) editRoomTable.getValueAt(row, 2))));
         editRoomLimit.setValue(Integer.valueOf((String) editRoomTable.getValueAt(row, 3)));
         editRS.setValue((String) editRoomTable.getValueAt(row, 4));
         try {
@@ -4931,7 +5261,7 @@ public class MainMenu extends javax.swing.JFrame {
         editCheckInDate.setDateTimeStrict(checkin);
         editCheckOutDate.setDateTimeStrict(checkout);
         if (editRoomReservationTable.getValueAt(row, 6) != null) {
-            editMiscCharge.setValue(InputNumberFilter.currencyConverter(editRoomReservationTable.getValueAt(row, 6)));
+            editMiscCharge.setValue(InputNumberFilter.currencyConverter(Double.parseDouble((String) editRoomReservationTable.getValueAt(row, 6))));
         } else {
             editMiscCharge.setValue("₱00000.00");
         }
@@ -4942,6 +5272,7 @@ public class MainMenu extends javax.swing.JFrame {
     private void editReservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editReservationActionPerformed
         // TODO add your handling code here:
         int row = editRoomReservationTable.getSelectedRow();
+        System.out.println("" + row);
         String date1 = editCheckInDate.getDateTimeStrict().format(DateTimeFormatter.ISO_DATE_TIME);
         String date2 = editCheckOutDate.getDateTimeStrict().format(DateTimeFormatter.ISO_DATE_TIME);
         String initialMisc = (String) editRoomReservationTable.getValueAt(row, 6);
@@ -4950,7 +5281,8 @@ public class MainMenu extends javax.swing.JFrame {
         String total = (String) editRoomReservationTable.getValueAt(row, 7);
         String misc = editMiscCharge.getText();
         String miscTable = (String) editRoomReservationTable.getValueAt(row, 6);
-        if (misc.equalsIgnoreCase("₱00000.00") || misc.substring(1, 8).equalsIgnoreCase(miscTable.substring(0, 7))) {
+        System.out.println(misc);
+        if (misc.equalsIgnoreCase("₱00000.00") || misc.substring(1, misc.length() - 1).equalsIgnoreCase(miscTable.substring(0, miscTable.length() - 1))) {
             misc = "0";
         } else {
             misc = misc.substring(1, 8);
@@ -4967,15 +5299,120 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_editReservationActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void logOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOutButtonActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
         new LogIn().setVisible(true);
     }//GEN-LAST:event_logOutButtonActionPerformed
+
+    private void editEventReservationTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editEventReservationTableMouseClicked
+        // TODO add your handling code here:
+
+        int row = editEventReservationTable.getSelectedRow();
+        java.sql.Date sqlCheckinDate = (java.sql.Date) editEventReservationTable.getValueAt(row, 3);
+        LocalDate localDate = sqlCheckinDate.toLocalDate();
+
+        reservedToEdit.setText((String) editEventReservationTable.getValueAt(row, 0));
+        eventNameEdit.setText((String) editEventReservationTable.getValueAt(row, 1));
+        roomAssignedEdit.setText((String) editEventReservationTable.getValueAt(row, 2));
+        editEventDate.setDate(localDate);
+        editEventRSpinner.setValue(Integer.valueOf((String) editEventReservationTable.getValueAt(row, 4)));
+
+        int roomNo = Integer.parseInt(roomAssignedEdit.getText());
+        String rento = Events.getRoomRate(roomNo);
+        double rent = Double.parseDouble(rento);
+        int hours = (Integer) editEventRSpinner.getValue();
+        double newrate = rent * hours;
+        //editRoomCeventR.setValue(InputNumberFilter.currencyConverter(editEventReservationTable.getValueAt(row, 5)));
+        editRoomCeventR.setValue(InputNumberFilter.currencyConverter(newrate));
+        editCateringCeventR.setValue(InputNumberFilter.currencyConverter(Double.parseDouble((String) editEventReservationTable.getValueAt(row, 6))));
+        editRequestCeventR.setValue(InputNumberFilter.currencyConverter(Double.parseDouble((String) editEventReservationTable.getValueAt(row, 7))));
+        editDecoCeventR.setValue(InputNumberFilter.currencyConverter(Double.parseDouble((String) editEventReservationTable.getValueAt(row, 8))));
+        editTaxesEventR.setValue(InputNumberFilter.currencyConverter(Double.parseDouble((String) editEventReservationTable.getValueAt(row, 9))));
+        editTotalEventR.setValue(InputNumberFilter.currencyConverter(Double.parseDouble((String) editEventReservationTable.getValueAt(row, 10))));
+
+    }//GEN-LAST:event_editEventReservationTableMouseClicked
+
+    private void editCateringCeventRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editCateringCeventRActionPerformed
+        // TODO add your handling code here:
+        String roomNo = roomAssignedEdit.getText();
+        //computeEditReservationTotal(roomNo);
+    }//GEN-LAST:event_editCateringCeventRActionPerformed
+
+    private void editRequestCeventRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editRequestCeventRActionPerformed
+        // TODO add your handling code here:
+        String roomNo = roomAssignedEdit.getText();
+        //computeEditReservationTotal(roomNo);
+    }//GEN-LAST:event_editRequestCeventRActionPerformed
+
+    private void editDecoCeventRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editDecoCeventRActionPerformed
+        // TODO add your handling code here:
+        String roomNo = roomAssignedEdit.getText();
+        //computeEditReservationTotal(roomNo);
+    }//GEN-LAST:event_editDecoCeventRActionPerformed
+
+    private void extendTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_extendTimeActionPerformed
+        // TODO add your handling code here:
+        String roomNo = roomAssignedEdit.getText();
+        computeEditReservationTotal(roomNo);
+    }//GEN-LAST:event_extendTimeActionPerformed
+
+    private void editEventReservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editEventReservationActionPerformed
+        // TODO add your handling code here:
+        String guestName = reservedToEdit.getText();
+        String eventName = eventNameEdit.getText();
+        String roomAssigned = roomAssignedEdit.getText();
+        String eventDate = editEventDate.toString();
+        String duration = editEventRSpinner.getValue().toString();
+        String roomCharge = editRoomCeventR.getText().substring(1, editRoomCeventR.getText().length() - 1);
+        String catering = editCateringCeventR.getText().substring(1, editCateringCeventR.getText().length() - 1);
+        String request = editRequestCeventR.getText().substring(1, editRequestCeventR.getText().length() - 1);
+        String deco = editDecoCeventR.getText().substring(1, editDecoCeventR.getText().length() - 1);
+        String taxes = editTaxesEventR.getText().substring(1, editTaxesEventR.getText().length() - 1);
+        String total = editTotalEventR.getText().substring(1, editTotalEventR.getText().length() - 1);
+
+        if (Events.EditEventReservation(eventDate, duration, roomCharge, catering, deco, request, taxes, total, guestName, eventName, roomAssigned)) {
+            JOptionPane.showMessageDialog(this, "Event reservation successfully edited!");
+            view_EditEventsR();
+        } else
+            JOptionPane.showMessageDialog(this, "Event reservation edit failed!");
+    }//GEN-LAST:event_editEventReservationActionPerformed
+
+    private void cancelEventReservationTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelEventReservationTableMouseClicked
+        // TODO add your handling code here:
+        int row = cancelEventReservationTable.getSelectedRow();
+        reservedToCancel.setText((String) cancelEventReservationTable.getValueAt(row, 0));
+        eventNameCancel.setText((String) cancelEventReservationTable.getValueAt(row, 1));
+        roomAssignedCancel.setText((String) cancelEventReservationTable.getValueAt(row, 2));
+        eventDateCancel.setText(cancelEventReservationTable.getValueAt(row, 3).toString());
+        eventDurationCancel.setText((String) cancelEventReservationTable.getValueAt(row, 4));
+        roomChargeCancel.setText((String) cancelEventReservationTable.getValueAt(row, 5));
+        cateringCancel.setText((String) cancelEventReservationTable.getValueAt(row, 6));
+        requestCancel.setText((String) cancelEventReservationTable.getValueAt(row, 7));
+        decoCancel.setText((String) cancelEventReservationTable.getValueAt(row, 8));
+        eventTaxesCancel.setText((String) cancelEventReservationTable.getValueAt(row, 9));
+        eventTotalCancel.setText((String) cancelEventReservationTable.getValueAt(row, 10));
+    }//GEN-LAST:event_cancelEventReservationTableMouseClicked
+
+    private void eventConfirmCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventConfirmCancelActionPerformed
+        // TODO add your handling code here:
+        String guestName = reservedToCancel.getText();
+        String eventName = eventNameCancel.getText();
+        String roomAssigned = roomAssignedCancel.getText();
+        int reply = JOptionPane.showConfirmDialog(this, "Are you sure you want to delete this reservation?", "Delete Event", JOptionPane.YES_NO_OPTION);
+        if (reply == JOptionPane.YES_OPTION) {
+            try {
+                if (Events.removeEventReservation(guestName, eventName, roomAssigned)) {
+                    JOptionPane.showMessageDialog(this, "Event reservation successfully deleted!");
+                    view_deleteEventsR();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Event reservation deletion failed!");
+                }
+            } catch (Exception e) {
+
+            }
+        }
+    }//GEN-LAST:event_eventConfirmCancelActionPerformed
 
     public static void main(String args[]) {
 
@@ -5044,7 +5481,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField addRoomRate;
     private javax.swing.JTextField addRoomSetup;
     private javax.swing.JSpinner addRoomType;
-    private javax.swing.JTable cancelReservation;
+    private javax.swing.JTable cancelEventReservationTable;
     private javax.swing.JTextField cateringCancel;
     private javax.swing.JTable checkoutTable;
     private javax.swing.JButton checkoutbutton;
@@ -5054,6 +5491,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton confRoomSearch;
     private javax.swing.JLabel dateLabel;
     private com.toedter.calendar.JDateChooser datebirthchooser;
+    private javax.swing.JTextField decoCancel;
     private javax.swing.JTextField deleteAVR;
     private javax.swing.JTextField deleteCatering;
     private javax.swing.JButton deleteConfRoom;
@@ -5072,16 +5510,22 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField editAVR;
     private javax.swing.JTextField editAddress;
     private javax.swing.JTextField editCatering;
+    private javax.swing.JFormattedTextField editCateringCeventR;
     private com.github.lgooddatepicker.components.DateTimePicker editCheckInDate;
     private com.github.lgooddatepicker.components.DateTimePicker editCheckOutDate;
     private javax.swing.JButton editConfRoom;
     private javax.swing.JSpinner editConfRoomCap;
     private javax.swing.JTextField editConfRoomRate;
+    private javax.swing.JFormattedTextField editDecoCeventR;
     private javax.swing.JTextField editDecoration;
     private javax.swing.JTextField editEmail;
     private javax.swing.JButton editEventButton;
+    private com.github.lgooddatepicker.components.DatePicker editEventDate;
     private javax.swing.JTextField editEventID;
     private javax.swing.JTextField editEventName;
+    private javax.swing.JSpinner editEventRSpinner;
+    private javax.swing.JButton editEventReservation;
+    private javax.swing.JTable editEventReservationTable;
     private javax.swing.JTable editEventTable;
     private javax.swing.JTextField editFirstName;
     private javax.swing.JToggleButton editGuestConfirm;
@@ -5094,8 +5538,10 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField editRN;
     private javax.swing.JFormattedTextField editRR;
     private javax.swing.JSpinner editRS;
+    private javax.swing.JFormattedTextField editRequestCeventR;
     private javax.swing.JButton editReservation;
     private javax.swing.JButton editRoomButton;
+    private javax.swing.JFormattedTextField editRoomCeventR;
     private javax.swing.JLabel editRoomLabel;
     private javax.swing.JSpinner editRoomLimit;
     private javax.swing.JTextField editRoomReservationSearch;
@@ -5104,14 +5550,18 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTable editRoomTable;
     private javax.swing.JSpinner editRoomType;
     private javax.swing.JButton editRoomUpload;
+    private javax.swing.JFormattedTextField editTaxesEventR;
+    private javax.swing.JFormattedTextField editTotalEventR;
     private javax.swing.JTextField emailfield;
     private javax.swing.JButton eventConfirmCancel;
     private javax.swing.JTextField eventDateCancel;
     private javax.swing.JTextField eventDurationCancel;
     private javax.swing.JButton eventGuestIDsearch;
     private javax.swing.JTextField eventNameCancel;
+    private javax.swing.JTextField eventNameEdit;
     private javax.swing.JTextField eventTaxesCancel;
     private javax.swing.JTextField eventTotalCancel;
+    private javax.swing.JButton extendTime;
     private javax.swing.JTextField firstfield;
     private javax.swing.ButtonGroup genderGroup;
     private javax.swing.JTextField guestfield;
@@ -5132,7 +5582,19 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel110;
     private javax.swing.JLabel jLabel111;
     private javax.swing.JLabel jLabel112;
+    private javax.swing.JLabel jLabel113;
+    private javax.swing.JLabel jLabel114;
+    private javax.swing.JLabel jLabel115;
+    private javax.swing.JLabel jLabel116;
+    private javax.swing.JLabel jLabel117;
+    private javax.swing.JLabel jLabel118;
+    private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel120;
+    private javax.swing.JLabel jLabel121;
+    private javax.swing.JLabel jLabel122;
+    private javax.swing.JLabel jLabel123;
+    private javax.swing.JLabel jLabel124;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -5243,6 +5705,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -5268,6 +5731,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -5296,7 +5760,9 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTable removeRoomTable;
     private javax.swing.JTextField requestCancel;
     private javax.swing.JTextField reservedToCancel;
+    private javax.swing.JTextField reservedToEdit;
     private javax.swing.JTextField roomAssignedCancel;
+    private javax.swing.JTextField roomAssignedEdit;
     private javax.swing.JTextField roomChargeCancel;
     private javax.swing.JLabel roomImageLabel;
     private javax.swing.JLabel roomImageLabel1;
