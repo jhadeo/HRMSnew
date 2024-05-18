@@ -622,8 +622,6 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        addRoomNo.setEditable(false);
-
         jLabel73.setText("Room Type:");
         jLabel73.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
@@ -1237,9 +1235,9 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(jLabel14)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextField4))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel112)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2771,8 +2769,8 @@ public class MainMenu extends javax.swing.JFrame {
 
         editEventRSpinner.setModel(new javax.swing.SpinnerNumberModel(1, null, 8, 1));
 
-        jLabel123.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel123.setText("Decoration Charge:");
+        jLabel123.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         editRoomCeventR.setEditable(false);
 
@@ -3009,8 +3007,8 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jLabel124.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel124.setText("Decoration Charge:");
+        jLabel124.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         decoCancel.setEditable(false);
 
@@ -3121,7 +3119,7 @@ public class MainMenu extends javax.swing.JFrame {
         EventReservationLayout.setHorizontalGroup(
             EventReservationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EventReservationLayout.createSequentialGroup()
-                .addComponent(EventRsection, javax.swing.GroupLayout.DEFAULT_SIZE, 1164, Short.MAX_VALUE)
+                .addComponent(EventRsection)
                 .addContainerGap())
         );
         EventReservationLayout.setVerticalGroup(
@@ -3635,7 +3633,7 @@ public class MainMenu extends javax.swing.JFrame {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
-            String sql = "select * from Guest";
+            String sql = "select * from [Guest Table]";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 String GuestID = String.valueOf(rs.getInt("GuestID"));
@@ -3669,7 +3667,7 @@ public class MainMenu extends javax.swing.JFrame {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
-            String sql = "select * from Guest";
+            String sql = "select * from [Guest Table]";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
 
@@ -3703,7 +3701,7 @@ public class MainMenu extends javax.swing.JFrame {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
-            String sql = "select * from Room";
+            String sql = "select * from [Room Table]";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 String RoomNo = String.valueOf(rs.getInt("RoomNo"));
@@ -3730,7 +3728,7 @@ public class MainMenu extends javax.swing.JFrame {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
-            String sql = "select * from Room";
+            String sql = "select * from [Room Table]";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 String RoomNo = String.valueOf(rs.getInt("RoomNo"));
@@ -3757,7 +3755,7 @@ public class MainMenu extends javax.swing.JFrame {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
-            String sql = "select * from Room";
+            String sql = "select * from [Room Table]";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 String RoomNo = String.valueOf(rs.getInt("RoomNo"));
@@ -3813,7 +3811,7 @@ public class MainMenu extends javax.swing.JFrame {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
-            String sql = "select concat(Guest.FirstName, ' ',Guest.LastName) as [GuestName], RoomReservation.RoomNo,RoomReservation.CheckInDate,RoomReservation.CheckOutDate,RoomReservation.CheckOutDate, RoomReservation.RoomRate, RoomReservation.Taxes, RoomReservation.MiscCharges, RoomReservation.Total, RoomReservation.PaymentStatus, RoomReservation.PayMethod,RoomReservation.CheckOutStatus from RoomReservation join Guest on RoomReservation.GuestID = Guest.GuestID";
+            String sql = "select * from [Room Reservations]";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 String GuestName = rs.getString("GuestName");
@@ -4269,8 +4267,6 @@ public class MainMenu extends javax.swing.JFrame {
                 view_Roomtable();
                 break;
             case 1:
-                int id = Integer.parseInt(Room.getMaxRoomID()) + 1;
-                addRoomNo.setText("" + id);
                 break;
             case 2:
                 view_editRoomtable();
@@ -4341,8 +4337,7 @@ public class MainMenu extends javax.swing.JFrame {
                 view_ConfRoom();
                 break;
             case 1:
-                int a = Integer.parseInt(Room.getMaxConfRoomID()) + 1;
-                addConfRoomNo.setText("" + a);
+               
                 break;
             case 2:
                 view_editConfRoom();

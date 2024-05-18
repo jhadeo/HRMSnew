@@ -10,26 +10,6 @@ import java.sql.*;
 
 public class Room {
 
-    static String getMaxRoomID() {
-        try {
-            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
-            Statement stmt = con.createStatement();
-            String search = "Select MAX(RoomNo) AS [RoomNo] from Room";
-            ResultSet rs = stmt.executeQuery(search);
-            String test = "";
-            while (rs.next()) {
-                test = rs.getString("RoomNo");
-                if (test.isEmpty()) {
-                    return "";
-                } else {
-                    return test;
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return "";
-    }
 
     static boolean searchRoomID(int RoomID) {
         try {
@@ -77,6 +57,8 @@ public class Room {
             ResultSet rs = stmt.executeQuery(search);
             while (rs.next()) {
                 rate = rs.getString("ReservationID");
+                if (rate==null)
+                    return "1";
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -185,6 +167,26 @@ public class Room {
             return false;
         }
     }
+    
+    static boolean addRoom(int roomNo, String roomType, double roomRate, int roomLimit) {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            Statement stmt = con.createStatement();
+            String insertsql = "INSERT INTO Room (RoomNo, RoomType, RoomRate, RoomLimit, RoomStatus)VALUES (?,?,?,?,?,?)";
+            PreparedStatement pstmt = con.prepareStatement(insertsql);
+            pstmt.setInt(1, roomNo);
+            pstmt.setString(2, roomType);
+            pstmt.setDouble(3, roomRate);
+            pstmt.setInt(4, roomLimit);
+            pstmt.setString(5, "Available");
+            pstmt.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
     static boolean editRoom(int roomNo, String roomType, double roomRate, int roomLimit) {
         try {
@@ -240,27 +242,6 @@ public class Room {
     }
 
     //CONFERENCE ROOMS
-    static String getMaxConfRoomID() {
-        try {
-            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
-            Statement stmt = con.createStatement();
-            String search = "Select MAX(ConfRoomNo) AS [RoomNo] from ConferenceRooms";
-            ResultSet rs = stmt.executeQuery(search);
-            String test = "";
-            while (rs.next()) {
-                test = rs.getString("RoomNo");
-                if (test.isEmpty()) {
-                    return "";
-                } else {
-                    return test;
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return "";
-
-    }
 
     static boolean addConferenceRoom(int roomNo, double roomRate, int roomLimit, File roomImage) {
         try {
