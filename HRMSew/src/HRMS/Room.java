@@ -172,7 +172,7 @@ public class Room {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
-            String insertsql = "INSERT INTO Room (RoomNo, RoomType, RoomRate, RoomLimit, RoomStatus)VALUES (?,?,?,?,?,?)";
+            String insertsql = "INSERT INTO Room (RoomNo, RoomType, RoomRate, RoomLimit, RoomStatus)VALUES (?,?,?,?,?)";
             PreparedStatement pstmt = con.prepareStatement(insertsql);
             pstmt.setInt(1, roomNo);
             pstmt.setString(2, roomType);
@@ -254,6 +254,24 @@ public class Room {
             FileInputStream fis = new FileInputStream(roomImage);
             pstmt.setBinaryStream(4, fis, (int) roomImage.length());
             pstmt.setString(5, "Available");
+            pstmt.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    static boolean addConferenceRoom(int roomNo, double roomRate, int roomLimit) {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            String insertsql = "INSERT INTO ConferenceRooms (ConfRoomNo, Capacity, BookRate, ConfRoomStatus)VALUES (?,?,?,?)";
+            PreparedStatement pstmt = con.prepareStatement(insertsql);
+            pstmt.setInt(1, roomNo);
+            pstmt.setInt(2, roomLimit);
+            pstmt.setDouble(3, roomRate);
+            pstmt.setString(4, "Available");
             pstmt.executeUpdate();
             return true;
 

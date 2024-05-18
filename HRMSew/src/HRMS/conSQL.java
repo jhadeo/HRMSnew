@@ -16,7 +16,7 @@ public class conSQL {
     private static String sqlInstanceName = "DESKTOP-LV53889\\HRSDB"; //computer name 
     private static String sqlDatabase = "HRSDB";  //sql server database name
     private static String sqlUser = "sa";
-    private static String sqlPassword = "123"; //password
+    private static String sqlPassword = "1234"; //password
 
     public static String connect() {
         return "jdbc:sqlserver://" + hostname + ":1433"

@@ -4339,7 +4339,7 @@ public class MainMenu extends javax.swing.JFrame {
                 view_ConfRoom();
                 break;
             case 1:
-               
+
                 break;
             case 2:
                 view_editConfRoom();
@@ -4556,21 +4556,30 @@ public class MainMenu extends javax.swing.JFrame {
         int roomLimit = (Integer) addRoomLimit.getValue();
         //int roomLimit = Integer.parseInt((String) addRoomLimit.getValue());
         double roomRate = Double.parseDouble(substring);
-        File imageFile = new File(imagepath);
+        File imageFile = null;
         try {
-            InputStream is = new FileInputStream(imageFile);
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+            imageFile = new File(imagepath);
+        } catch (NullPointerException e) {
+            imageFile = null;
         }
-        if (Room.addRoom(roomid, roomtype, roomRate, roomLimit, imageFile)) {
-            JOptionPane.showMessageDialog(this, "Room successfully added!");
-            imagepath = null;
-        } else {
-            if(Room.addRoom(roomid, roomtype, roomRate, roomLimit)){
-            JOptionPane.showMessageDialog(this, "Room successfully added!");
+
+        if (imageFile != null) {
+            try {
+                InputStream is = new FileInputStream(imageFile);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
             }
-            else{
-            JOptionPane.showMessageDialog(this, "Data not Saved!");
+            if (Room.addRoom(roomid, roomtype, roomRate, roomLimit, imageFile)) {
+                JOptionPane.showMessageDialog(this, "Room successfully added!");
+                imagepath = null;
+            } else {
+                JOptionPane.showMessageDialog(this, "Data not Saved!");
+            }
+        } else {
+            if (Room.addRoom(roomid, roomtype, roomRate, roomLimit)) {
+                JOptionPane.showMessageDialog(this, "Room successfully added!");
+            } else {
+                JOptionPane.showMessageDialog(this, "Data not Saved!");
             }
         }
     }//GEN-LAST:event_addRoomActionPerformed
@@ -4659,17 +4668,31 @@ public class MainMenu extends javax.swing.JFrame {
         int roomCap = (Integer) addConfRoomCap.getValue();
         //int roomCap = Integer.parseInt(addConfRoomCap.getValue());
         double roomRate = Double.parseDouble(substring);
-        File imageFile = new File(imagepath);
+        File imageFile = null;
         try {
-            InputStream is = new FileInputStream(imageFile);
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+            imageFile = new File(imagepath);
+        } catch (NullPointerException e) {
+            imageFile = null;
         }
-        if (Room.addConferenceRoom(roomid, roomRate, roomCap, imageFile)) {
-            JOptionPane.showMessageDialog(this, "Room successfully added!");
-            imagepath = null;
+        if (imageFile != null) {
+            try {
+                InputStream is = new FileInputStream(imageFile);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            if (Room.addConferenceRoom(roomid, roomRate, roomCap, imageFile)) {
+                JOptionPane.showMessageDialog(this, "Room successfully added!");
+                imagepath = null;
+            } else {
+                JOptionPane.showMessageDialog(this, "Data not Saved!");
+            }
         } else {
-            JOptionPane.showMessageDialog(this, "Data not Saved!");
+            if (Room.addConferenceRoom(roomid, roomRate, roomCap)) {
+                JOptionPane.showMessageDialog(this, "Room successfully added!");
+                imagepath = null;
+            } else {
+                JOptionPane.showMessageDialog(this, "Data not Saved!");
+            }
         }
     }//GEN-LAST:event_addConfActionPerformed
 
