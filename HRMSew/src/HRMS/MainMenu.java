@@ -193,8 +193,16 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel110 = new javax.swing.JLabel();
         editRoomReservationSearch = new javax.swing.JTextField();
         editReservation = new javax.swing.JButton();
-        editCheckInDate = new com.github.lgooddatepicker.components.DateTimePicker();
-        editCheckOutDate = new com.github.lgooddatepicker.components.DateTimePicker();
+        DatePickerSettings dateSettings3 = new DatePickerSettings();
+
+        TimePickerSettings timeSettings3 = new TimePickerSettings();
+        timeSettings.initialTime = nowTime;
+        editCheckInDate = new com.github.lgooddatepicker.components.DateTimePicker(dateSettings3,timeSettings3);
+        DatePickerSettings dateSettings4 = new DatePickerSettings();
+
+        TimePickerSettings timeSettings4 = new TimePickerSettings();
+        timeSettings.initialTime = nowTime;
+        editCheckOutDate = new com.github.lgooddatepicker.components.DateTimePicker(dateSettings4,timeSettings4);
         editMiscCharge = new javax.swing.JFormattedTextField(currencyFormat);
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -369,7 +377,8 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel120 = new javax.swing.JLabel();
         jLabel121 = new javax.swing.JLabel();
         jLabel122 = new javax.swing.JLabel();
-        editEventDate = new com.github.lgooddatepicker.components.DatePicker();
+        DatePickerSettings dateSettings2 = new DatePickerSettings();
+        editEventDate = new com.github.lgooddatepicker.components.DatePicker(dateSettings2);
         editEventRSpinner = new javax.swing.JSpinner();
         jLabel123 = new javax.swing.JLabel();
         editRoomCeventR = new javax.swing.JFormattedTextField(currencyFormat);
@@ -1088,9 +1097,9 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel13.setText("Check In:");
         jLabel13.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
+        submitRoomReservation.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         submitRoomReservation.setText("Submit Reservation");
         submitRoomReservation.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        submitRoomReservation.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         submitRoomReservation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitRoomReservationActionPerformed(evt);
@@ -1381,8 +1390,11 @@ public class MainMenu extends javax.swing.JFrame {
                         .addGap(36, 36, 36)
                         .addComponent(editReservation, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 533, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(237, Short.MAX_VALUE))
+                .addContainerGap(227, Short.MAX_VALUE))
         );
+
+        dateSettings3.setDateRangeLimits(now, LocalDate.MAX);
+        dateSettings4.setDateRangeLimits(now, LocalDate.MAX);
 
         RReservationPanel.addTab("Edit Reservation", jPanel21);
 
@@ -2926,6 +2938,8 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        dateSettings2.setDateRangeLimits(now, LocalDate.MAX);
+
         EventRsection.addTab("Edit Reservation", jPanel23);
 
         jPanel15.setBackground(new java.awt.Color(239, 231, 221));
@@ -3606,7 +3620,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 835, Short.MAX_VALUE)
+                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 835, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

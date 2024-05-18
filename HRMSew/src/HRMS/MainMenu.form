@@ -1465,12 +1465,12 @@
                             </Component>
                             <Component class="javax.swing.JButton" name="submitRoomReservation">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Segoe UI" size="18" style="0"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="Submit Reservation"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                                   <Color id="Hand Cursor"/>
-                                </Property>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI" size="18" style="0"/>
                                 </Property>
                               </Properties>
                               <Events>
@@ -1679,7 +1679,7 @@
                                           </Group>
                                           <Component id="jScrollPane16" alignment="0" min="-2" pref="533" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="237" max="32767" attributes="0"/>
+                                      <EmptySpace pref="227" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -1791,8 +1791,18 @@
                               </Events>
                             </Component>
                             <Component class="com.github.lgooddatepicker.components.DateTimePicker" name="editCheckInDate">
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.github.lgooddatepicker.components.DateTimePicker(dateSettings3,timeSettings3)"/>
+                                <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DatePickerSettings dateSettings3 = new DatePickerSettings();&#xa;&#xa;TimePickerSettings timeSettings3 = new TimePickerSettings();&#xa;timeSettings.initialTime = nowTime;"/>
+                                <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="dateSettings3.setDateRangeLimits(now, LocalDate.MAX);"/>
+                              </AuxValues>
                             </Component>
                             <Component class="com.github.lgooddatepicker.components.DateTimePicker" name="editCheckOutDate">
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.github.lgooddatepicker.components.DateTimePicker(dateSettings4,timeSettings4)"/>
+                                <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DatePickerSettings dateSettings4 = new DatePickerSettings();&#xa;&#xa;TimePickerSettings timeSettings4 = new TimePickerSettings();&#xa;timeSettings.initialTime = nowTime;"/>
+                                <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="dateSettings4.setDateRangeLimits(now, LocalDate.MAX);"/>
+                              </AuxValues>
                             </Component>
                             <Component class="javax.swing.JFormattedTextField" name="editMiscCharge">
                               <AuxValues>
@@ -4411,6 +4421,11 @@
                               </Properties>
                             </Component>
                             <Component class="com.github.lgooddatepicker.components.DatePicker" name="editEventDate">
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.github.lgooddatepicker.components.DatePicker(dateSettings2)"/>
+                                <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DatePickerSettings dateSettings2 = new DatePickerSettings();"/>
+                                <AuxValue name="JavaCodeGenerator_allCodePost" type="java.lang.String" value="dateSettings2.setDateRangeLimits(now, LocalDate.MAX);"/>
+                              </AuxValues>
                             </Component>
                             <Component class="javax.swing.JSpinner" name="editEventRSpinner">
                               <Properties>
