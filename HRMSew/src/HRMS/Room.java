@@ -265,7 +265,7 @@ public class Room {
     static boolean addConferenceRoom(int roomNo, double roomRate, int roomLimit, File roomImage) {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
-            String insertsql = "INSERT INTO ConferenceRooms (ConfRoomNo, Capacity, BookRate, RoomImage, ConfRoomStatus)VALUES (?,?,?,?,?)";
+            String insertsql = "INSERT INTO ConferenceRooms (ConfRoomNo, Capacity, BookRate, ConfRoomImage, ConfRoomStatus)VALUES (?,?,?,?,?)";
             PreparedStatement pstmt = con.prepareStatement(insertsql);
             pstmt.setInt(1, roomNo);
             pstmt.setInt(2, roomLimit);
@@ -285,7 +285,7 @@ public class Room {
     static boolean editConferenceRoom(int roomNo, double roomRate, int roomLimit, File roomImage) {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
-            String insertsql = "UPDATE ConferenceRooms SET BookRate = ?, Capacity = ?, RoomImage = ? WHERE ConfRoomNo = ?";
+            String insertsql = "UPDATE ConferenceRooms SET BookRate = ?, Capacity = ?, ConfRoomImage = ? WHERE ConfRoomNo = ?";
             PreparedStatement pstmt = con.prepareStatement(insertsql);
             pstmt.setDouble(1, roomRate);
             pstmt.setInt(2, roomLimit);

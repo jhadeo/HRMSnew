@@ -4746,10 +4746,10 @@ public class MainMenu extends javax.swing.JFrame {
             System.out.println("eto ung id: " + id);
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
-            String sql = "SELECT RoomImage from ConferenceRooms where ConfRoomNo = " + id;
+            String sql = "SELECT ConfRoomImage from ConferenceRooms where ConfRoomNo = " + id;
             ResultSet rs = stmt.executeQuery(sql);
             if (rs.next()) {
-                InputStream inputStream = rs.getBinaryStream("RoomImage");
+                InputStream inputStream = rs.getBinaryStream("ConfRoomImage");
                 if (inputStream != null) {
                     BufferedImage image = ImageIO.read(inputStream);
                     if (image != null) {
@@ -4796,10 +4796,10 @@ public class MainMenu extends javax.swing.JFrame {
             System.out.println("eto ung id: " + id);
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
-            String sql = "SELECT RoomImage from ConferenceRooms where ConfRoomNo = " + id;
+            String sql = "SELECT ConfRoomImage from ConferenceRooms where ConfRoomNo = " + id;
             ResultSet rs = stmt.executeQuery(sql);
             if (rs.next()) {
-                InputStream inputStream = rs.getBinaryStream("RoomImage");
+                InputStream inputStream = rs.getBinaryStream("ConfRoomImage");
                 if (inputStream != null) {
                     BufferedImage image = ImageIO.read(inputStream);
                     if (image != null) {
@@ -5204,10 +5204,10 @@ public class MainMenu extends javax.swing.JFrame {
             System.out.println("eto ung id: " + id);
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
-            String sql = "SELECT RoomImage from ConferenceRooms where ConfRoomNo = " + id;
+            String sql = "SELECT ConfRoomImage from ConferenceRooms where ConfRoomNo = " + id;
             ResultSet rs = stmt.executeQuery(sql);
             if (rs.next()) {
-                InputStream inputStream = rs.getBinaryStream("RoomImage");
+                InputStream inputStream = rs.getBinaryStream("ConfRoomImage");
                 if (inputStream != null) {
                     BufferedImage image = ImageIO.read(inputStream);
                     if (image != null) {
