@@ -4407,7 +4407,7 @@ public class MainMenu extends javax.swing.JFrame {
         try {
             guestID = Integer.parseInt(txtGuestID.getText());
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(EventPanel, "Input not Valid!");
+            JOptionPane.showMessageDialog(EventPanel, "Guest not found!");
         }
 
         if (Guest.searchguestID(guestID)) {
@@ -4423,7 +4423,7 @@ public class MainMenu extends javax.swing.JFrame {
         try {
             roomID = Integer.parseInt(txtRoomNo.getText());
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(EventPanel, "Input not Valid!");
+            JOptionPane.showMessageDialog(EventPanel, "Room not found!");
         }
 
         if (Room.searchRoomID(roomID)) {
@@ -4525,6 +4525,8 @@ public class MainMenu extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Room found!");
             txtRentalFee1.setText(Events.getRoomRate(RoomID));
             eventrent = Double.valueOf(txtRentalFee1.getText());
+        } else {
+            JOptionPane.showMessageDialog(this, "Room not found!");
         }
 
     }//GEN-LAST:event_confRoomSearchActionPerformed
@@ -4561,7 +4563,7 @@ public class MainMenu extends javax.swing.JFrame {
             roomID = Integer.parseInt(txtGuestID2.getText());
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(EventPanel, "Input not Valid!");
+            JOptionPane.showMessageDialog(EventPanel, "Guest not found!");
         }
         if (Guest.searchguestID(roomID)) {
             JOptionPane.showMessageDialog(EventPanel, "Guest found!");
