@@ -108,7 +108,7 @@ public class Room {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
 
-            String insertsql = "UPDATE RoomReservation SET roomNo = ?, CheckInDate = ?, CheckOutDate = ?, MiscCharges = ?, Total = ? WHERE ReservationID = ?";
+            String insertsql = "UPDATE RoomReservation SET roomNo = ?, CheckInDate = ?, CheckOutDate = ?, MiscCharge = ?, Total = ? WHERE ReservationID = ?";
             PreparedStatement pstmt = con.prepareStatement(insertsql);
             pstmt.setString(1, roomNo);
             pstmt.setString(2, checkInDate);
