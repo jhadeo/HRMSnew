@@ -121,8 +121,24 @@ public class Guest {
         }
     }
 
-    public static boolean EditGuest() {
+    public static boolean EditGuest(String first, String middle, String last, String mobile, String email, String home, int status, int GuestID) {
         try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            
+            String sql = "UPDATE Guest "
+                    + "SET FirstName = ?, MiddleName = ?, LastName = ?, PhoneNo = ?, Email = ?, HomeAddress = ?, MemberStatus = ?"
+                    + "Where GuestID = ?";
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, first);
+            pstmt.setString(2, middle);
+            pstmt.setString(3, last);
+            pstmt.setString(4, mobile);
+            pstmt.setString(5, email);
+            pstmt.setString(6, home);
+            pstmt.setInt(7, status);
+            pstmt.setInt(8, GuestID);
+            pstmt.executeUpdate();
+            
             return true;
         } catch (Exception e) {
             e.printStackTrace();

@@ -7,20 +7,11 @@ package HRMS;
 import javax.swing.text.PlainDocument;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
-/**
- *
- * @author PC
- */
-class UtilityCollection {
-    /**how to use:
-     * JTextFieldLimit - JTextFieldName.setDocument(new JTextFieldLimit(10));
-    */
-    UtilityCollection(int choice, int i){
-    switch(choice){
-        case 1: {new JTextFieldLimit(i); break;}
-    }
-    }
-}
+
+/*How to use:
+* Code After-All Set: JTextFieldName.setDocument(new JTextFieldLimit(x));
+* where x = intended character limit;
+*/
 
 public class JTextFieldLimit extends PlainDocument { //sets maximum length of text field
   private int limit;
