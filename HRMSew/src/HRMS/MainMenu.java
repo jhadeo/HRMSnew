@@ -128,7 +128,7 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel63 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
-        editRN = new javax.swing.JTextField();
+        editRN = new javax.swing.JFormattedTextField(numFormat);
         editRoomButton = new javax.swing.JButton();
         editRoomType = new javax.swing.JSpinner();
         editRoomLimit = new javax.swing.JSpinner();
@@ -414,7 +414,7 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel85 = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
-        addConfRoomNo = new javax.swing.JTextField();
+        addConfRoomNo = new javax.swing.JFormattedTextField(numFormat);
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         addConfRoomBook = new javax.swing.JFormattedTextField(currencyFormat);
@@ -426,7 +426,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel19 = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
         EditConfTable = new javax.swing.JTable();
-        dispConfRoomNo = new javax.swing.JTextField();
+        dispConfRoomNo = new javax.swing.JFormattedTextField(numFormat);
         dispConfRoomStatus = new javax.swing.JTextField();
         editConfRoomRate = new javax.swing.JFormattedTextField(currencyFormat);
         jLabel76 = new javax.swing.JLabel();
@@ -1088,9 +1088,9 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel13.setText("Check In:");
         jLabel13.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        submitRoomReservation.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         submitRoomReservation.setText("Submit Reservation");
         submitRoomReservation.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        submitRoomReservation.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         submitRoomReservation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitRoomReservationActionPerformed(evt);
@@ -3231,8 +3231,6 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel31.setText("Conference Room Number:");
         jLabel31.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        addConfRoomNo.setEditable(false);
-
         jLabel32.setText("Capacity:");
         jLabel32.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
@@ -3350,8 +3348,6 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
         jScrollPane10.setViewportView(EditConfTable);
-
-        dispConfRoomNo.setEditable(false);
 
         dispConfRoomStatus.setEditable(false);
 
@@ -3610,7 +3606,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 835, Short.MAX_VALUE)
+                .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 835, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

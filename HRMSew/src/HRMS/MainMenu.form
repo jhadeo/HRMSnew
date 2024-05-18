@@ -746,6 +746,9 @@
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JTextField" name="editRN">
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(numFormat)"/>
+                              </AuxValues>
                             </Component>
                             <Component class="javax.swing.JButton" name="editRoomButton">
                               <Properties>
@@ -1462,12 +1465,12 @@
                             </Component>
                             <Component class="javax.swing.JButton" name="submitRoomReservation">
                               <Properties>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI" size="18" style="0"/>
-                                </Property>
                                 <Property name="text" type="java.lang.String" value="Submit Reservation"/>
                                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                                   <Color id="Hand Cursor"/>
+                                </Property>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Segoe UI" size="18" style="0"/>
                                 </Property>
                               </Properties>
                               <Events>
@@ -5059,9 +5062,9 @@
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JTextField" name="addConfRoomNo">
-                              <Properties>
-                                <Property name="editable" type="boolean" value="false"/>
-                              </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(numFormat)"/>
+                              </AuxValues>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel32">
                               <Properties>
@@ -5273,9 +5276,9 @@
                               </SubComponents>
                             </Container>
                             <Component class="javax.swing.JTextField" name="dispConfRoomNo">
-                              <Properties>
-                                <Property name="editable" type="boolean" value="false"/>
-                              </Properties>
+                              <AuxValues>
+                                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(numFormat)"/>
+                              </AuxValues>
                             </Component>
                             <Component class="javax.swing.JTextField" name="dispConfRoomStatus">
                               <Properties>
