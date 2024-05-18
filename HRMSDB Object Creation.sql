@@ -98,8 +98,9 @@ CONSTRAINT EventPayMethodCheck CHECK (PayMethod in ('Cash','Bank Transfer','Cheq
 )
 
 CREATE TABLE EventRequests(
-EventID INT CONSTRAINT EventRequestsPK PRIMARY KEY,
+EventID INT,
 Request VARCHAR(255),
+CONSTRAINT EventRequestsPK PRIMARY KEY (EventID, Request),
 CONSTRAINT EventRequestsFK FOREIGN KEY (EventID) REFERENCES HotelEvents(EventID)
 )
 
