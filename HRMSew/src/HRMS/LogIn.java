@@ -156,12 +156,12 @@ public class LogIn extends javax.swing.JFrame {
                     System.out.println("You are an admin");
                     System.out.println("WIW");
                     dispose();
-                    new MainMenu(true).setVisible(true);
+                    new MainMenu(true, username).setVisible(true);
                 } else {
                     System.out.println("You are not an admin");
                     System.out.println("WIW");
                     dispose();
-                    new MainMenu(false).setVisible(true);
+                    new MainMenu(false, username).setVisible(true);
 
                 }
 
