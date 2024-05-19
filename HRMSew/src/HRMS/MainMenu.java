@@ -6618,15 +6618,7 @@ public class MainMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_viewpaidroomresActionPerformed
 
-    public static void main(String args[]) {
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainMenu(true,"admin").setVisible(true);
-            }
-        });
-    }
 
 //<editor-fold defaultstate="collapsed" desc=" Netbeans SWING ">
     // Variables declaration - do not modify//GEN-BEGIN:variables
