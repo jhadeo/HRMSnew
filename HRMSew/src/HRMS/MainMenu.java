@@ -478,7 +478,9 @@ public class MainMenu extends javax.swing.JFrame {
         oldPass = new javax.swing.JPasswordField();
         newPass = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
-        addStaff = new javax.swing.JPanel();
+        newPass1 = new javax.swing.JPasswordField();
+        jLabel131 = new javax.swing.JLabel();
+        jPanel25 = new javax.swing.JPanel();
         jLabel51 = new javax.swing.JLabel();
         jLabel126 = new javax.swing.JLabel();
         jLabel127 = new javax.swing.JLabel();
@@ -488,7 +490,7 @@ public class MainMenu extends javax.swing.JFrame {
         addStaffName = new javax.swing.JTextField();
         addStaffUser = new javax.swing.JTextField();
         addStaffButton = new javax.swing.JButton();
-        removeStaff = new javax.swing.JPanel();
+        jPanel26 = new javax.swing.JPanel();
         jScrollPane18 = new javax.swing.JScrollPane();
         removeStaffTable = new javax.swing.JTable();
         jLabel129 = new javax.swing.JLabel();
@@ -3666,6 +3668,9 @@ public class MainMenu extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jButton1.setText("Change Password");
 
+        jLabel131.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        jLabel131.setText("Confirm New Password:");
+
         javax.swing.GroupLayout changePassLayout = new javax.swing.GroupLayout(changePass);
         changePass.setLayout(changePassLayout);
         changePassLayout.setHorizontalGroup(
@@ -3673,6 +3678,10 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(changePassLayout.createSequentialGroup()
                 .addGap(360, 360, 360)
                 .addGroup(changePassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(changePassLayout.createSequentialGroup()
+                        .addComponent(jLabel131)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(newPass1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButton1)
                     .addGroup(changePassLayout.createSequentialGroup()
                         .addGroup(changePassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -3695,14 +3704,18 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGroup(changePassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(newPass, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(5, 5, 5)
+                .addGroup(changePassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel131, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(newPass1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(359, 359, 359))
+                .addContainerGap())
         );
 
         StaffPane.addTab("Change Password", changePass);
 
-        addStaff.setBackground(new java.awt.Color(239, 231, 221));
+        jPanel25.setBackground(new java.awt.Color(239, 231, 221));
 
         jLabel51.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel51.setText("Staff Full Name:");
@@ -3724,19 +3737,19 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout addStaffLayout = new javax.swing.GroupLayout(addStaff);
-        addStaff.setLayout(addStaffLayout);
-        addStaffLayout.setHorizontalGroup(
-            addStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addStaffLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
+        jPanel25.setLayout(jPanel25Layout);
+        jPanel25Layout.setHorizontalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel25Layout.createSequentialGroup()
                 .addGap(246, 246, 246)
-                .addGroup(addStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel128)
                     .addComponent(jLabel127)
                     .addComponent(jLabel126)
                     .addComponent(jLabel51))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(addStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(addStaffButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(addStaffPass2)
                     .addComponent(addStaffPass)
@@ -3744,23 +3757,23 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(addStaffUser, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(435, 435, 435))
         );
-        addStaffLayout.setVerticalGroup(
-            addStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addStaffLayout.createSequentialGroup()
+        jPanel25Layout.setVerticalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel25Layout.createSequentialGroup()
                 .addGap(258, 258, 258)
-                .addGroup(addStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(addStaffName)
                     .addComponent(jLabel51))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(addStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel126)
                     .addComponent(addStaffUser))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(addStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(addStaffPass)
                     .addComponent(jLabel127))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(addStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(addStaffPass2)
                     .addComponent(jLabel128))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3768,9 +3781,9 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGap(362, 362, 362))
         );
 
-        StaffPane.addTab("Add Staff", addStaff);
+        StaffPane.addTab("Add Staff", jPanel25);
 
-        removeStaff.setBackground(new java.awt.Color(239, 231, 221));
+        jPanel26.setBackground(new java.awt.Color(239, 231, 221));
 
         removeStaffTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -3812,19 +3825,19 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout removeStaffLayout = new javax.swing.GroupLayout(removeStaff);
-        removeStaff.setLayout(removeStaffLayout);
-        removeStaffLayout.setHorizontalGroup(
-            removeStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, removeStaffLayout.createSequentialGroup()
-                .addContainerGap(183, Short.MAX_VALUE)
-                .addGroup(removeStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, removeStaffLayout.createSequentialGroup()
-                        .addGroup(removeStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
+        jPanel26.setLayout(jPanel26Layout);
+        jPanel26Layout.setHorizontalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel26Layout.createSequentialGroup()
+                .addContainerGap(277, Short.MAX_VALUE)
+                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel26Layout.createSequentialGroup()
+                        .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel130)
                             .addComponent(jLabel129))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(removeStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(removeStaffName, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(removeStaffID, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(removeStaffButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -3832,19 +3845,19 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(134, 134, 134))
         );
-        removeStaffLayout.setVerticalGroup(
-            removeStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(removeStaffLayout.createSequentialGroup()
+        jPanel26Layout.setVerticalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel26Layout.createSequentialGroup()
                 .addGap(183, 183, 183)
-                .addGroup(removeStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(removeStaffLayout.createSequentialGroup()
+                    .addGroup(jPanel26Layout.createSequentialGroup()
                         .addGap(119, 119, 119)
-                        .addGroup(removeStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(removeStaffID)
                             .addComponent(jLabel129))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(removeStaffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel130, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(removeStaffName, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3853,7 +3866,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGap(194, 194, 194))
         );
 
-        StaffPane.addTab("Remove Staff", removeStaff);
+        StaffPane.addTab("Remove Staff", jPanel26);
 
         javax.swing.GroupLayout StaffSectionLayout = new javax.swing.GroupLayout(StaffSection);
         StaffSection.setLayout(StaffSectionLayout);
@@ -5794,7 +5807,7 @@ public class MainMenu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainMenu(false).setVisible(true);
+                new MainMenu(true).setVisible(true);
             }
         });
     }
@@ -5858,7 +5871,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField addRoomRate;
     private javax.swing.JTextField addRoomSetup;
     private javax.swing.JSpinner addRoomType;
-    private javax.swing.JPanel addStaff;
     private javax.swing.JButton addStaffButton;
     private javax.swing.JTextField addStaffName;
     private javax.swing.JPasswordField addStaffPass;
@@ -5987,6 +5999,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel129;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel130;
+    private javax.swing.JLabel jLabel131;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -6098,6 +6111,8 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -6142,6 +6157,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField middlefield;
     private javax.swing.JTextField mobilefield;
     private javax.swing.JPasswordField newPass;
+    private javax.swing.JPasswordField newPass1;
     private javax.swing.JPasswordField oldPass;
     private javax.swing.ButtonGroup paymentRoomGroup;
     private javax.swing.JCheckBox paymentStatEditER;
@@ -6154,7 +6170,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField removeRT;
     private javax.swing.JLabel removeRoomLabel;
     private javax.swing.JTable removeRoomTable;
-    private javax.swing.JPanel removeStaff;
     private javax.swing.JButton removeStaffButton;
     private javax.swing.JTextField removeStaffID;
     private javax.swing.JTextField removeStaffName;
