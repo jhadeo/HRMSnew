@@ -110,6 +110,22 @@ public class Events {
         }
         return 0;
     }
+    
+    static String getEventName(int EventID) {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            Statement stmt = con.createStatement();
+            String sql = "select EventName [EventID] from HotelEvents";
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                System.out.println(rs.getString("EventID"));
+                return rs.getString("EventID");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
 
     static boolean addEvent(String eventID, String eventName, String catering, String AVR, String roomSetup, String deco) {
         try {

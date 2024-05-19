@@ -61,6 +61,7 @@ public class MainMenu extends javax.swing.JFrame {
     Double eventrent = 0.0;
     String imagepath = null;
     ArrayList<String> eventIDs = new ArrayList<String>();
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -4235,8 +4236,8 @@ public class MainMenu extends javax.swing.JFrame {
         editTotalEventR.setValue(InputNumberFilter.currencyConverter(total));
     }
     //</editor-fold>
-    
-     private void updateSpinnerID() {
+
+    private void updateSpinnerID() {
         eventIDs.clear(); // Clear the previous list
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
@@ -4257,7 +4258,7 @@ public class MainMenu extends javax.swing.JFrame {
             spinEventID1.setModel(model);
         });
     }
-    
+
 
     private void GuestPanelStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_GuestPanelStateChanged
         switch (GuestPanel.getSelectedIndex()) {
@@ -4414,8 +4415,21 @@ public class MainMenu extends javax.swing.JFrame {
         try {
             String date1 = CheckInDate.getDateTimeStrict().format(DateTimeFormatter.ISO_DATE_TIME);
             String date2 = CheckOutDate.getDateTimeStrict().format(DateTimeFormatter.ISO_DATE_TIME);
+            String reservationId = Room.getReservationID();
 
             if (Room.AddReservation(Room.getReservationID(), Integer.parseInt(txtGuestID.getText()), txtRoomNo.getText(), date1, date2, txtRoomRate.getText(), txtTaxes.getText(), txtTotal.getText())) {
+
+                String guestName = Guest.getGuestName(Integer.parseInt(txtGuestID.getText()));
+                String mobile = Guest.getGuestNum(Integer.parseInt(txtGuestID.getText()));
+                String email = Guest.getGuestEmail(Integer.parseInt(txtGuestID.getText()));
+                String roomNo = txtRoomNo.getText();
+                String roomCap = Room.getRoomCap(Integer.parseInt(txtRoomNo.getText()));
+                String roomRate = txtRoomRate.getText();
+                String tax = txtTaxes.getText();
+                String total = txtTotal.getText();
+
+                RoomReservationReciept reciept = new RoomReservationReciept(guestName, mobile, email, reservationId, roomNo, roomCap, roomRate, tax, total, date1, date2);
+
                 JOptionPane.showMessageDialog(this, "Reservation Success!");
             } else {
                 JOptionPane.showMessageDialog(this, "Reservation Unsuccessful!");
@@ -4440,8 +4454,7 @@ public class MainMenu extends javax.swing.JFrame {
             jTextField3.setText(Guest.getGuestNum(guestID));
             jTextField4.setText(Guest.getGuestEmail(guestID));
             jTextField1.setText(Guest.getGuestName(guestID));
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(EventPanel, "Guest not found!");
         }
     }//GEN-LAST:event_SearchIDActionPerformed
@@ -4456,8 +4469,7 @@ public class MainMenu extends javax.swing.JFrame {
         if (Room.searchRoomID(roomID)) {
             JOptionPane.showMessageDialog(EventPanel, "Room found!");
             txtRoomRate.setText(Room.getRoomRate(roomID));
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(EventPanel, "Room not found!");
         }
 
@@ -4523,17 +4535,23 @@ public class MainMenu extends javax.swing.JFrame {
             int memberstatus = member ? 1 : 0;
 
             String a = (String) spinEventID1.getValue();
-            a = a.substring(0,1);
-            int spin1 = Integer.parseInt(a);
-            
-            System.out.println(""+spin1);
+            String[] parts = a.split("-");
+            int spin1 = Integer.parseInt(parts[0].trim());
+            String eventName = parts[1].trim();
+
+            System.out.println("" + spin1);
             int spin2 = (Integer) spinEventDuration1.getValue();
             Date selectedDate = DCEventStart1.getDate();
             java.sql.Date sqlDate = new java.sql.Date(selectedDate.getTime()); //stackoverflow
+            SimpleDateFormat sdf = new SimpleDateFormat("MMMM-dd-yyyy"); // Define the desired date format
+            String dateString = sdf.format(sqlDate);
 
+            String Pstatus = (memberstatus == 0) ? "Pending" : "Paid";
             int guestID = Integer.parseInt(txtGuestID2.getText());
             int EventRoom = Integer.parseInt(txtEventRoomID1.getText());
             if (Events.ReserveEvent(spin1, guestID, EventRoom, sqlDate, spin2, memberstatus, choice1, txtTaxes2.getText(), txtTotal2.getText(), txtRentalFee1.getText(), txtCateringCharge1.getText(), txtDecorationCharge1.getText(), txtRequestCharge1.getText())) {
+
+                EventReservationReciept reciept = new EventReservationReciept(Guest.getGuestName(guestID), Guest.getGuestEmail(guestID), Guest.getGuestNum(guestID), txtEventRoomID1.getText(), Room.getConfRoomCapacity(txtEventRoomID1.getText()), eventName, eventName, dateString, "" + spin2, choice1, Pstatus, txtDecorationCharge1.getText(), txtRequestCharge1.getText(), txtCateringCharge1.getText(), txtTaxes2.getText(), txtTotal2.getText());
 
                 JOptionPane.showMessageDialog(this, "Data Saved!");
                 txtGuestID2.setText("");
@@ -4554,9 +4572,9 @@ public class MainMenu extends javax.swing.JFrame {
             txtRentalFee1.setText(Events.getRoomRate(RoomID));
             double taxes = 0.12 * ((int) spinEventDuration1.getValue() * Double.valueOf(txtRentalFee1.getText()));
             eventrent = Double.valueOf(txtRentalFee1.getText());
-            double total =  taxes +  (eventrent * (int) spinEventDuration1.getValue()) +  Double.valueOf(txtDecorationCharge1.getText().substring(1)) +  Double.valueOf(txtRequestCharge1.getText().substring(1)) +  Double.valueOf(txtCateringCharge1.getText().substring(1));
-            txtTaxes2.setText(taxes+"");
-            txtTotal2.setText(total+"");
+            double total = taxes + (eventrent * (int) spinEventDuration1.getValue()) + Double.valueOf(txtDecorationCharge1.getText().substring(1)) + Double.valueOf(txtRequestCharge1.getText().substring(1)) + Double.valueOf(txtCateringCharge1.getText().substring(1));
+            txtTaxes2.setText(taxes + "");
+            txtTotal2.setText(total + "");
         } else {
             JOptionPane.showMessageDialog(this, "Room not found!");
         }
@@ -4781,93 +4799,47 @@ public class MainMenu extends javax.swing.JFrame {
         int row = EditConfTable.getSelectedRow();
         int oldNo = Integer.parseInt((String) EditConfTable.getValueAt(row, 0));
         String status = (String) dispConfRoomStatus.getValue();
-        String oldstat = (String) EditConfTable.getValueAt(row, 3);
-        if (oldstat.equalsIgnoreCase("OCCUPIED")) {
-            JOptionPane.showMessageDialog(this, "Room Occupied!");
-        } else if (status.equalsIgnoreCase("OCCUPIED") && oldstat.equalsIgnoreCase("RESERVED")) {
-            if (imagepath != null) {
-                int roomid = Integer.parseInt(dispConfRoomNo.getText());
-                try {
-                    editConfRoomCap.commitEdit();
-                } catch (java.text.ParseException e) {
-                }
-                int roomCap = (Integer) editConfRoomCap.getValue();
-                //int roomCap = Integer.parseInt(editConfRoomCap.getText());
-                double roomRate = Double.parseDouble(substring);
-                File imageFile = new File(imagepath);
-                try {
-                    InputStream is = new FileInputStream(imageFile);
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                if (Room.editConferenceRoom(oldNo, roomRate, roomCap, imageFile, roomid, status)) {
-                    JOptionPane.showMessageDialog(this, "Room successfully edited!");
-                    imagepath = null;
-                    view_editConfRoom();
-                } else {
-                    JOptionPane.showMessageDialog(this, "Data not Saved!");
-                }
+
+        if (imagepath != null) {
+            int roomid = Integer.parseInt(dispConfRoomNo.getText());
+            try {
+                editConfRoomCap.commitEdit();
+            } catch (java.text.ParseException e) {
+            }
+            int roomCap = (Integer) editConfRoomCap.getValue();
+            //int roomCap = Integer.parseInt(editConfRoomCap.getText());
+            double roomRate = Double.parseDouble(substring);
+            File imageFile = new File(imagepath);
+            try {
+                InputStream is = new FileInputStream(imageFile);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            if (Room.editConferenceRoom(oldNo, roomRate, roomCap, imageFile, roomid, status)) {
+                JOptionPane.showMessageDialog(this, "Room successfully edited!");
+                imagepath = null;
+                view_editConfRoom();
             } else {
-                int roomid = Integer.parseInt(dispConfRoomNo.getText());
-                try {
-                    editConfRoomCap.commitEdit();
-                } catch (java.text.ParseException e) {
-                }
-                int roomCap = (Integer) editConfRoomCap.getValue();
-                //  int roomCap = Integer.parseInt(editConfRoomCap.getText());
-                double roomRate = Double.parseDouble(substring);
-                System.out.println(roomRate);
-                if (Room.editConferenceRoom(oldNo, roomRate, roomCap, roomid, status)) {
-                    JOptionPane.showMessageDialog(this, "Room successfully edited!");
-                    imagepath = null;
-                    view_editConfRoom();
-                } else {
-                    JOptionPane.showMessageDialog(this, "Data not Saved!");
-                }
+                JOptionPane.showMessageDialog(this, "Data not Saved!");
             }
         } else {
-            if (imagepath != null) {
-                int roomid = Integer.parseInt(dispConfRoomNo.getText());
-                try {
-                    editConfRoomCap.commitEdit();
-                } catch (java.text.ParseException e) {
-                }
-                int roomCap = (Integer) editConfRoomCap.getValue();
-                //int roomCap = Integer.parseInt(editConfRoomCap.getText());
-                double roomRate = Double.parseDouble(substring);
-                File imageFile = new File(imagepath);
-                try {
-                    InputStream is = new FileInputStream(imageFile);
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                if (Room.editConferenceRoom(oldNo, roomRate, roomCap, imageFile, roomid, status)) {
-                    JOptionPane.showMessageDialog(this, "Room successfully edited!");
-                    imagepath = null;
-                    view_editConfRoom();
-                } else {
-                    JOptionPane.showMessageDialog(this, "Data not Saved!");
-                }
+            int roomid = Integer.parseInt(dispConfRoomNo.getText());
+            try {
+                editConfRoomCap.commitEdit();
+            } catch (java.text.ParseException e) {
+            }
+            int roomCap = (Integer) editConfRoomCap.getValue();
+            //  int roomCap = Integer.parseInt(editConfRoomCap.getText());
+            double roomRate = Double.parseDouble(substring);
+            System.out.println(roomRate);
+            if (Room.editConferenceRoom(oldNo, roomRate, roomCap, roomid, status)) {
+                JOptionPane.showMessageDialog(this, "Room successfully edited!");
+                imagepath = null;
+                view_editConfRoom();
             } else {
-                int roomid = Integer.parseInt(dispConfRoomNo.getText());
-                try {
-                    editConfRoomCap.commitEdit();
-                } catch (java.text.ParseException e) {
-                }
-                int roomCap = (Integer) editConfRoomCap.getValue();
-                //  int roomCap = Integer.parseInt(editConfRoomCap.getText());
-                double roomRate = Double.parseDouble(substring);
-                System.out.println(roomRate);
-                if (Room.editConferenceRoom(oldNo, roomRate, roomCap, roomid, status)) {
-                    JOptionPane.showMessageDialog(this, "Room successfully edited!");
-                    imagepath = null;
-                    view_editConfRoom();
-                } else {
-                    JOptionPane.showMessageDialog(this, "Data not Saved!");
-                }
+                JOptionPane.showMessageDialog(this, "Data not Saved!");
             }
         }
-
     }//GEN-LAST:event_editConfRoomActionPerformed
 
     private void EditConfTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditConfTableMouseClicked
@@ -5114,104 +5086,50 @@ public class MainMenu extends javax.swing.JFrame {
         int oldid = Integer.parseInt((String) editRoomTable.getValueAt(row, 0));
         String substring = editRR.getText().substring(1);
         String roomType = (String) editRoomType.getValue();
-        String rs = (String) editRS.getValue();
-        String initialrs = (String) editRoomTable.getValueAt(row, 4);
         String status = (String) editRS.getValue();
-        
-        if (initialrs.equalsIgnoreCase("RESERVED") && status.equalsIgnoreCase("OCCUPIED")) { // replace this with roomstatus column on respective table
-            JOptionPane.showMessageDialog(this, "Room still reserved!");
-        } else if (initialrs.equalsIgnoreCase("OCCUPIED")) {
-            if (status.equalsIgnoreCase("AVAILABLE")) {
-                if (imagepath != null) {
-                    int roomid = Integer.parseInt(editRN.getText());
-                    try {
-                        editRoomLimit.commitEdit();
-                        editRoomType.commitEdit();
-                        editRS.commitEdit();
-                    } catch (java.text.ParseException e) {
-                    }
-                    int roomLimit = (Integer) editRoomLimit.getValue();
-                    //int roomCap = Integer.parseInt(editConfRoomCap.getText());
-                    double roomRate = Double.parseDouble(substring);
-                    File imageFile = new File(imagepath);
-                    try {
-                        InputStream is = new FileInputStream(imageFile);
-                    } catch (FileNotFoundException ex) {
-                        Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    if (Room.editRoom(oldid, roomType, roomRate, roomLimit, imageFile, roomid, status)) {
-                        JOptionPane.showMessageDialog(this, "Room successfully edited!");
-                        imagepath = null;
-                        view_editRoomtable();
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Data not Saved!");
-                    }
-                } else if (imagepath == null && initialrs.equalsIgnoreCase("AVAILABLE")) {
-                    int roomid = Integer.parseInt(editRN.getText());
-                    try {
-                        editRoomLimit.commitEdit();
-                        editRoomType.commitEdit();
-                        editRS.commitEdit();
-                    } catch (java.text.ParseException e) {
-                    }
-                    int roomLimit = (Integer) editRoomLimit.getValue();
-                    //int roomCap = Integer.parseInt(editConfRoomCap.getText());
-                    double roomRate = Double.parseDouble(substring);
-                    System.out.println(roomRate);
-                    if (Room.editRoom(oldid, roomType, roomRate, roomLimit, roomid, status)) {
-                        JOptionPane.showMessageDialog(this, "Room successfully edited!");
-                        imagepath = null;
-                        view_editRoomtable();
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Data not Saved!");
-                    }
-                }
+
+        if (imagepath != null) {
+            int roomid = Integer.parseInt(editRN.getText());
+            try {
+                editRoomLimit.commitEdit();
+                editRoomType.commitEdit();
+                editRS.commitEdit();
+            } catch (java.text.ParseException e) {
             }
-            JOptionPane.showMessageDialog(this, "Room currently occupied!");
-        } else {
-            if (imagepath != null) {
-                int roomid = Integer.parseInt(editRN.getText());
-                try {
-                    editRoomLimit.commitEdit();
-                    editRoomType.commitEdit();
-                    editRS.commitEdit();
-                } catch (java.text.ParseException e) {
-                }
-                int roomLimit = (Integer) editRoomLimit.getValue();
-                //int roomCap = Integer.parseInt(editConfRoomCap.getText());
-                double roomRate = Double.parseDouble(substring);
-                File imageFile = new File(imagepath);
-                try {
-                    InputStream is = new FileInputStream(imageFile);
-                } catch (FileNotFoundException ex) {
-                    Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                if (Room.editRoom(oldid, roomType, roomRate, roomLimit, imageFile, roomid, status)) {
-                    JOptionPane.showMessageDialog(this, "Room successfully edited!");
-                    imagepath = null;
-                    view_editRoomtable();
-                } else {
-                    JOptionPane.showMessageDialog(this, "Data not Saved!");
-                }
-            } else if (imagepath == null && initialrs.equalsIgnoreCase("AVAILABLE")) {
-                int roomid = Integer.parseInt(editRN.getText());
-                try {
-                    editRoomLimit.commitEdit();
-                    editRoomType.commitEdit();
-                    editRS.commitEdit();
-                } catch (java.text.ParseException e) {
-                }
-                int roomLimit = (Integer) editRoomLimit.getValue();
-                //int roomCap = Integer.parseInt(editConfRoomCap.getText());
-                double roomRate = Double.parseDouble(substring);
-                System.out.println(roomRate);
-                if (Room.editRoom(oldid, roomType, roomRate, roomLimit, roomid, status)) {
-                    JOptionPane.showMessageDialog(this, "Room successfully edited!");
-                    imagepath = null;
-                    view_editRoomtable();
-                } else {
-                    JOptionPane.showMessageDialog(this, "Data not Saved!");
-                }
+            int roomLimit = (Integer) editRoomLimit.getValue();
+            //int roomCap = Integer.parseInt(editConfRoomCap.getText());
+            double roomRate = Double.parseDouble(substring);
+            File imageFile = new File(imagepath);
+            try {
+                InputStream is = new FileInputStream(imageFile);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            if (Room.editRoom(oldid, roomType, roomRate, roomLimit, imageFile, roomid, status)) {
+                JOptionPane.showMessageDialog(this, "Room successfully edited!");
+                imagepath = null;
+                view_editRoomtable();
+            } else {
+                JOptionPane.showMessageDialog(this, "Data not Saved!");
+            }
+        } else if (imagepath == null) {
+            int roomid = Integer.parseInt(editRN.getText());
+            try {
+                editRoomLimit.commitEdit();
+                editRoomType.commitEdit();
+                editRS.commitEdit();
+            } catch (java.text.ParseException e) {
+            }
+            int roomLimit = (Integer) editRoomLimit.getValue();
+            //int roomCap = Integer.parseInt(editConfRoomCap.getText());
+            double roomRate = Double.parseDouble(substring);
+            System.out.println(roomRate);
+            if (Room.editRoom(oldid, roomType, roomRate, roomLimit, roomid, status)) {
+                JOptionPane.showMessageDialog(this, "Room successfully edited!");
+                imagepath = null;
+                view_editRoomtable();
+            } else {
+                JOptionPane.showMessageDialog(this, "Data not Saved!");
             }
         }
 

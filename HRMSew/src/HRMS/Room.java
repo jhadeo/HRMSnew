@@ -10,7 +10,6 @@ import java.sql.*;
 
 public class Room {
 
-
     static boolean searchRoomID(int RoomID) {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
@@ -48,6 +47,22 @@ public class Room {
         return rate;
     }
 
+    static String getRoomCap(int RoomNo) {
+        String rate = "";
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            Statement stmt = con.createStatement();
+            String search = "select RoomLimit from Room where " + RoomNo + "= RoomNo";
+            ResultSet rs = stmt.executeQuery(search);
+            while (rs.next()) {
+                rate = rs.getString("RoomLimit");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return rate;
+    }
+
     static String getReservationID() {
         String rate = "";
         try {
@@ -57,8 +72,9 @@ public class Room {
             ResultSet rs = stmt.executeQuery(search);
             while (rs.next()) {
                 rate = rs.getString("ReservationID");
-                if (rate==null)
+                if (rate == null) {
                     return "1";
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -124,20 +140,20 @@ public class Room {
         }
     }
 
-    static boolean CheckOut(int rID, String paymentMethod,String roomNo) {
+    static boolean CheckOut(int rID, String paymentMethod, String roomNo) {
         try {
 
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
-            
+
             String insertsql = "UPDATE RoomReservation SET PaymentStatus = 1, CheckOutStatus = 1, PayMethod =? WHERE ReservationID = ?";
             PreparedStatement pstmt = con.prepareStatement(insertsql);
             pstmt.setString(1, paymentMethod);
             pstmt.setInt(2, rID);
             pstmt.executeUpdate();
-            
+
             String update = "UPDATE Room SET RoomStatus = 'Available' WHERE RoomNo = ?";
             PreparedStatement pstmt2 = con.prepareStatement(update);
-            pstmt2.setString(1,roomNo);
+            pstmt2.setString(1, roomNo);
             pstmt2.executeUpdate();
             return true;
         } catch (Exception e) {
@@ -167,7 +183,7 @@ public class Room {
             return false;
         }
     }
-    
+
     static boolean addRoom(int roomNo, String roomType, double roomRate, int roomLimit) {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
@@ -197,7 +213,8 @@ public class Room {
             pstmt.setString(2, roomType);
             pstmt.setInt(3, roomLimit);
             pstmt.setInt(4, newRoomNo);
-            pstmt.setInt(5, roomNo);
+            pstmt.setString(5, Status);
+            pstmt.setInt(6, roomNo);
             pstmt.executeUpdate();
             return true;
 
@@ -218,7 +235,8 @@ public class Room {
             FileInputStream fis = new FileInputStream(roomImage);
             pstmt.setBinaryStream(4, fis, (int) roomImage.length());
             pstmt.setInt(5, newRoomNo);
-            pstmt.setInt(6, roomNo);
+            pstmt.setString(6, status);
+            pstmt.setInt(7, roomNo);
             pstmt.executeUpdate();
             return true;
 
@@ -244,7 +262,6 @@ public class Room {
     }
 
     //CONFERENCE ROOMS
-
     static boolean addConferenceRoom(int roomNo, double roomRate, int roomLimit, File roomImage) {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
@@ -264,7 +281,7 @@ public class Room {
             return false;
         }
     }
-    
+
     static boolean addConferenceRoom(int roomNo, double roomRate, int roomLimit) {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
@@ -304,7 +321,7 @@ public class Room {
         }
     }
 
-    static boolean editConferenceRoom(int roomNo, double roomRate, int roomLimit, int newConfNo,String Status) {
+    static boolean editConferenceRoom(int roomNo, double roomRate, int roomLimit, int newConfNo, String Status) {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             String insertsql = "UPDATE ConferenceRooms SET BookRate = ?, Capacity = ?, ConfRoomNo = ?, ConfRoomStatus = ? WHERE ConfRoomNo = ?";
@@ -336,5 +353,22 @@ public class Room {
             e.printStackTrace();
             return false;
         }
+    }
+
+    static String getConfRoomCapacity(String roomNo) {
+        String rate = "";
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            Statement stmt = con.createStatement();
+            String search = "select Capacity from ConferenceRooms where " + roomNo + "= ConfRoomNo";
+            ResultSet rs = stmt.executeQuery(search);
+            while (rs.next()) {
+                rate = rs.getString("Capacity");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return rate;
+
     }
 }
