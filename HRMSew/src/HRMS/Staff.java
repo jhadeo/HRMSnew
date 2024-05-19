@@ -15,12 +15,15 @@ import java.sql.Statement;
  * @author user
  */
 public class Staff extends StaffSQL {
+
     @Override
-    public boolean addValue(){
+    public boolean addValue() {
         return true;
-    };
+    }
+
+    ;
     
-    public static String getPassword(String username){
+    public static String getPassword(String username) {
         System.out.println(username);
         String password = "";
         try {
@@ -31,19 +34,23 @@ public class Staff extends StaffSQL {
             while (rs.next()) {
                 password = rs.getString("staffpassword");
                 System.out.println(password);
-            }   
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return password;
-    };
-    public static String getValue(){
-    
-    return "";
-    };
+    }
+
+    ;
+    public static String getValue() {
+
+        return "";
+    }
+
+    ;
    
     public static boolean setPassword(String password, String username) {
-        try{
+        try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
 
@@ -53,7 +60,7 @@ public class Staff extends StaffSQL {
             pstmt.setString(2, username);
             pstmt.executeUpdate();
             return true;
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
@@ -63,17 +70,19 @@ public class Staff extends StaffSQL {
     public String getStaff() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    static boolean AddStaff(String first, String last, String username, String Password){
+
+    static boolean AddStaff(String first, String last, String username, String Password, int admin) {
 
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
 
-            String sql = "INSERT INTO STAFF ( FirstName, LastName, username, staffPassword) VALUES ( ?, ?, ?, ? )";
+            String sql = "INSERT INTO STAFF ( FirstName, LastName, username, staffPassword, isAdmin) VALUES ( ?, ?, ?, ?, ? )";
             PreparedStatement pstmt = con.prepareStatement(sql);
             pstmt.setString(1, first);
             pstmt.setString(2, last);
             pstmt.setString(3, username);
             pstmt.setString(4, Password);
+            pstmt.setInt(5, admin);
             pstmt.executeUpdate();
 
             return true;
@@ -82,9 +91,27 @@ public class Staff extends StaffSQL {
             return false;
         }
     }
+
+    static boolean removeStaff(String username) {
+
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            String insertsql = "DELETE FROM STAFF  WHERE username = ?";
+            PreparedStatement pstmt = con.prepareStatement(insertsql);
+            pstmt.setString(1, username);
+            pstmt.executeUpdate();
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
 
-abstract class StaffSQL{
+abstract class StaffSQL {
+
     public abstract boolean addValue();
+
     public abstract String getStaff();
 }
