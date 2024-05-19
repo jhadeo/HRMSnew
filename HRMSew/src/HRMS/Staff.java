@@ -19,15 +19,18 @@ public class Staff extends StaffSQL {
     public boolean addValue(){
         return true;
     };
+    
     public static String getPassword(String username){
+        System.out.println(username);
         String password = "";
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
-            String search = "select password from STAFF where " + username + "= username";
+            String search = "select staffpassword from STAFF where '" + username + "' = username";
             ResultSet rs = stmt.executeQuery(search);
             while (rs.next()) {
-                password = rs.getString("username");
+                password = rs.getString("staffpassword");
+                System.out.println(password);
             }   
         } catch (Exception e) {
             e.printStackTrace();
@@ -44,7 +47,7 @@ public class Staff extends StaffSQL {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
 
-            String insertsql = "UPDATE STAFF SET roomNo = ?, CheckInDate = ?, CheckOutDate = ?, MiscCharge = ?, Total = ? WHERE Username = ?";
+            String insertsql = "UPDATE STAFF SET staffPassword = ? WHERE Username = ?";
             PreparedStatement pstmt = con.prepareStatement(insertsql);
             pstmt.setString(1, password);
             pstmt.setString(2, username);
