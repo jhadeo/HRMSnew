@@ -3731,10 +3731,10 @@
                                                       <Component id="spinEventID1" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
                                                       <Component id="txtGuestID2" alignment="1" max="32767" attributes="0"/>
                                                       <Component id="eventGuestIDsearch" alignment="1" max="32767" attributes="0"/>
+                                                      <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -3754,10 +3754,12 @@
                                                       <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel48" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="confRoomSearch" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
                                                       <Component id="txtEventRoomID1" alignment="1" max="32767" attributes="0"/>
+                                                      <Group type="103" groupAlignment="3" attributes="0">
+                                                          <Component id="jLabel48" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="confRoomSearch" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
                                                   </Group>
                                                   <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -4473,18 +4475,18 @@
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel125">
                               <Properties>
+                                <Property name="text" type="java.lang.String" value="Payment Status:"/>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Segoe UI Light" size="24" style="0"/>
                                 </Property>
-                                <Property name="text" type="java.lang.String" value="Payment Status:"/>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JCheckBox" name="paymentStatEditER">
                               <Properties>
+                                <Property name="text" type="java.lang.String" value="Paid"/>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Segoe UI Light" size="18" style="0"/>
                                 </Property>
-                                <Property name="text" type="java.lang.String" value="Paid"/>
                               </Properties>
                             </Component>
                           </SubComponents>

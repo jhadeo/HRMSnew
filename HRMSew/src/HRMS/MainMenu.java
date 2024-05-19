@@ -2646,10 +2646,10 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(jLabel43)
                             .addComponent(spinEventID1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel46)
-                            .addComponent(txtGuestID2)
-                            .addComponent(eventGuestIDsearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtGuestID2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(eventGuestIDsearch, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel46))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel44)
@@ -2665,10 +2665,11 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(spinEventDuration1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel42))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel48)
-                            .addComponent(confRoomSearch)
-                            .addComponent(txtEventRoomID1))
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtEventRoomID1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel48)
+                                .addComponent(confRoomSearch)))
                         .addGap(9, 9, 9)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel49)
@@ -3612,7 +3613,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 835, Short.MAX_VALUE)
+                .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 835, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -4397,6 +4398,9 @@ public class MainMenu extends javax.swing.JFrame {
             jTextField4.setText(Guest.getGuestEmail(guestID));
             jTextField1.setText(Guest.getGuestName(guestID));
         }
+        else{
+            JOptionPane.showMessageDialog(EventPanel, "Guest not found!");
+        }
     }//GEN-LAST:event_SearchIDActionPerformed
 
     private void searchRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchRoomActionPerformed
@@ -4406,11 +4410,12 @@ public class MainMenu extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(EventPanel, "Room not found!");
         }
-
         if (Room.searchRoomID(roomID)) {
             JOptionPane.showMessageDialog(EventPanel, "Room found!");
             txtRoomRate.setText(Room.getRoomRate(roomID));
-
+        }
+        else{
+            JOptionPane.showMessageDialog(EventPanel, "Room not found!");
         }
 
     }//GEN-LAST:event_searchRoomActionPerformed
@@ -5061,7 +5066,7 @@ public class MainMenu extends javax.swing.JFrame {
         String rs = (String) editRS.getValue();
         String initialrs = (String) editRoomTable.getValueAt(row, 4);
         String status = (String) editRS.getValue();
-
+        
         if (initialrs.equalsIgnoreCase("RESERVED") && status.equalsIgnoreCase("OCCUPIED")) { // replace this with roomstatus column on respective table
             JOptionPane.showMessageDialog(this, "Room still reserved!");
         } else if (initialrs.equalsIgnoreCase("OCCUPIED")) {
