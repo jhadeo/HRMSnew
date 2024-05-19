@@ -17,6 +17,7 @@ public class RoomReservationReciept extends javax.swing.JFrame {
         initComponents();
         this.setLabels(name, mobile, gemail, rID, roomNo, roomCap, roomRate, tax, total, cidate, codate);
         this.setVisible(true);
+        setLocationRelativeTo(null);
     }
 
     

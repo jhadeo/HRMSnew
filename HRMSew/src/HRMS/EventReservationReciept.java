@@ -14,6 +14,7 @@ public class EventReservationReciept extends javax.swing.JFrame {
         initComponents();
         setLabels(name, email, mobile, room, roomC, eName, eDate, duration, rr, payM, payS, deco, req, catering, tax, total);
         this.setVisible(true);
+        setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
