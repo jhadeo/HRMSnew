@@ -104,4 +104,14 @@ CONSTRAINT EventRequestsPK PRIMARY KEY (EventID, Request),
 CONSTRAINT EventRequestsFK FOREIGN KEY (EventID) REFERENCES HotelEvents(EventID)
 )
 
+CREATE TABLE STAFF (
+staffID int primary key identity(100,1),
+username varchar(100),
+staffPassword varchar(100),
+isAdmin int default 0
+CONSTRAINT isAdmin CHECK (isAdmin=0 OR isAdmin=1)
+)
+
+insert into staff values ('admin', 'password', 1)
+
 --drop database HRSDB

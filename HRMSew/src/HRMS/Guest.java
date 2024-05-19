@@ -18,14 +18,10 @@ public class Guest {
             Statement stmt = con.createStatement();
             String search = "select GuestID from Guest where " + guestID + "= Guest.GuestID";
             ResultSet rs = stmt.executeQuery(search);
-            String test = "";
+            String test;
             while (rs.next()) {
                 test = rs.getString("GuestID");
-                if (test.isEmpty()) {
-                    return false;
-                } else {
-                    return true;
-                }
+                return !test.isEmpty();
             }
         } catch (Exception e) {
             e.printStackTrace();

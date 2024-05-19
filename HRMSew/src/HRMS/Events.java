@@ -45,11 +45,11 @@ public class Events {
         }
     }
 
-    static boolean EditEventReservation(String eventDate, String duration, String roomCharge, String catering, String deco, String request, String taxes, String total, String guestName, String eventName, String roomAssigned) {
+    static boolean EditEventReservation(String eventDate, String duration, String roomCharge, String catering, String deco, String request, String taxes, String total, String guestName, String eventName, String roomAssigned, boolean status) {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
 
-            String insertsql = "UPDATE EventReservation SET EventDate = ?, Duration = ?, ConfRoomCharge = ?, CateringCharge = ?, DecorCharge = ?, RequestCharge = ?, Taxes = ?, Total = ? FROM EventReservation JOIN Guest ON EventReservation.GuestID = Guest.GuestID JOIN EventReservationView ON CONCAT(Guest.FirstName, ' ', Guest.LastName) = ? JOIN HotelEvents ON EventReservationView.EventName = HotelEvents.EventName AND EventReservation.EventID = HotelEvents.EventID WHERE ConfRoomNo = ? AND EventReservationView.EventName = ?";
+            String insertsql = "UPDATE EventReservation SET EventDate = ?, Duration = ?, ConfRoomCharge = ?, CateringCharge = ?, DecorCharge = ?, RequestCharge = ?, Taxes = ?, Total = ?, PaymentStatus = ? FROM EventReservation JOIN Guest ON EventReservation.GuestID = Guest.GuestID JOIN EventReservationView ON CONCAT(Guest.FirstName, ' ', Guest.LastName) = ? JOIN HotelEvents ON EventReservationView.EventName = HotelEvents.EventName AND EventReservation.EventID = HotelEvents.EventID WHERE ConfRoomNo = ? AND EventReservationView.EventName = ?";
             PreparedStatement pstmt = con.prepareStatement(insertsql);
             pstmt.setString(1, eventDate);
             pstmt.setString(2, duration);
@@ -59,9 +59,10 @@ public class Events {
             pstmt.setString(6, request);
             pstmt.setString(7, taxes);
             pstmt.setString(8, total);
-            pstmt.setString(9, guestName);
-            pstmt.setString(10, roomAssigned);
-            pstmt.setString(11, eventName);
+            pstmt.setBoolean(9, status);
+            pstmt.setString(10, guestName);
+            pstmt.setString(11, roomAssigned);
+            pstmt.setString(12, eventName);
 
             pstmt.executeUpdate();
             return true;
@@ -108,6 +109,22 @@ public class Events {
             e.printStackTrace();
         }
         return 0;
+    }
+    
+    static String getEventName(int EventID) {
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            Statement stmt = con.createStatement();
+            String sql = "select EventName [EventID] from HotelEvents";
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                System.out.println(rs.getString("EventID"));
+                return rs.getString("EventID");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 
     static boolean addEvent(String eventID, String eventName, String catering, String AVR, String roomSetup, String deco) {
@@ -166,6 +183,10 @@ public class Events {
             return false;
         }
     }
+    
+    
+    
+    
 
     //CONFERENCE ROOMS
     static boolean searchRoomID(int RoomID) {
