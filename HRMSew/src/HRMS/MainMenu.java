@@ -53,8 +53,9 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     //variables
-    Double eventrent;
+    Double eventrent = 0.0;
     String imagepath = null;
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -158,7 +159,6 @@ public class MainMenu extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         RReservationView = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
-        txtDownPayment = new javax.swing.JTextField();
         txtRoomRate = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         txtTaxes = new javax.swing.JTextField();
@@ -174,7 +174,6 @@ public class MainMenu extends javax.swing.JFrame {
         txtGuestID = new javax.swing.JFormattedTextField(numFormat);
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
-        jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
@@ -344,10 +343,8 @@ public class MainMenu extends javax.swing.JFrame {
         JBCard1 = new javax.swing.JRadioButton();
         addEventRbutton = new javax.swing.JButton();
         jLabel52 = new javax.swing.JLabel();
-        txtDownPayment2 = new javax.swing.JTextField();
         txtDecorationCharge1 = new javax.swing.JFormattedTextField(currencyFormat);
         txtTotal2 = new javax.swing.JTextField();
-        jLabel51 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         txtRequestCharge1 = new javax.swing.JFormattedTextField(currencyFormat);
         txtTaxes2 = new javax.swing.JTextField();
@@ -388,6 +385,8 @@ public class MainMenu extends javax.swing.JFrame {
         editTaxesEventR = new javax.swing.JFormattedTextField(currencyFormat);
         editTotalEventR = new javax.swing.JFormattedTextField(currencyFormat);
         extendTime = new javax.swing.JButton();
+        jLabel125 = new javax.swing.JLabel();
+        paymentStatEditER = new javax.swing.JCheckBox();
         jPanel15 = new javax.swing.JPanel();
         jScrollPane12 = new javax.swing.JScrollPane();
         cancelEventReservationTable = new javax.swing.JTable();
@@ -436,7 +435,6 @@ public class MainMenu extends javax.swing.JFrame {
         jScrollPane10 = new javax.swing.JScrollPane();
         EditConfTable = new javax.swing.JTable();
         dispConfRoomNo = new javax.swing.JFormattedTextField(numFormat);
-        dispConfRoomStatus = new javax.swing.JTextField();
         editConfRoomRate = new javax.swing.JFormattedTextField(currencyFormat);
         jLabel76 = new javax.swing.JLabel();
         jLabel78 = new javax.swing.JLabel();
@@ -447,6 +445,7 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel86 = new javax.swing.JLabel();
         editImageUpload = new javax.swing.JButton();
         editConfRoomCap = new javax.swing.JSpinner();
+        dispConfRoomStatus = new javax.swing.JSpinner();
         jPanel20 = new javax.swing.JPanel();
         jScrollPane11 = new javax.swing.JScrollPane();
         removeConfTable = new javax.swing.JTable();
@@ -1122,9 +1121,6 @@ public class MainMenu extends javax.swing.JFrame {
 
         jTextField4.setEditable(false);
 
-        jLabel19.setText("Down Payment:");
-        jLabel19.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
-
         jLabel20.setText("Total:");
         jLabel20.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
@@ -1167,26 +1163,23 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(174, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(42, 42, 42)
+                                .addGap(77, 77, 77)
                                 .addComponent(jLabel22)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtRoomRate, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addComponent(jLabel19)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtDownPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addComponent(jLabel20)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addComponent(jLabel21)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtTaxes, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(133, 133, 133)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel20)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel21)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtTaxes, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1278,11 +1271,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel20)
                     .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtDownPayment, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19))
-                .addGap(42, 42, 42)
+                .addGap(80, 80, 80)
                 .addComponent(submitRoomReservation, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(228, Short.MAX_VALUE))
         );
@@ -2489,9 +2478,6 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel52.setText("Breakdown of Charges");
         jLabel52.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
 
-        txtDownPayment2.setDragEnabled(true);
-        txtDownPayment2.setEnabled(false);
-
         txtDecorationCharge1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDecorationCharge1ActionPerformed(evt);
@@ -2505,9 +2491,6 @@ public class MainMenu extends javax.swing.JFrame {
                 txtTotal2ActionPerformed(evt);
             }
         });
-
-        jLabel51.setText("Down Payment");
-        jLabel51.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         jLabel57.setText("Taxes:");
         jLabel57.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
@@ -2566,7 +2549,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(188, Short.MAX_VALUE)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel45)
                     .addComponent(jLabel46)
@@ -2613,56 +2596,50 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(jLabel55)
                             .addComponent(jLabel56)
                             .addComponent(jLabel57)
-                            .addComponent(jLabel50)
-                            .addComponent(jLabel51))
+                            .addComponent(jLabel50))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtCateringCharge1)
+                            .addComponent(txtCateringCharge1, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
                             .addComponent(txtRequestCharge1)
                             .addComponent(txtDecorationCharge1)
                             .addComponent(txtRentalFee1)
                             .addComponent(txtTaxes2)
-                            .addComponent(txtTotal2)
-                            .addComponent(txtDownPayment2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtTotal2)))
                     .addComponent(addEventRbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
-                .addContainerGap(177, Short.MAX_VALUE)
+                .addGap(177, 177, 177)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addComponent(jLabel52)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel53)
-                            .addComponent(txtRentalFee1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtRentalFee1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel54)
-                            .addComponent(txtCateringCharge1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtCateringCharge1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel55)
-                            .addComponent(txtRequestCharge1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtRequestCharge1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel56)
-                            .addComponent(txtDecorationCharge1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel56, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtDecorationCharge1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel57)
-                            .addComponent(txtTaxes2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel57, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtTaxes2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel50)
-                            .addComponent(txtTotal2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel51)
-                            .addComponent(txtDownPayment2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtTotal2))
+                        .addGap(56, 56, 56)
                         .addComponent(addEventRbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -2671,17 +2648,17 @@ public class MainMenu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel46)
-                            .addComponent(txtGuestID2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(eventGuestIDsearch))
+                            .addComponent(txtGuestID2)
+                            .addComponent(eventGuestIDsearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel44)
                             .addComponent(RBPaid1)
                             .addComponent(RBPending1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel45)
-                            .addComponent(DCEventStart1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(DCEventStart1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel47)
@@ -2690,8 +2667,8 @@ public class MainMenu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel48)
-                            .addComponent(txtEventRoomID1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(confRoomSearch))
+                            .addComponent(confRoomSearch)
+                            .addComponent(txtEventRoomID1))
                         .addGap(9, 9, 9)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel49)
@@ -2703,7 +2680,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(JBBankTransfer1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(JBCashApp1)))
-                .addContainerGap(252, Short.MAX_VALUE))
+                .addGap(252, 252, 252))
         );
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
@@ -2832,6 +2809,12 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        jLabel125.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+        jLabel125.setText("Payment Status:");
+
+        paymentStatEditER.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        paymentStatEditER.setText("Paid");
+
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
         jPanel23Layout.setHorizontalGroup(
@@ -2847,17 +2830,19 @@ public class MainMenu extends javax.swing.JFrame {
                                 .addComponent(jLabel120)
                                 .addComponent(jLabel122))
                             .addComponent(jLabel116, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel118, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jLabel118, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel125, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel23Layout.createSequentialGroup()
                                 .addComponent(editEventRSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(extendTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(extendTime, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
                             .addComponent(reservedToEdit)
                             .addComponent(eventNameEdit)
                             .addComponent(roomAssignedEdit)
-                            .addComponent(editEventDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(editEventDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(paymentStatEditER, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(123, 123, 123)
                         .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel121)
@@ -2931,11 +2916,18 @@ public class MainMenu extends javax.swing.JFrame {
                         .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel117, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(editTotalEventR)))
-                    .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(extendTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel118, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(editEventRSpinner, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(extendTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel118, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(editEventRSpinner, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel125, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel23Layout.createSequentialGroup()
+                                .addComponent(paymentStatEditER, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(1, 1, 1)))))
+                .addGap(143, 143, 143))
         );
 
         dateSettings2.setDateRangeLimits(now, LocalDate.MAX);
@@ -3363,8 +3355,6 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane10.setViewportView(EditConfTable);
 
-        dispConfRoomStatus.setEditable(false);
-
         jLabel76.setText("Conf. Room Rate:");
         jLabel76.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
@@ -3406,12 +3396,14 @@ public class MainMenu extends javax.swing.JFrame {
 
         editConfRoomCap.setModel(new javax.swing.SpinnerNumberModel(10, 10, 100, 1));
 
+        dispConfRoomStatus.setModel(new javax.swing.SpinnerListModel(new String[] {"Available", "Reserved", "Occupied", "In Maintenance"}));
+
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
         jPanel19Layout.setHorizontalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel19Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(45, Short.MAX_VALUE)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(confRoomImageLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel19Layout.createSequentialGroup()
@@ -3425,13 +3417,13 @@ public class MainMenu extends javax.swing.JFrame {
                         .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(dispConfRoomNo)
                             .addComponent(editConfRoomRate)
-                            .addComponent(dispConfRoomStatus)
                             .addComponent(editImageUpload, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(editConfRoomCap, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(editConfRoomCap, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(dispConfRoomStatus)))
                     .addComponent(editConfRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3453,14 +3445,14 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(jLabel76)
                             .addComponent(editConfRoomRate, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel80)
-                            .addComponent(dispConfRoomStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel80, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(dispConfRoomStatus))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel86, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(editImageUpload, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(16, 16, 16)
                         .addComponent(editConfRoom, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(184, Short.MAX_VALUE))
@@ -3852,7 +3844,7 @@ public class MainMenu extends javax.swing.JFrame {
                 Time CheckoutTime = rs.getTime("CheckoutDate");
                 String RoomRate = rs.getString("RoomRate");
                 String Taxes = rs.getString("Taxes");
-                String MiscCharges = rs.getString("MiscCharge");
+                String MiscCharges = rs.getString("MiscCharges");
                 String Total = rs.getString("Total");
                 boolean status = rs.getBoolean("PaymentStatus");
                 String method = rs.getString("PayMethod");
@@ -3878,7 +3870,7 @@ public class MainMenu extends javax.swing.JFrame {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
             Statement stmt = con.createStatement();
-            String sql = "select RoomReservation.ReservationID, RoomReservation.RoomNo,RoomReservation.CheckInDate,RoomReservation.CheckOutDate,RoomReservation.CheckOutDate, RoomReservation.MiscCharge, RoomReservation.Total, RoomReservation.PaymentStatus, RoomReservation.PayMethod,RoomReservation.CheckOutStatus from RoomReservation";
+            String sql = "select RoomReservation.ReservationID, RoomReservation.RoomNo,RoomReservation.CheckInDate,RoomReservation.CheckOutDate,RoomReservation.CheckOutDate, RoomReservation.MiscCharges, RoomReservation.Total, RoomReservation.PaymentStatus, RoomReservation.PayMethod,RoomReservation.CheckOutStatus from RoomReservation";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
 
@@ -3888,7 +3880,7 @@ public class MainMenu extends javax.swing.JFrame {
                 Time CheckinTime = rs.getTime("CheckInDate");
                 Date Checkout = rs.getDate("CheckoutDate");
                 Time CheckoutTime = rs.getTime("CheckoutDate");
-                String MiscCharges = rs.getString("MiscCharge");
+                String MiscCharges = rs.getString("MiscCharges");
                 String Total = rs.getString("Total");
 
                 tbmodel.addRow(new Object[]{ReserID, RoomNo, Checkin, CheckinTime, Checkout, CheckoutTime, MiscCharges, Total});
@@ -4261,15 +4253,8 @@ public class MainMenu extends javax.swing.JFrame {
 
             String status = getSelectedButtonText(membershipGroup);
             boolean member = false;
-            if ("Active".equals(status)) {
-                member = true;
-            } else {
-                member = false;
-            }
+            member = "Active".equals(status);
             int memberstatus = member ? 1 : 0;
-            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
-            Statement stmt = con.createStatement();
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             Date selectedDate = (Date) datebirthchooser.getDate();
             java.sql.Date sqlDate = new java.sql.Date(selectedDate.getTime()); //stackoverflow
             if (Guest.AddGuest(firstfield.getText(), middlefield.getText(), lastfield.getText(), mobilefield.getText(), emailfield.getText(), homefield.getText(), sqlDate, choice, memberstatus)) {
@@ -4379,14 +4364,10 @@ public class MainMenu extends javax.swing.JFrame {
                 break;
         }
     }//GEN-LAST:event_ConferenceSectionStateChanged
-   
+
     private void submitRoomReservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitRoomReservationActionPerformed
         // TODO add your handling code here:
-        // Add datePicker to your UI...
         try {
-
-            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
-            Statement stmt = con.createStatement();
             String date1 = CheckInDate.getDateTimeStrict().format(DateTimeFormatter.ISO_DATE_TIME);
             String date2 = CheckOutDate.getDateTimeStrict().format(DateTimeFormatter.ISO_DATE_TIME);
 
@@ -4452,8 +4433,7 @@ public class MainMenu extends javax.swing.JFrame {
                 double total = totalRate + taxes;
                 txtTaxes.setText(String.format("%.2f", taxes));
                 txtTotal.setText(String.format("%.2f", total));
-                double downPaymentAmount = total * 0.3;
-                txtDownPayment.setText(String.format("%.2f", downPaymentAmount));
+                //txtDownPayment.setText(String.format("%.2f", downPaymentAmount));
             }
         } catch (DateTimeParseException | NumberFormatException e) {
             System.out.println("Room not selected");
@@ -4491,11 +4471,7 @@ public class MainMenu extends javax.swing.JFrame {
             String choice1 = getSelectedButtonText(EventReservationPMGroup);
             String status = getSelectedButtonText(EventReservationPGroup);
             boolean member = false;
-            if ("Paid".equals(status)) {
-                member = true;
-            } else {
-                member = false;
-            }
+            member = "Paid".equals(status);
             int memberstatus = member ? 1 : 0;
 
             int spin1 = (Integer) spinEventID1.getValue();
@@ -4690,7 +4666,7 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void addConfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addConfActionPerformed
         int roomid = Integer.parseInt(addConfRoomNo.getText());
-        String substring = addConfRoomBook.getText().toString().substring(1);
+        String substring = addConfRoomBook.getText().substring(1);
         try {
             addConfRoomCap.commitEdit();
         } catch (java.text.ParseException e) {
@@ -4745,46 +4721,97 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void editConfRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editConfRoomActionPerformed
 
-        String substring = editConfRoomRate.getText().toString().substring(1);
-        if (imagepath != null) {
-            int roomid = Integer.parseInt(dispConfRoomNo.getText());
-            try {
-                editConfRoomCap.commitEdit();
-            } catch (java.text.ParseException e) {
-            }
-            int roomCap = (Integer) editConfRoomCap.getValue();
-            //int roomCap = Integer.parseInt(editConfRoomCap.getText());
-            double roomRate = Double.parseDouble(substring);
-            File imageFile = new File(imagepath);
-            try {
-                InputStream is = new FileInputStream(imageFile);
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            if (Room.editConferenceRoom(roomid, roomRate, roomCap, imageFile)) {
-                JOptionPane.showMessageDialog(this, "Room successfully edited!");
-                imagepath = null;
+        String substring = editConfRoomRate.getText().substring(1);
+        int row = EditConfTable.getSelectedRow();
+        int oldNo = Integer.parseInt((String) EditConfTable.getValueAt(row, 0));
+        String status = (String) dispConfRoomStatus.getValue();
+        String oldstat = (String) EditConfTable.getValueAt(row, 3);
+        if (oldstat.equalsIgnoreCase("OCCUPIED")) {
+            JOptionPane.showMessageDialog(this, "Room Occupied!");
+        } else if (status.equalsIgnoreCase("OCCUPIED") && oldstat.equalsIgnoreCase("RESERVED")) {
+            if (imagepath != null) {
+                int roomid = Integer.parseInt(dispConfRoomNo.getText());
+                try {
+                    editConfRoomCap.commitEdit();
+                } catch (java.text.ParseException e) {
+                }
+                int roomCap = (Integer) editConfRoomCap.getValue();
+                //int roomCap = Integer.parseInt(editConfRoomCap.getText());
+                double roomRate = Double.parseDouble(substring);
+                File imageFile = new File(imagepath);
+                try {
+                    InputStream is = new FileInputStream(imageFile);
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                if (Room.editConferenceRoom(oldNo, roomRate, roomCap, imageFile, roomid, status)) {
+                    JOptionPane.showMessageDialog(this, "Room successfully edited!");
+                    imagepath = null;
+                    view_editConfRoom();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Data not Saved!");
+                }
             } else {
-                JOptionPane.showMessageDialog(this, "Data not Saved!");
+                int roomid = Integer.parseInt(dispConfRoomNo.getText());
+                try {
+                    editConfRoomCap.commitEdit();
+                } catch (java.text.ParseException e) {
+                }
+                int roomCap = (Integer) editConfRoomCap.getValue();
+                //  int roomCap = Integer.parseInt(editConfRoomCap.getText());
+                double roomRate = Double.parseDouble(substring);
+                System.out.println(roomRate);
+                if (Room.editConferenceRoom(oldNo, roomRate, roomCap, roomid, status)) {
+                    JOptionPane.showMessageDialog(this, "Room successfully edited!");
+                    imagepath = null;
+                    view_editConfRoom();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Data not Saved!");
+                }
             }
         } else {
-            int roomid = Integer.parseInt(dispConfRoomNo.getText());
-            try {
-                editConfRoomCap.commitEdit();
-            } catch (java.text.ParseException e) {
-            }
-            int roomCap = (Integer) editConfRoomCap.getValue();
-            //  int roomCap = Integer.parseInt(editConfRoomCap.getText());
-            double roomRate = Double.parseDouble(substring);
-            System.out.println(roomRate);
-            if (Room.editConferenceRoom(roomid, roomRate, roomCap)) {
-                JOptionPane.showMessageDialog(this, "Room successfully edited!");
-                imagepath = null;
-
+            if (imagepath != null) {
+                int roomid = Integer.parseInt(dispConfRoomNo.getText());
+                try {
+                    editConfRoomCap.commitEdit();
+                } catch (java.text.ParseException e) {
+                }
+                int roomCap = (Integer) editConfRoomCap.getValue();
+                //int roomCap = Integer.parseInt(editConfRoomCap.getText());
+                double roomRate = Double.parseDouble(substring);
+                File imageFile = new File(imagepath);
+                try {
+                    InputStream is = new FileInputStream(imageFile);
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                if (Room.editConferenceRoom(oldNo, roomRate, roomCap, imageFile, roomid, status)) {
+                    JOptionPane.showMessageDialog(this, "Room successfully edited!");
+                    imagepath = null;
+                    view_editConfRoom();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Data not Saved!");
+                }
             } else {
-                JOptionPane.showMessageDialog(this, "Data not Saved!");
+                int roomid = Integer.parseInt(dispConfRoomNo.getText());
+                try {
+                    editConfRoomCap.commitEdit();
+                } catch (java.text.ParseException e) {
+                }
+                int roomCap = (Integer) editConfRoomCap.getValue();
+                //  int roomCap = Integer.parseInt(editConfRoomCap.getText());
+                double roomRate = Double.parseDouble(substring);
+                System.out.println(roomRate);
+                if (Room.editConferenceRoom(oldNo, roomRate, roomCap, roomid, status)) {
+                    JOptionPane.showMessageDialog(this, "Room successfully edited!");
+                    imagepath = null;
+                    view_editConfRoom();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Data not Saved!");
+                }
             }
         }
+
     }//GEN-LAST:event_editConfRoomActionPerformed
 
     private void EditConfTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditConfTableMouseClicked
@@ -4792,7 +4819,7 @@ public class MainMenu extends javax.swing.JFrame {
         dispConfRoomNo.setText((String) EditConfTable.getValueAt(row, 0));
         editConfRoomCap.setValue(Integer.valueOf((String) EditConfTable.getValueAt(row, 1)));
         editConfRoomRate.setText(InputNumberFilter.currencyConverter(Double.parseDouble((String) EditConfTable.getValueAt(row, 2))));
-        dispConfRoomStatus.setText((String) EditConfTable.getValueAt(row, 3));
+        dispConfRoomStatus.setValue((String) EditConfTable.getValueAt(row, 3));
 
         try {
             System.out.println("eto ung row: " + row);
@@ -5028,63 +5055,110 @@ public class MainMenu extends javax.swing.JFrame {
     private void editRoomButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editRoomButtonActionPerformed
         // TODO add your handling code here:
         int row = editRoomTable.getSelectedRow();
+        int oldid = Integer.parseInt((String) editRoomTable.getValueAt(row, 0));
         String substring = editRR.getText().substring(1);
         String roomType = (String) editRoomType.getValue();
         String rs = (String) editRS.getValue();
         String initialrs = (String) editRoomTable.getValueAt(row, 4);
+        String status = (String) editRS.getValue();
 
-        if (initialrs.equalsIgnoreCase("RESERVED")) { // replace this with roomstatus column on respective table
-            // check editRS if "occupied"
-            // else VVVV
+        if (initialrs.equalsIgnoreCase("RESERVED") && status.equalsIgnoreCase("OCCUPIED")) { // replace this with roomstatus column on respective table
             JOptionPane.showMessageDialog(this, "Room still reserved!");
-            if (initialrs.equalsIgnoreCase("OCCUPIED")) {
-                JOptionPane.showMessageDialog(this, "Room currently occupied!");
+        } else if (initialrs.equalsIgnoreCase("OCCUPIED")) {
+            if (status.equalsIgnoreCase("AVAILABLE")) {
+                if (imagepath != null) {
+                    int roomid = Integer.parseInt(editRN.getText());
+                    try {
+                        editRoomLimit.commitEdit();
+                        editRoomType.commitEdit();
+                        editRS.commitEdit();
+                    } catch (java.text.ParseException e) {
+                    }
+                    int roomLimit = (Integer) editRoomLimit.getValue();
+                    //int roomCap = Integer.parseInt(editConfRoomCap.getText());
+                    double roomRate = Double.parseDouble(substring);
+                    File imageFile = new File(imagepath);
+                    try {
+                        InputStream is = new FileInputStream(imageFile);
+                    } catch (FileNotFoundException ex) {
+                        Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    if (Room.editRoom(oldid, roomType, roomRate, roomLimit, imageFile, roomid, status)) {
+                        JOptionPane.showMessageDialog(this, "Room successfully edited!");
+                        imagepath = null;
+                        view_editRoomtable();
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Data not Saved!");
+                    }
+                } else if (imagepath == null && initialrs.equalsIgnoreCase("AVAILABLE")) {
+                    int roomid = Integer.parseInt(editRN.getText());
+                    try {
+                        editRoomLimit.commitEdit();
+                        editRoomType.commitEdit();
+                        editRS.commitEdit();
+                    } catch (java.text.ParseException e) {
+                    }
+                    int roomLimit = (Integer) editRoomLimit.getValue();
+                    //int roomCap = Integer.parseInt(editConfRoomCap.getText());
+                    double roomRate = Double.parseDouble(substring);
+                    System.out.println(roomRate);
+                    if (Room.editRoom(oldid, roomType, roomRate, roomLimit, roomid, status)) {
+                        JOptionPane.showMessageDialog(this, "Room successfully edited!");
+                        imagepath = null;
+                        view_editRoomtable();
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Data not Saved!");
+                    }
+                }
             }
-
-        } else if (imagepath != null && initialrs.equalsIgnoreCase("AVAILABLE")) {
-            int roomid = Integer.parseInt(editRN.getText());
-            try {
-                editRoomLimit.commitEdit();
-                editRoomType.commitEdit();
-                editRS.commitEdit();
-            } catch (java.text.ParseException e) {
-            }
-            int roomLimit = (Integer) editRoomLimit.getValue();
-            //int roomCap = Integer.parseInt(editConfRoomCap.getText());
-            double roomRate = Double.parseDouble(substring);
-            File imageFile = new File(imagepath);
-            try {
-                InputStream is = new FileInputStream(imageFile);
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            if (Room.editRoom(roomid, roomType, roomRate, roomLimit, imageFile)) {
-                JOptionPane.showMessageDialog(this, "Room successfully edited!");
-                imagepath = null;
-                view_editRoomtable();
-            } else {
-                JOptionPane.showMessageDialog(this, "Data not Saved!");
-            }
-        } else if (imagepath == null && initialrs.equalsIgnoreCase("AVAILABLE")) {
-            int roomid = Integer.parseInt(editRN.getText());
-            try {
-                editRoomLimit.commitEdit();
-                editRoomType.commitEdit();
-                editRS.commitEdit();
-            } catch (java.text.ParseException e) {
-            }
-            int roomLimit = (Integer) editRoomLimit.getValue();
-            //int roomCap = Integer.parseInt(editConfRoomCap.getText());
-            double roomRate = Double.parseDouble(substring);
-            System.out.println(roomRate);
-            if (Room.editRoom(roomid, roomType, roomRate, roomLimit)) {
-                JOptionPane.showMessageDialog(this, "Room successfully edited!");
-                imagepath = null;
-                view_editRoomtable();
-            } else {
-                JOptionPane.showMessageDialog(this, "Data not Saved!");
+            JOptionPane.showMessageDialog(this, "Room currently occupied!");
+        } else {
+            if (imagepath != null) {
+                int roomid = Integer.parseInt(editRN.getText());
+                try {
+                    editRoomLimit.commitEdit();
+                    editRoomType.commitEdit();
+                    editRS.commitEdit();
+                } catch (java.text.ParseException e) {
+                }
+                int roomLimit = (Integer) editRoomLimit.getValue();
+                //int roomCap = Integer.parseInt(editConfRoomCap.getText());
+                double roomRate = Double.parseDouble(substring);
+                File imageFile = new File(imagepath);
+                try {
+                    InputStream is = new FileInputStream(imageFile);
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                if (Room.editRoom(oldid, roomType, roomRate, roomLimit, imageFile, roomid, status)) {
+                    JOptionPane.showMessageDialog(this, "Room successfully edited!");
+                    imagepath = null;
+                    view_editRoomtable();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Data not Saved!");
+                }
+            } else if (imagepath == null && initialrs.equalsIgnoreCase("AVAILABLE")) {
+                int roomid = Integer.parseInt(editRN.getText());
+                try {
+                    editRoomLimit.commitEdit();
+                    editRoomType.commitEdit();
+                    editRS.commitEdit();
+                } catch (java.text.ParseException e) {
+                }
+                int roomLimit = (Integer) editRoomLimit.getValue();
+                //int roomCap = Integer.parseInt(editConfRoomCap.getText());
+                double roomRate = Double.parseDouble(substring);
+                System.out.println(roomRate);
+                if (Room.editRoom(oldid, roomType, roomRate, roomLimit, roomid, status)) {
+                    JOptionPane.showMessageDialog(this, "Room successfully edited!");
+                    imagepath = null;
+                    view_editRoomtable();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Data not Saved!");
+                }
             }
         }
+
     }//GEN-LAST:event_editRoomButtonActionPerformed
 
     private void editRoomTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editRoomTableMouseClicked
@@ -5385,7 +5459,7 @@ public class MainMenu extends javax.swing.JFrame {
         editDecoCeventR.setValue(InputNumberFilter.currencyConverter(Double.parseDouble((String) editEventReservationTable.getValueAt(row, 8))));
         editTaxesEventR.setValue(InputNumberFilter.currencyConverter(Double.parseDouble((String) editEventReservationTable.getValueAt(row, 9))));
         editTotalEventR.setValue(InputNumberFilter.currencyConverter(Double.parseDouble((String) editEventReservationTable.getValueAt(row, 10))));
-
+        paymentStatEditER.setSelected((boolean) editEventReservationTable.getValueAt(row, 11));
     }//GEN-LAST:event_editEventReservationTableMouseClicked
 
     private void editCateringCeventRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editCateringCeventRActionPerformed
@@ -5425,8 +5499,9 @@ public class MainMenu extends javax.swing.JFrame {
         String deco = editDecoCeventR.getText().substring(1, editDecoCeventR.getText().length() - 1);
         String taxes = editTaxesEventR.getText().substring(1, editTaxesEventR.getText().length() - 1);
         String total = editTotalEventR.getText().substring(1, editTotalEventR.getText().length() - 1);
+        boolean paidStatus = paymentStatEditER.isSelected();
 
-        if (Events.EditEventReservation(eventDate, duration, roomCharge, catering, deco, request, taxes, total, guestName, eventName, roomAssigned)) {
+        if (Events.EditEventReservation(eventDate, duration, roomCharge, catering, deco, request, taxes, total, guestName, eventName, roomAssigned, paidStatus)) {
             JOptionPane.showMessageDialog(this, "Event reservation successfully edited!");
             view_EditEventsR();
         } else
@@ -5560,7 +5635,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField dispConfRoomNo;
     private javax.swing.JTextField dispConfRoomNo2;
     private javax.swing.JTextField dispConfRoomRate;
-    private javax.swing.JTextField dispConfRoomStatus;
+    private javax.swing.JSpinner dispConfRoomStatus;
     private javax.swing.JTextField dispConfRoomStatus2;
     private javax.swing.JTextField editAVR;
     private javax.swing.JTextField editAddress;
@@ -5650,12 +5725,12 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel122;
     private javax.swing.JLabel jLabel123;
     private javax.swing.JLabel jLabel124;
+    private javax.swing.JLabel jLabel125;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
@@ -5691,7 +5766,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
@@ -5804,6 +5878,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField middlefield;
     private javax.swing.JTextField mobilefield;
     private javax.swing.ButtonGroup paymentRoomGroup;
+    private javax.swing.JCheckBox paymentStatEditER;
     private javax.swing.JTable removeConfTable;
     private javax.swing.JButton removeRBution;
     private javax.swing.JTextField removeRL;
@@ -5830,8 +5905,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton submitRoomReservation;
     private javax.swing.JTextField txtCateringCharge1;
     private javax.swing.JTextField txtDecorationCharge1;
-    private javax.swing.JTextField txtDownPayment;
-    private javax.swing.JTextField txtDownPayment2;
     private javax.swing.JTextField txtEventRoomID1;
     private javax.swing.JTextField txtGuestID;
     private javax.swing.JTextField txtGuestID2;

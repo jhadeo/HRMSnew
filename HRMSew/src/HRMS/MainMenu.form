@@ -1255,29 +1255,26 @@
                                       <EmptySpace pref="174" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                                                       <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="txtRoomRate" min="-2" pref="193" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                                      <Group type="102" alignment="1" attributes="0">
-                                                          <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="txtDownPayment" min="-2" pref="192" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="1" attributes="0">
-                                                          <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="txtTotal" min="-2" pref="192" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="1" attributes="0">
-                                                          <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                          <Component id="txtTaxes" min="-2" pref="192" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="1" attributes="0">
+                                                          <Group type="102" alignment="1" attributes="0">
+                                                              <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="txtTotal" min="-2" pref="192" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" alignment="1" attributes="0">
+                                                              <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="txtTaxes" min="-2" pref="192" max="-2" attributes="0"/>
+                                                          </Group>
                                                       </Group>
                                                   </Group>
                                               </Group>
@@ -1403,12 +1400,7 @@
                                           <Component id="jLabel20" max="-2" attributes="0"/>
                                           <Component id="txtTotal" min="-2" pref="32" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="txtDownPayment" min="-2" pref="32" max="-2" attributes="0"/>
-                                          <Component id="jLabel19" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                                       <Component id="submitRoomReservation" min="-2" pref="37" max="-2" attributes="0"/>
                                       <EmptySpace pref="228" max="32767" attributes="0"/>
                                   </Group>
@@ -1416,8 +1408,6 @@
                             </DimensionLayout>
                           </Layout>
                           <SubComponents>
-                            <Component class="javax.swing.JTextField" name="txtDownPayment">
-                            </Component>
                             <Component class="javax.swing.JTextField" name="txtRoomRate">
                               <Properties>
                                 <Property name="editable" type="boolean" value="false"/>
@@ -1524,14 +1514,6 @@
                             <Component class="javax.swing.JTextField" name="jTextField4">
                               <Properties>
                                 <Property name="editable" type="boolean" value="false"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JLabel" name="jLabel19">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Down Payment:"/>
-                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Light" size="24" style="0"/>
-                                </Property>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel20">
@@ -3629,7 +3611,7 @@
                                 <DimensionLayout dim="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="188" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="jLabel45" alignment="1" min="-2" max="-2" attributes="0"/>
                                               <Component id="jLabel46" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -3686,68 +3668,61 @@
                                                       <Component id="jLabel56" alignment="1" min="-2" max="-2" attributes="0"/>
                                                       <Component id="jLabel57" alignment="1" min="-2" max="-2" attributes="0"/>
                                                       <Component id="jLabel50" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="jLabel51" alignment="1" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="txtCateringCharge1" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="txtCateringCharge1" alignment="0" pref="122" max="32767" attributes="0"/>
                                                       <Component id="txtRequestCharge1" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="txtDecorationCharge1" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="txtRentalFee1" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="txtTaxes2" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="txtTotal2" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="txtDownPayment2" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <Component id="addEventRbutton" min="-2" pref="137" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="188" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace pref="177" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="jLabel52" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel53" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="txtRentalFee1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="jLabel53" max="32767" attributes="0"/>
+                                                      <Component id="txtRentalFee1" max="32767" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel54" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="txtCateringCharge1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="jLabel54" max="32767" attributes="0"/>
+                                                      <Component id="txtCateringCharge1" max="32767" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel55" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="txtRequestCharge1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="jLabel55" max="32767" attributes="0"/>
+                                                      <Component id="txtRequestCharge1" max="32767" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel56" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="txtDecorationCharge1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="jLabel56" max="32767" attributes="0"/>
+                                                      <Component id="txtDecorationCharge1" max="32767" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel57" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="txtTaxes2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="jLabel57" max="32767" attributes="0"/>
+                                                      <Component id="txtTaxes2" max="32767" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel50" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="txtTotal2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="jLabel50" max="32767" attributes="0"/>
+                                                      <Component id="txtTotal2" max="32767" attributes="0"/>
                                                   </Group>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="txtDownPayment2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                                                   <Component id="addEventRbutton" min="-2" pref="43" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
@@ -3758,8 +3733,8 @@
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="3" attributes="0">
                                                       <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="txtGuestID2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="eventGuestIDsearch" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="txtGuestID2" alignment="1" max="32767" attributes="0"/>
+                                                      <Component id="eventGuestIDsearch" alignment="1" max="32767" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -3768,9 +3743,9 @@
                                                       <Component id="RBPending1" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Component id="jLabel45" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="DCEventStart1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="jLabel45" max="32767" attributes="0"/>
+                                                      <Component id="DCEventStart1" max="32767" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -3781,8 +3756,8 @@
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="3" attributes="0">
                                                       <Component id="jLabel48" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="txtEventRoomID1" alignment="3" min="-2" max="-2" attributes="0"/>
                                                       <Component id="confRoomSearch" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="txtEventRoomID1" alignment="1" max="32767" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -3798,7 +3773,7 @@
                                                   <Component id="JBCashApp1" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <EmptySpace pref="252" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="252" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
@@ -3997,12 +3972,6 @@
                                     </Property>
                                   </Properties>
                                 </Component>
-                                <Component class="javax.swing.JTextField" name="txtDownPayment2">
-                                  <Properties>
-                                    <Property name="dragEnabled" type="boolean" value="true"/>
-                                    <Property name="enabled" type="boolean" value="false"/>
-                                  </Properties>
-                                </Component>
                                 <Component class="javax.swing.JTextField" name="txtDecorationCharge1">
                                   <Events>
                                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDecorationCharge1ActionPerformed"/>
@@ -4019,14 +3988,6 @@
                                   <Events>
                                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTotal2ActionPerformed"/>
                                   </Events>
-                                </Component>
-                                <Component class="javax.swing.JLabel" name="jLabel51">
-                                  <Properties>
-                                    <Property name="text" type="java.lang.String" value="Down Payment"/>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Segoe UI Light" size="24" style="0"/>
-                                    </Property>
-                                  </Properties>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel57">
                                   <Properties>
@@ -4158,18 +4119,20 @@
                                                   </Group>
                                                   <Component id="jLabel116" alignment="1" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel118" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel125" alignment="1" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="editEventRSpinner" min="-2" max="-2" attributes="0"/>
                                                       <EmptySpace max="-2" attributes="0"/>
-                                                      <Component id="extendTime" max="32767" attributes="0"/>
+                                                      <Component id="extendTime" pref="82" max="32767" attributes="0"/>
                                                   </Group>
                                                   <Component id="reservedToEdit" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="eventNameEdit" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="roomAssignedEdit" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="editEventDate" max="32767" attributes="0"/>
+                                                  <Component id="paymentStatEditER" max="32767" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="1" attributes="0">
@@ -4266,13 +4229,23 @@
                                                   <Component id="editTotalEventR" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="extendTime" max="32767" attributes="0"/>
-                                              <Component id="jLabel118" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="editEventRSpinner" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="extendTime" max="32767" attributes="0"/>
+                                                  <Component id="jLabel118" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="editEventRSpinner" alignment="0" max="32767" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel125" max="32767" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="paymentStatEditER" max="32767" attributes="0"/>
+                                                      <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -4497,6 +4470,22 @@
                               <Events>
                                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="extendTimeActionPerformed"/>
                               </Events>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel125">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Segoe UI Light" size="24" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Payment Status:"/>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JCheckBox" name="paymentStatEditER">
+                              <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Segoe UI Light" size="18" style="0"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Paid"/>
+                              </Properties>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -5168,7 +5157,7 @@
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="45" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="confRoomImageLabel2" alignment="1" min="-2" pref="370" max="-2" attributes="0"/>
                                           <Group type="102" alignment="1" attributes="0">
@@ -5183,16 +5172,16 @@
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                   <Component id="dispConfRoomNo" max="32767" attributes="0"/>
                                                   <Component id="editConfRoomRate" max="32767" attributes="0"/>
-                                                  <Component id="dispConfRoomStatus" max="32767" attributes="0"/>
                                                   <Component id="editImageUpload" max="32767" attributes="0"/>
-                                                  <Component id="editConfRoomCap" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="editConfRoomCap" pref="100" max="32767" attributes="0"/>
+                                                  <Component id="dispConfRoomStatus" alignment="0" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Component id="editConfRoom" alignment="1" min="-2" pref="243" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jScrollPane10" min="-2" pref="685" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace pref="46" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -5219,16 +5208,16 @@
                                                   <Component id="editConfRoomRate" min="-2" pref="32" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel80" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="dispConfRoomStatus" min="-2" pref="32" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="jLabel80" max="32767" attributes="0"/>
+                                                  <Component id="dispConfRoomStatus" max="32767" attributes="0"/>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                   <Component id="jLabel86" max="32767" attributes="0"/>
                                                   <Component id="editImageUpload" max="32767" attributes="0"/>
                                               </Group>
-                                              <EmptySpace max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                                               <Component id="editConfRoom" min="-2" pref="40" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="jScrollPane10" min="-2" pref="472" max="-2" attributes="0"/>
@@ -5294,11 +5283,6 @@
                               <AuxValues>
                                 <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JFormattedTextField(numFormat)"/>
                               </AuxValues>
-                            </Component>
-                            <Component class="javax.swing.JTextField" name="dispConfRoomStatus">
-                              <Properties>
-                                <Property name="editable" type="boolean" value="false"/>
-                              </Properties>
                             </Component>
                             <Component class="javax.swing.JTextField" name="editConfRoomRate">
                               <AuxValues>
@@ -5388,6 +5372,18 @@
                               <Properties>
                                 <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
                                   <SpinnerModel initial="10" maximum="100" minimum="10" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                                </Property>
+                              </Properties>
+                            </Component>
+                            <Component class="javax.swing.JSpinner" name="dispConfRoomStatus">
+                              <Properties>
+                                <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+                                  <SpinnerModel type="list">
+                                    <ListItem value="Available"/>
+                                    <ListItem value="Reserved"/>
+                                    <ListItem value="Occupied"/>
+                                    <ListItem value="In Maintenance"/>
+                                  </SpinnerModel>
                                 </Property>
                               </Properties>
                             </Component>
