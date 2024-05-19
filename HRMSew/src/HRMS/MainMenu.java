@@ -45,12 +45,13 @@ import javax.swing.text.MaskFormatter;
 //</editor-fold>
 
 public class MainMenu extends javax.swing.JFrame {
-
+    String username;
     /**
      * Creates new form NewJFrame
      * @param admin
      */
     public MainMenu(boolean admin) {
+        username = "admin";
         FlatLightLaf.setup();
         initComponents();
         setDateLabel();
@@ -5807,8 +5808,26 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_removeStaffTableMouseClicked
 
     private void changePassButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changePassButtonActionPerformed
-        // TODO add your handling code here:
-        
+        // check near constructor for default value of username
+        String password = oldPass.getText();
+        if (password.equals(Staff.getPassword(username))){
+            String newpass = newPass.getText();
+            String newpass1 = newPass1.getText();
+            if(newpass.equals(newpass1)){
+               if(Staff.setPassword(newpass, username)){
+                   JOptionPane.showMessageDialog(this, "Password Successfully changed.");
+               }
+               else{
+                   JOptionPane.showMessageDialog(this, "Password Change Unsuccessful.");
+               }
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "New Password and Confirm Password are not the same.");
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Old Password is incorrect.");
+        }
     }//GEN-LAST:event_changePassButtonActionPerformed
 
     public static void main(String args[]) {

@@ -6,6 +6,7 @@ package HRMS;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -18,8 +19,7 @@ public class Staff extends StaffSQL {
     public boolean addValue(){
         return true;
     };
-    @Override
-    public String getPassword(String username){
+    public static String getPassword(String username){
         String password = "";
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
@@ -34,10 +34,27 @@ public class Staff extends StaffSQL {
         }
         return password;
     };
-    public String getValue(){
+    public static String getValue(){
     
     return "";
     };
+   
+    public static boolean setPassword(String password, String username) {
+        try{
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            Statement stmt = con.createStatement();
+
+            String insertsql = "UPDATE STAFF SET roomNo = ?, CheckInDate = ?, CheckOutDate = ?, MiscCharge = ?, Total = ? WHERE Username = ?";
+            PreparedStatement pstmt = con.prepareStatement(insertsql);
+            pstmt.setString(1, password);
+            pstmt.setString(2, username);
+            pstmt.executeUpdate();
+            return true;
+        }catch(Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
 
     @Override
     public String getStaff() {
@@ -48,5 +65,4 @@ public class Staff extends StaffSQL {
 abstract class StaffSQL{
     public abstract boolean addValue();
     public abstract String getStaff();
-    public abstract String getPassword(String username);
 }
