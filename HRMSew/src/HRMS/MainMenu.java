@@ -2503,6 +2503,11 @@ public class MainMenu extends javax.swing.JFrame {
 
         txtTaxes2.setDragEnabled(true);
         txtTaxes2.setEnabled(false);
+        txtTaxes2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTaxes2ActionPerformed(evt);
+            }
+        });
 
         jLabel54.setText("Catering Charge:");
         jLabel54.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
@@ -2549,7 +2554,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
-                .addContainerGap(188, Short.MAX_VALUE)
+                .addContainerGap(186, Short.MAX_VALUE)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel45)
                     .addComponent(jLabel46)
@@ -2606,7 +2611,7 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(txtTaxes2)
                             .addComponent(txtTotal2)))
                     .addComponent(addEventRbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addContainerGap(186, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2667,9 +2672,10 @@ public class MainMenu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtEventRoomID1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addGroup(jPanel16Layout.createSequentialGroup()
                                 .addComponent(jLabel48)
-                                .addComponent(confRoomSearch)))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(confRoomSearch, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(9, 9, 9)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel49)
@@ -2810,11 +2816,11 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jLabel125.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel125.setText("Payment Status:");
+        jLabel125.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        paymentStatEditER.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         paymentStatEditER.setText("Paid");
+        paymentStatEditER.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
@@ -4505,7 +4511,11 @@ public class MainMenu extends javax.swing.JFrame {
         if (Events.searchRoomID(RoomID)) {
             JOptionPane.showMessageDialog(this, "Room found!");
             txtRentalFee1.setText(Events.getRoomRate(RoomID));
+            double taxes = 0.12 * ((int) spinEventDuration1.getValue() * Double.valueOf(txtRentalFee1.getText()));
             eventrent = Double.valueOf(txtRentalFee1.getText());
+            double total =  taxes +  (eventrent * (int) spinEventDuration1.getValue()) +  Double.valueOf(txtDecorationCharge1.getText().substring(1)) +  Double.valueOf(txtRequestCharge1.getText().substring(1)) +  Double.valueOf(txtCateringCharge1.getText().substring(1));
+            txtTaxes2.setText(taxes+"");
+            txtTotal2.setText(total+"");
         } else {
             JOptionPane.showMessageDialog(this, "Room not found!");
         }
@@ -5313,10 +5323,10 @@ public class MainMenu extends javax.swing.JFrame {
         if (reply == JOptionPane.YES_OPTION && dispConfRoomStatus2.getText().equalsIgnoreCase("AVAILABLE")) {
             try {
                 if (Room.removeConferenceRoom(dispConfRoomNo2.getText())) {
-                    JOptionPane.showMessageDialog(this, "Event successfully deleted!");
+                    JOptionPane.showMessageDialog(this, "Room successfully deleted!");
                     view_removeConfRoom();
                 } else {
-                    JOptionPane.showMessageDialog(this, "Event deletion failed!");
+                    JOptionPane.showMessageDialog(this, "Room deletion failed!");
                 }
             } catch (Exception e) {
 
@@ -5548,6 +5558,10 @@ public class MainMenu extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_eventConfirmCancelActionPerformed
+
+    private void txtTaxes2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTaxes2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTaxes2ActionPerformed
 
     public static void main(String args[]) {
 

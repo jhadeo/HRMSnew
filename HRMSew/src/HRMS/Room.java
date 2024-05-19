@@ -268,7 +268,7 @@ public class Room {
     static boolean addConferenceRoom(int roomNo, double roomRate, int roomLimit) {
         try {
             Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
-            String insertsql = "INSERT INTO ConferenceRooms (ConfRoomNo, Capacity, BookRate, ConfRoomStatus = ?)VALUES (?,?,?,?)";
+            String insertsql = "INSERT INTO ConferenceRooms (ConfRoomNo, Capacity, BookRate, ConfRoomStatus)VALUES (?,?,?,?)";
             PreparedStatement pstmt = con.prepareStatement(insertsql);
             pstmt.setInt(1, roomNo);
             pstmt.setInt(2, roomLimit);
