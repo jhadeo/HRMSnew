@@ -3,9 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package HRMS;
+
 import com.formdev.flatlaf.FlatLightLaf;
-import javax.swing.JDialog;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author admin
@@ -123,20 +130,52 @@ public class LogIn extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
+
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        String username = jTextField1.getText();
-        String password = jPasswordField2.getText();
-        if(username.equals(cUser)&& password.equals(cPass)){
-            System.out.println("WIW");
-            dispose();
-            new MainMenu().setVisible(true);
-        } else {
-        JOptionPane.showMessageDialog(this,"Wrong username or password!");  
+        try {
+            String username = jTextField1.getText();
+            String password = jPasswordField2.getText();
+
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+            // Create a statement
+            Statement stmt = con.createStatement();
+
+            // Execute a query
+            String query = "SELECT * FROM STAFF WHERE username = ? AND staffPassword = ?";
+            PreparedStatement pstmt = con.prepareStatement(query);
+            pstmt.setString(1, username);
+            pstmt.setString(2, password);
+
+            // Get the result
+            ResultSet rs = pstmt.executeQuery();
+
+            // Check if the username and password are correct
+            if (rs.next()) {
+                int isAdmin = rs.getInt("isAdmin");
+                if (isAdmin == 1) {
+                    System.out.println("You are an admin");
+                    System.out.println("WIW");
+                    dispose();
+                    new MainMenu(true,username).setVisible(true);
+                } else {
+                    System.out.println("You are not an admin");
+                    System.out.println("WIW");
+                    dispose();
+                    new MainMenu(false, username).setVisible(true);
+
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(this, "Wrong username or password!");
+            }
+
+            // Close the connection
+            con.close();
+        } catch (SQLException e) {
+            System.out.println("SQLException: " + e.getMessage());
         }
     }//GEN-LAST:event_jButton1MouseClicked
 
-    
     /**
      * @param args the command line arguments
      */
@@ -152,16 +191,12 @@ public class LogIn extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
+
                 new LogIn().setVisible(true);
-                
+
             }
         });
     }
-
-    private String cUser = "admin";
-    private String cPass = "password";
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

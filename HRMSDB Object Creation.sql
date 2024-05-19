@@ -28,6 +28,7 @@ MemberStatus INT DEFAULT 0
 )
 
 CREATE TABLE RoomReservation(
+
 ReservationID INT NOT NULL,
 GuestID INT NOT NULL,
 RoomNo INT NOT NULL,
@@ -37,7 +38,8 @@ RoomRate MONEY NOT NULL,
 --Derived from Room(RoomRate) * DATEDIFF(CheckInDate, CheckOutDate) - membership or birthday discounts
 Taxes MONEY NOT NULL,
 --Derived from RoomRate * 12%
-MiscCharge MONEY DEFAULT 0,
+
+MiscCharges MONEY DEFAULT 0,
 --Charges accrued through misc. means, such as additional services or reparations
 Total MONEY NOT NULL,
 --Derived from RoomRate + Taxes + MiscCharge
@@ -51,7 +53,7 @@ CONSTRAINT RoomPaymentCheck CHECK (PaymentStatus=0 OR PaymentStatus=1),
 --simulates boolean value for payment status
 CONSTRAINT CheckOutStatus CHECK (CheckOutStatus=0 OR CheckOutStatus=1),
 --simulates boolean value for payment status
-CONSTRAINT RoomPayMethodCheck CHECK (PayMethod in ('Cash','Bank Transfer','Cheque','CashApp'))
+CONSTRAINT RoomPayMethodCheck CHECK (PayMethod in ('Cash','Bank Transfer','Cheque','CashApp','Card'))
 )
 
 CREATE TABLE HotelEvents(
@@ -102,8 +104,23 @@ CONSTRAINT EventPayMethodCheck CHECK (PayMethod in ('Cash','Bank Transfer','Cheq
 )
 
 CREATE TABLE EventRequests(
-EventID INT CONSTRAINT EventRequestsPK PRIMARY KEY,
+EventID INT,
 Request VARCHAR(255),
+CONSTRAINT EventRequestsPK PRIMARY KEY (EventID, Request),
 CONSTRAINT EventRequestsFK FOREIGN KEY (EventID) REFERENCES HotelEvents(EventID)
 )
+
+
+CREATE TABLE STAFF (
+username varchar(100) PRIMARY KEY,
+staffFirstName varchar(20),
+staffLastName varchar(20),
+staffPassword varchar(100),
+isAdmin int default 0,
+CONSTRAINT isAdmin CHECK (isAdmin=0 OR isAdmin=1)
+)
+
+insert into staff values ('admin', 'password', 1)
+
+--drop database HRSDB
 
