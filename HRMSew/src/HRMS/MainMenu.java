@@ -477,7 +477,7 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         oldPass = new javax.swing.JPasswordField();
         newPass = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        changePassButton = new javax.swing.JButton();
         newPass1 = new javax.swing.JPasswordField();
         jLabel131 = new javax.swing.JLabel();
         jPanel25 = new javax.swing.JPanel();
@@ -508,8 +508,8 @@ public class MainMenu extends javax.swing.JFrame {
 
         jPanel22.setOpaque(false);
 
-        logOutButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         logOutButton.setText("Log out");
+        logOutButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         logOutButton.setToolTipText("");
         logOutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -517,15 +517,15 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jLabel111.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel111.setText("Hello!");
+        jLabel111.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jLabel109.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel109.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel109.setText("The date today is:");
+        jLabel109.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        dateLabel.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         dateLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dateLabel.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
 
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
         jPanel22.setLayout(jPanel22Layout);
@@ -559,8 +559,8 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(216, 167, 144));
         jPanel2.setPreferredSize(new java.awt.Dimension(1152, 768));
 
-        MainPanel.setBackground(new java.awt.Color(216, 167, 144));
         MainPanel.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        MainPanel.setBackground(new java.awt.Color(216, 167, 144));
         MainPanel.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         MainPanel.setMaximumSize(new java.awt.Dimension(1920, 1080));
         MainPanel.setPreferredSize(new java.awt.Dimension(1166, 557));
@@ -611,16 +611,16 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(ViewRoomTable);
 
-        roomImageLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         roomImageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         roomImageLabel.setText("no image");
-        roomImageLabel.setToolTipText("");
         roomImageLabel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         roomImageLabel.setFocusTraversalPolicyProvider(true);
+        roomImageLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         roomImageLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        roomImageLabel.setToolTipText("");
 
-        jLabel77.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel77.setText("Room Image");
+        jLabel77.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -652,14 +652,14 @@ public class MainMenu extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(239, 231, 221));
 
-        jLabel68.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel68.setText("Book Rate (per day):");
+        jLabel68.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel69.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel69.setText("Room Image:");
+        jLabel69.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        uploadRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         uploadRoom.setText("Upload");
+        uploadRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         uploadRoom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uploadRoomActionPerformed(evt);
@@ -670,22 +670,22 @@ public class MainMenu extends javax.swing.JFrame {
 
         addRoomType.setModel(new javax.swing.SpinnerListModel(new String[] {"Single", "Double", "Suite"}));
 
-        jLabel71.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel71.setText("Room Number:");
+        jLabel71.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel72.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel72.setText("Room Limit:");
+        jLabel72.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        addRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         addRoom.setText("Add Room");
+        addRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         addRoom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addRoomActionPerformed(evt);
             }
         });
 
-        jLabel73.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel73.setText("Room Type:");
+        jLabel73.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         addRoomLimit.setModel(new javax.swing.SpinnerNumberModel(1, 1, 100, 1));
 
@@ -788,23 +788,23 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane13.setViewportView(editRoomTable);
 
-        jLabel35.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel35.setText("Room Number:");
+        jLabel35.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel62.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel62.setText("Room Rate:");
+        jLabel62.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel63.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel63.setText("Room Type:");
+        jLabel63.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel64.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel64.setText("Room Limit:");
+        jLabel64.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel65.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel65.setText("Room Status:");
+        jLabel65.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        editRoomButton.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         editRoomButton.setText("Edit Room");
+        editRoomButton.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         editRoomButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editRoomButtonActionPerformed(evt);
@@ -815,19 +815,19 @@ public class MainMenu extends javax.swing.JFrame {
 
         editRoomLimit.setModel(new javax.swing.SpinnerNumberModel(1, 1, 100, 1));
 
-        editRoomLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         editRoomLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         editRoomLabel.setText("no image");
-        editRoomLabel.setToolTipText("");
         editRoomLabel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         editRoomLabel.setFocusTraversalPolicyProvider(true);
+        editRoomLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         editRoomLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        editRoomLabel.setToolTipText("");
 
-        jLabel101.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel101.setText("Edit Image:");
+        jLabel101.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        editRoomUpload.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         editRoomUpload.setText("Upload");
+        editRoomUpload.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         editRoomUpload.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editRoomUploadActionPerformed(evt);
@@ -940,44 +940,44 @@ public class MainMenu extends javax.swing.JFrame {
 
         removeRT.setEditable(false);
 
-        jLabel66.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel66.setText("Room Number:");
+        jLabel66.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel67.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel67.setText("Room Rate:");
+        jLabel67.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         removeRR.setEditable(false);
 
-        jLabel70.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel70.setText("Room Type:");
+        jLabel70.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel74.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel74.setText("Room Limit:");
+        jLabel74.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         removeRS.setEditable(false);
 
-        jLabel75.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel75.setText("Room Status:");
+        jLabel75.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         removeRL.setEditable(false);
 
         removeRN.setEditable(false);
 
-        removeRBution.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         removeRBution.setText("Remove Room");
+        removeRBution.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         removeRBution.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeRButionActionPerformed(evt);
             }
         });
 
-        removeRoomLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         removeRoomLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         removeRoomLabel.setText("no image");
-        removeRoomLabel.setToolTipText("");
         removeRoomLabel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         removeRoomLabel.setFocusTraversalPolicyProvider(true);
+        removeRoomLabel.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         removeRoomLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        removeRoomLabel.setToolTipText("");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -1118,22 +1118,22 @@ public class MainMenu extends javax.swing.JFrame {
         txtRoomRate.setDragEnabled(true);
         txtRoomRate.setEnabled(false);
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel11.setText("Check Out:");
+        jLabel11.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         txtTaxes.setEditable(false);
         txtTaxes.setDragEnabled(true);
         txtTaxes.setEnabled(false);
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel12.setText("Room Number:");
+        jLabel12.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         txtTotal.setEditable(false);
         txtTotal.setDragEnabled(true);
         txtTotal.setEnabled(false);
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel13.setText("Check In:");
+        jLabel13.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         submitRoomReservation.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         submitRoomReservation.setText("Submit Reservation");
@@ -1144,11 +1144,11 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel14.setText("Mobile Number:");
+        jLabel14.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel15.setText("Email:");
+        jLabel15.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         CheckOutDate.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
@@ -1160,17 +1160,17 @@ public class MainMenu extends javax.swing.JFrame {
 
         jTextField4.setEditable(false);
 
-        jLabel20.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel20.setText("Total:");
+        jLabel20.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel21.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel21.setText("Taxes:");
+        jLabel21.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel22.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel22.setText("Room Rate:");
+        jLabel22.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel23.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel23.setText("Guest  ID:");
+        jLabel23.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         SearchID.setText("Search");
         SearchID.addActionListener(new java.awt.event.ActionListener() {
@@ -1188,11 +1188,11 @@ public class MainMenu extends javax.swing.JFrame {
 
         jTextField1.setEditable(false);
 
-        jLabel24.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel24.setText("Name:");
+        jLabel24.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel112.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel112.setText("Breakdown of Charges");
+        jLabel112.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -1349,20 +1349,20 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane16.setViewportView(editRoomReservationTable);
 
-        jLabel102.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel102.setText("Room Number:");
+        jLabel102.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel107.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel107.setText("Check-Out Date:");
+        jLabel107.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel108.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel108.setText("Check-In Date:");
+        jLabel108.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel110.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel110.setText("Add Misc. Charges:");
+        jLabel110.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        editReservation.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         editReservation.setText("Edit Reservation");
+        editReservation.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         editReservation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editReservationActionPerformed(evt);
@@ -1428,8 +1428,8 @@ public class MainMenu extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(239, 231, 221));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel1.setText("Enter Reservation ID:");
+        jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         roomnumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1462,44 +1462,44 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane9.setViewportView(checkoutTable);
 
-        searchRoomCheckout.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         searchRoomCheckout.setText("Search");
+        searchRoomCheckout.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         searchRoomCheckout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchRoomCheckoutActionPerformed(evt);
             }
         });
 
-        checkoutbutton.setFont(new java.awt.Font("Segoe UI Light", 0, 36)); // NOI18N
         checkoutbutton.setText("Check Out");
+        checkoutbutton.setFont(new java.awt.Font("Segoe UI Light", 0, 36)); // NOI18N
         checkoutbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkoutbuttonActionPerformed(evt);
             }
         });
 
-        jLabel16.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel16.setText("Payment Method");
+        jLabel16.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         paymentRoomGroup.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton2.setText("Cash");
+        jRadioButton2.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         paymentRoomGroup.add(jRadioButton9);
-        jRadioButton9.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton9.setText("Bank Transfer");
+        jRadioButton9.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         paymentRoomGroup.add(jRadioButton8);
-        jRadioButton8.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton8.setText("Card");
+        jRadioButton8.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         paymentRoomGroup.add(jRadioButton10);
-        jRadioButton10.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton10.setText("Cheque");
+        jRadioButton10.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         paymentRoomGroup.add(jRadioButton7);
-        jRadioButton7.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton7.setText("CashApp");
+        jRadioButton7.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -1635,61 +1635,61 @@ public class MainMenu extends javax.swing.JFrame {
 
         AddGuest.setBackground(new java.awt.Color(239, 231, 221));
 
-        jLabel18.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel18.setText("Membership:");
+        jLabel18.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         membershipGroup.add(jRadioButton5);
-        jRadioButton5.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton5.setText("Active");
+        jRadioButton5.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         membershipGroup.add(jRadioButton6);
-        jRadioButton6.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton6.setText("Inactive");
+        jRadioButton6.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel2.setText("Guest  ID:");
+        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel9.setText("Middle Name:");
+        jLabel9.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel3.setText("Date of Birth:");
+        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel4.setText("First Name:");
+        jLabel4.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel10.setText("Mobile Number:");
+        jLabel10.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel5.setText("Last Name:");
+        jLabel5.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel6.setText("Home Address:");
+        jLabel6.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel7.setText("Email:");
+        jLabel7.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel8.setText("Gender:");
+        jLabel8.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         guestfield.setEditable(false);
 
         genderGroup.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton1.setText("Male");
+        jRadioButton1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         genderGroup.add(jRadioButton3);
-        jRadioButton3.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton3.setText("Female");
+        jRadioButton3.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         genderGroup.add(jRadioButton4);
-        jRadioButton4.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jRadioButton4.setText("Other");
+        jRadioButton4.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        addGuestButton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         addGuestButton.setText("Submit Information");
         addGuestButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addGuestButton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         addGuestButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addGuestButtonconfirm(evt);
@@ -1837,30 +1837,30 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(EditTable);
 
-        jLabel25.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel25.setText("Guest First Name:");
+        jLabel25.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jLabel26.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel26.setText("Guest Middle Name:");
+        jLabel26.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jLabel27.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel27.setText("Guest Last Name:");
+        jLabel27.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jLabel28.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel28.setText("Phone Number:");
+        jLabel28.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jLabel29.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel29.setText("Email:");
+        jLabel29.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jLabel30.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel30.setText("Address:");
+        jLabel30.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        editMember.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         editMember.setText("Is member?");
+        editMember.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         editMember.setToolTipText("");
 
-        editGuestConfirm.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         editGuestConfirm.setText("Edit Guest");
+        editGuestConfirm.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         editGuestConfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editGuestConfirmActionPerformed(evt);
@@ -2010,27 +2010,27 @@ public class MainMenu extends javax.swing.JFrame {
 
         jPanel10.setBackground(new java.awt.Color(239, 231, 221));
 
-        jLabel87.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel87.setText("Event  ID:");
+        jLabel87.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel88.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel88.setText("Event  Name:");
+        jLabel88.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel89.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel89.setText("Room Setup:");
+        jLabel89.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel90.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel90.setText("Catering:");
+        jLabel90.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel91.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel91.setText("Audio Visual Request:");
+        jLabel91.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel92.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel92.setText("Decoration:");
+        jLabel92.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        addEventButton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         addEventButton.setText("Submit Information");
         addEventButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addEventButton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         addEventButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addEventButtonconfirm(evt);
@@ -2142,28 +2142,28 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane7.setViewportView(editEventTable);
 
-        jLabel99.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel99.setText("Event ID:");
+        jLabel99.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel93.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel93.setText("Event Name:");
+        jLabel93.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel94.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel94.setText("Catering:");
+        jLabel94.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel95.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel95.setText("Audio Visual Request:");
+        jLabel95.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel96.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel96.setText("Room Setup:");
+        jLabel96.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel97.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel97.setText("Decoration:");
+        jLabel97.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         editEventID.setEditable(false);
 
-        editEventButton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         editEventButton.setText("Edit Event");
+        editEventButton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         editEventButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editEventButtonActionPerformed(evt);
@@ -2280,35 +2280,35 @@ public class MainMenu extends javax.swing.JFrame {
 
         deleteRoomSetup.setEditable(false);
 
-        jLabel100.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel100.setText("Event ID:");
+        jLabel100.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         deleteDeco.setEditable(false);
 
-        jLabel98.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel98.setText("Event Name:");
+        jLabel98.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        deleteEventButton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         deleteEventButton.setText("Remove Event");
+        deleteEventButton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         deleteEventButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteEventButtonActionPerformed(evt);
             }
         });
 
-        jLabel103.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel103.setText("Catering:");
+        jLabel103.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel104.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel104.setText("Decoration:");
+        jLabel104.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel105.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel105.setText("Audio Visual Request:");
+        jLabel105.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         deleteEventID.setEditable(false);
 
-        jLabel106.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel106.setText("Room Setup:");
+        jLabel106.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         deleteEventName.setEditable(false);
 
@@ -2443,55 +2443,55 @@ public class MainMenu extends javax.swing.JFrame {
 
         jPanel16.setBackground(new java.awt.Color(239, 231, 221));
 
-        jLabel42.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         jLabel42.setText("hours");
+        jLabel42.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         EventReservationPMGroup.add(JBCheque1);
-        JBCheque1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         JBCheque1.setText("Cheque");
+        JBCheque1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         EventReservationPMGroup.add(JBCashApp1);
-        JBCashApp1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         JBCashApp1.setText("CashApp");
+        JBCashApp1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jLabel43.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel43.setText("Event ID:");
+        jLabel43.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel44.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel44.setText("Payment Status:");
+        jLabel44.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel45.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel45.setText("Event Start:");
+        jLabel45.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         EventReservationPGroup.add(RBPaid1);
-        RBPaid1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         RBPaid1.setText("Paid");
+        RBPaid1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jLabel46.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel46.setText("Guest ID:");
+        jLabel46.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         EventReservationPGroup.add(RBPending1);
-        RBPending1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         RBPending1.setText("Pending");
+        RBPending1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        jLabel47.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel47.setText("Event Duration:");
+        jLabel47.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         spinEventID1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
 
-        jLabel48.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel48.setText("Event Room ID:");
+        jLabel48.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel49.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel49.setText("Payment Method:");
+        jLabel49.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         EventReservationPMGroup.add(JBBankTransfer1);
-        JBBankTransfer1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         JBBankTransfer1.setText("Bank Transfer");
+        JBBankTransfer1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         EventReservationPMGroup.add(JBCash1);
-        JBCash1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         JBCash1.setText("Cash");
+        JBCash1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         spinEventDuration1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
         spinEventDuration1.setName(""); // NOI18N
@@ -2502,20 +2502,20 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         EventReservationPMGroup.add(JBCard1);
-        JBCard1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         JBCard1.setText("Card");
+        JBCard1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
-        addEventRbutton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         addEventRbutton.setText("Reserve Event");
         addEventRbutton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addEventRbutton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         addEventRbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addEventRbuttonActionPerformed(evt);
             }
         });
 
-        jLabel52.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel52.setText("Breakdown of Charges");
+        jLabel52.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
 
         txtDecorationCharge1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2531,8 +2531,8 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jLabel57.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel57.setText("Taxes:");
+        jLabel57.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         txtRequestCharge1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2548,23 +2548,23 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jLabel54.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel54.setText("Catering Charge:");
+        jLabel54.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel56.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel56.setText("Decoration Charge:");
+        jLabel56.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel53.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel53.setText("Rental Fee:");
+        jLabel53.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         txtRentalFee1.setDragEnabled(true);
         txtRentalFee1.setEnabled(false);
 
-        jLabel55.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel55.setText("Request Charge:");
+        jLabel55.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel50.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel50.setText("Total:");
+        jLabel50.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         txtCateringCharge1.setName(""); // NOI18N
         txtCateringCharge1.addActionListener(new java.awt.event.ActionListener() {
@@ -2635,7 +2635,7 @@ public class MainMenu extends javax.swing.JFrame {
                                 .addComponent(RBPaid1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(RBPending1)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel52)
                     .addGroup(jPanel16Layout.createSequentialGroup()
@@ -2683,11 +2683,11 @@ public class MainMenu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(RBPaid1)
+                                .addComponent(RBPending1))
+                            .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel57, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel44)
-                                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(RBPaid1)
-                                    .addComponent(RBPending1)))
+                                .addComponent(jLabel44))
                             .addComponent(txtTaxes2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -2748,23 +2748,23 @@ public class MainMenu extends javax.swing.JFrame {
 
         jPanel23.setBackground(new java.awt.Color(239, 231, 221));
 
-        jLabel113.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel113.setText("Request Charge:");
+        jLabel113.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel114.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel114.setText("Room Assigned:");
+        jLabel114.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel115.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel115.setText("Taxes:");
+        jLabel115.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel116.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel116.setText("Event Date:");
+        jLabel116.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel117.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel117.setText("Total:");
+        jLabel117.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel118.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel118.setText("Duration:");
+        jLabel118.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         reservedToEdit.setEditable(false);
 
@@ -2802,8 +2802,8 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane17.setViewportView(editEventReservationTable);
 
-        editEventReservation.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         editEventReservation.setText("Edit Reservation");
+        editEventReservation.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         editEventReservation.setPreferredSize(new java.awt.Dimension(75, 32));
         editEventReservation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2811,22 +2811,22 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jLabel119.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel119.setText("Room Charge:");
+        jLabel119.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel120.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel120.setText("Reserved To:");
+        jLabel120.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel121.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel121.setText("Catering Charge:");
+        jLabel121.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel122.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel122.setText("Event Name:");
+        jLabel122.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         editEventRSpinner.setModel(new javax.swing.SpinnerNumberModel(1, null, 8, 1));
 
-        jLabel123.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel123.setText("Decoration Charge:");
+        jLabel123.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         editRoomCeventR.setEditable(false);
 
@@ -2859,11 +2859,11 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jLabel125.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel125.setText("Payment Status:");
+        jLabel125.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        paymentStatEditER.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         paymentStatEditER.setText("Paid");
+        paymentStatEditER.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
@@ -3016,20 +3016,20 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane12.setViewportView(cancelEventReservationTable);
 
-        jLabel36.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel36.setText("Reserved To:");
+        jLabel36.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel37.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel37.setText("Event Name:");
+        jLabel37.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel38.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel38.setText("Room Assigned:");
+        jLabel38.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel39.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel39.setText("Event Date:");
+        jLabel39.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel40.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel40.setText("Duration:");
+        jLabel40.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         reservedToCancel.setEditable(false);
 
@@ -3046,20 +3046,20 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jLabel41.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel41.setText("Room Charge:");
+        jLabel41.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel58.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel58.setText("Catering Charge:");
+        jLabel58.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel59.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel59.setText("Request Charge:");
+        jLabel59.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel60.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel60.setText("Taxes:");
+        jLabel60.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel61.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel61.setText("Total:");
+        jLabel61.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         roomChargeCancel.setEditable(false);
 
@@ -3071,8 +3071,8 @@ public class MainMenu extends javax.swing.JFrame {
 
         eventTotalCancel.setEditable(false);
 
-        eventConfirmCancel.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         eventConfirmCancel.setText("Cancel Reservation");
+        eventConfirmCancel.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         eventConfirmCancel.setPreferredSize(new java.awt.Dimension(75, 32));
         eventConfirmCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3080,8 +3080,8 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jLabel124.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel124.setText("Decoration Charge:");
+        jLabel124.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         decoCancel.setEditable(false);
 
@@ -3244,16 +3244,16 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane8.setViewportView(ConfRoomTable);
 
-        roomImageLabel1.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         roomImageLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         roomImageLabel1.setText("no image");
-        roomImageLabel1.setToolTipText("");
         roomImageLabel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         roomImageLabel1.setFocusTraversalPolicyProvider(true);
+        roomImageLabel1.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         roomImageLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        roomImageLabel1.setToolTipText("");
 
-        jLabel85.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel85.setText("Room Image");
+        jLabel85.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
@@ -3284,20 +3284,20 @@ public class MainMenu extends javax.swing.JFrame {
 
         jPanel18.setBackground(new java.awt.Color(239, 231, 221));
 
-        jLabel31.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel31.setText("Conference Room Number:");
+        jLabel31.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel32.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel32.setText("Capacity:");
+        jLabel32.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel33.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel33.setText("Book Rate (per hour):");
+        jLabel33.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel34.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel34.setText("Room Image:");
+        jLabel34.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        uploadConf.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         uploadConf.setText("Upload");
+        uploadConf.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         uploadConf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 uploadConfActionPerformed(evt);
@@ -3306,8 +3306,8 @@ public class MainMenu extends javax.swing.JFrame {
 
         confRoomImageUpload.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        addConf.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         addConf.setText("Add Conference Room");
+        addConf.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         addConf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addConfActionPerformed(evt);
@@ -3405,39 +3405,39 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane10.setViewportView(EditConfTable);
 
-        jLabel76.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel76.setText("Conf. Room Rate:");
+        jLabel76.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel78.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel78.setText("Conf. Room Capacity:");
+        jLabel78.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel79.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel79.setText("Conf. Room Number:");
+        jLabel79.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel80.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel80.setText("Conf. Room Status:");
+        jLabel80.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        editConfRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         editConfRoom.setText("Edit Room");
+        editConfRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         editConfRoom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editConfRoomActionPerformed(evt);
             }
         });
 
-        confRoomImageLabel2.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         confRoomImageLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         confRoomImageLabel2.setText("no image");
-        confRoomImageLabel2.setToolTipText("");
         confRoomImageLabel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         confRoomImageLabel2.setFocusTraversalPolicyProvider(true);
+        confRoomImageLabel2.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         confRoomImageLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        confRoomImageLabel2.setToolTipText("");
 
-        jLabel86.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel86.setText("Edit Image:");
+        jLabel86.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        editImageUpload.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         editImageUpload.setText("Upload");
+        editImageUpload.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         editImageUpload.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editImageUploadActionPerformed(evt);
@@ -3542,8 +3542,8 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane11.setViewportView(removeConfTable);
 
-        jLabel81.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel81.setText("Conf. Room Number:");
+        jLabel81.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
         dispConfRoomNo2.setEditable(false);
 
@@ -3553,30 +3553,30 @@ public class MainMenu extends javax.swing.JFrame {
 
         dispConfRoomStatus2.setEditable(false);
 
-        jLabel82.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel82.setText("Conf. Room Capacity:");
+        jLabel82.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel83.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel83.setText("Conf. Room Rate:");
+        jLabel83.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        jLabel84.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         jLabel84.setText("Conf. Room Status:");
+        jLabel84.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
 
-        deleteConfRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         deleteConfRoom.setText("Remove Room");
+        deleteConfRoom.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
         deleteConfRoom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteConfRoomActionPerformed(evt);
             }
         });
 
-        confRoomImageLabel3.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         confRoomImageLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         confRoomImageLabel3.setText("no image");
-        confRoomImageLabel3.setToolTipText("");
         confRoomImageLabel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         confRoomImageLabel3.setFocusTraversalPolicyProvider(true);
+        confRoomImageLabel3.setFont(new java.awt.Font("Segoe UI Light", 3, 18)); // NOI18N
         confRoomImageLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        confRoomImageLabel3.setToolTipText("");
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
@@ -3659,17 +3659,22 @@ public class MainMenu extends javax.swing.JFrame {
 
         changePass.setBackground(new java.awt.Color(239, 231, 221));
 
-        jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel17.setText("New Password:");
+        jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
 
-        jLabel19.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel19.setText("Old Password:");
+        jLabel19.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
 
-        jButton1.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
-        jButton1.setText("Change Password");
+        changePassButton.setText("Change Password");
+        changePassButton.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+        changePassButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changePassButtonActionPerformed(evt);
+            }
+        });
 
-        jLabel131.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel131.setText("Confirm New Password:");
+        jLabel131.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
 
         javax.swing.GroupLayout changePassLayout = new javax.swing.GroupLayout(changePass);
         changePass.setLayout(changePassLayout);
@@ -3682,7 +3687,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(jLabel131)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(newPass1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton1)
+                    .addComponent(changePassButton)
                     .addGroup(changePassLayout.createSequentialGroup()
                         .addGroup(changePassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel17)
@@ -3709,7 +3714,7 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(jLabel131, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(newPass1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(changePassButton, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -3717,20 +3722,20 @@ public class MainMenu extends javax.swing.JFrame {
 
         jPanel25.setBackground(new java.awt.Color(239, 231, 221));
 
-        jLabel51.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel51.setText("Staff Full Name:");
+        jLabel51.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
 
-        jLabel126.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel126.setText("Staff Username:");
+        jLabel126.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
 
-        jLabel127.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel127.setText("Staff Password:");
+        jLabel127.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
 
-        jLabel128.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel128.setText("Confirm Staff Password:");
+        jLabel128.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
 
-        addStaffButton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         addStaffButton.setText("Add Staff");
+        addStaffButton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         addStaffButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addStaffButtonActionPerformed(evt);
@@ -3811,14 +3816,14 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jScrollPane18.setViewportView(removeStaffTable);
 
-        jLabel129.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel129.setText("Staff ID:");
+        jLabel129.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
 
-        jLabel130.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel130.setText("Staff Name:");
+        jLabel130.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
 
-        removeStaffButton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         removeStaffButton.setText("Remove Staff");
+        removeStaffButton.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         removeStaffButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeStaffButtonActionPerformed(evt);
@@ -3861,8 +3866,7 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(jLabel130, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(removeStaffName, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(removeStaffButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(removeStaffButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(194, 194, 194))
         );
 
@@ -3887,13 +3891,13 @@ public class MainMenu extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1307, Short.MAX_VALUE)
+                .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1307, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 835, Short.MAX_VALUE)
+                .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 835, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -5802,6 +5806,11 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_removeStaffTableMouseClicked
 
+    private void changePassButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changePassButtonActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_changePassButtonActionPerformed
+
     public static void main(String args[]) {
 
         /* Create and display the form */
@@ -5879,6 +5888,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTable cancelEventReservationTable;
     private javax.swing.JTextField cateringCancel;
     private javax.swing.JPanel changePass;
+    private javax.swing.JButton changePassButton;
     private javax.swing.JTable checkoutTable;
     private javax.swing.JButton checkoutbutton;
     private javax.swing.JLabel confRoomImageLabel2;
@@ -5962,7 +5972,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.ButtonGroup genderGroup;
     private javax.swing.JTextField guestfield;
     private javax.swing.JTextField homefield;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
