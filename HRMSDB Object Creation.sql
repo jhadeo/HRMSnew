@@ -1,5 +1,6 @@
 --create Database HRSDB
 --use HRSDB
+--drop database HRSDB
 --Execute first to be safe
 
 CREATE TABLE Room(
@@ -27,7 +28,8 @@ MemberStatus INT DEFAULT 0
 )
 
 CREATE TABLE RoomReservation(
-ReservationID INT,
+
+ReservationID INT NOT NULL,
 GuestID INT NOT NULL,
 RoomNo INT NOT NULL,
 CheckInDate DATETIME NOT NULL,
@@ -36,13 +38,15 @@ RoomRate MONEY NOT NULL,
 --Derived from Room(RoomRate) * DATEDIFF(CheckInDate, CheckOutDate) - membership or birthday discounts
 Taxes MONEY NOT NULL,
 --Derived from RoomRate * 12%
-MiscCharges MONEY,
+
+MiscCharges MONEY DEFAULT 0,
+--Charges accrued through misc. means, such as additional services or reparations
 Total MONEY NOT NULL,
---Derived from RoomRate + Taxes + MiscCharges
+--Derived from RoomRate + Taxes + MiscCharge
 PaymentStatus INT DEFAULT 0,
 PayMethod VARCHAR(16),
 CheckOutStatus INT DEFAULT 0,
-CONSTRAINT RoomReservationPK PRIMARY KEY(ReservationID),
+CONSTRAINT RoomReservationPK PRIMARY KEY(ReservationID, CheckInDate),
 CONSTRAINT RoomReservationFK FOREIGN KEY (GuestID) REFERENCES Guest(GuestID),
 CONSTRAINT RoomReservationFK2 FOREIGN KEY (RoomNo) REFERENCES Room(RoomNo),
 CONSTRAINT RoomPaymentCheck CHECK (PaymentStatus=0 OR PaymentStatus=1),
@@ -66,7 +70,7 @@ ConfRoomNo INT CONSTRAINT ConferenceRoomsPK PRIMARY KEY,
 Capacity INT NOT NULL,
 BookRate MONEY NOT NULL,
 ConfRoomStatus VARCHAR(14) DEFAULT 'Available',
-ConfRoomImage VAR(MAX),
+ConfRoomImage VARBINARY(MAX),
 CONSTRAINT ConfRoomStatusCheck Check (ConfRoomStatus in ('Available', 'Occupied', 'Reserved', 'In Maintenance'))
 )
 
@@ -84,8 +88,10 @@ RequestCharge MONEY,
 DecorCharge MONEY,
 Taxes MONEY NOT NULL,
 --Derived from RoomRate * 12%
+MiscEventCharge MONEY,
+--Charges accrued through misc. means, such as additional services or reparations
 Total MONEY NOT NULL,
---Derived from RoomRate + Taxes
+--Derived from RoomRate + Taxes + MiscEventCharge
 PaymentStatus INT DEFAULT 0,
 PayMethod VARCHAR(16) NOT NULL,
 CONSTRAINT EventReservationPK PRIMARY KEY(GuestID, EventID, RoomAssigned, EventDate),
@@ -104,6 +110,7 @@ CONSTRAINT EventRequestsPK PRIMARY KEY (EventID, Request),
 CONSTRAINT EventRequestsFK FOREIGN KEY (EventID) REFERENCES HotelEvents(EventID)
 )
 
+
 CREATE TABLE STAFF (
 username varchar(100) PRIMARY KEY,
 staffFirstName varchar(20),
@@ -116,3 +123,4 @@ CONSTRAINT isAdmin CHECK (isAdmin=0 OR isAdmin=1)
 insert into staff values ('admin', 'password', 1)
 
 --drop database HRSDB
+
