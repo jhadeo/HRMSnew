@@ -106,8 +106,10 @@ CONSTRAINT EventRequestsFK FOREIGN KEY (EventID) REFERENCES HotelEvents(EventID)
 
 CREATE TABLE STAFF (
 username varchar(100) PRIMARY KEY,
+staffFirstName varchar(20),
+staffLastName varchar(20),
 staffPassword varchar(100),
-isAdmin int default 0
+isAdmin int default 0,
 CONSTRAINT isAdmin CHECK (isAdmin=0 OR isAdmin=1)
 )
 
