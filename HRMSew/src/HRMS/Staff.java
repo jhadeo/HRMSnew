@@ -63,6 +63,25 @@ public class Staff extends StaffSQL {
     public String getStaff() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    static boolean AddStaff(String first, String last, String username, String Password){
+
+        try {
+            Connection con = DriverManager.getConnection(conSQL.connect(), conSQL.user(), conSQL.password());
+
+            String sql = "INSERT INTO STAFF ( FirstName, LastName, username, staffPassword) VALUES ( ?, ?, ?, ? )";
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, first);
+            pstmt.setString(2, last);
+            pstmt.setString(3, username);
+            pstmt.setString(4, Password);
+            pstmt.executeUpdate();
+
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
 
 abstract class StaffSQL{
