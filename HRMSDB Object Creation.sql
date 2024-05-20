@@ -103,14 +103,6 @@ CONSTRAINT EventPayMethodCheck CHECK (PayMethod in ('Cash','Bank Transfer','Cheq
 --simulates boolean value for payment status
 )
 
-CREATE TABLE EventRequests(
-EventID INT,
-Request VARCHAR(255),
-CONSTRAINT EventRequestsPK PRIMARY KEY (EventID, Request),
-CONSTRAINT EventRequestsFK FOREIGN KEY (EventID) REFERENCES HotelEvents(EventID)
-)
-
-
 CREATE TABLE STAFF (
 username varchar(100) PRIMARY KEY,
 FirstName varchar(20),
